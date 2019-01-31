@@ -2,6 +2,9 @@
 
 menu:
   主页: /
+  读书: /books
+  电影: /movies
+  游戏: /games
   相册: /photos
 
 # SubNav

@@ -60,6 +60,21 @@ time_format: HH:mm:ss
 per_page: 5
 pagination_dir: page
 
+# Plug-in
+douban:
+  user: 187167485
+  builtin: true
+  book:
+    title: '读书'
+    quote: '她那时候还太年轻，不知道所有命运馈赠的礼物早已在暗中标好了价格。'
+  movie:
+    title: '电影'
+    quote: 'だって私、あの人を追いかけてる私が好きなんだもの。'
+  game:
+    title: '游戏'
+    quote: 'Never look a tulip in the eye！'
+  timeout: 10000
+
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
