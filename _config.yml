@@ -63,7 +63,7 @@ pagination_dir: page
 # Plug-in
 douban:
   user: 187167485
-  builtin: true
+  builtin: false
   book:
     title: '读书'
     quote: '她那时候还太年轻，不知道所有命运馈赠的礼物早已在暗中标好了价格。'
