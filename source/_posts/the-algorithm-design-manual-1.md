@@ -17,8 +17,7 @@ tags: [interview problems]
 
 #### 课后习题
 ##### Interview Problems
-+ 1-28 Write a function to perform interger division without using either the **/** or ***** operators. Find a fast way to do it.
++ 1-28. Write a function to perform interger division without using either the **/** or ***** operators. Find a fast way to do it.
 
-+ 1-29 There are 25 horses. At most, 5 horses can race together at a time. You must determine the fastest, sencond fastest, and third fastest horses. Find the minimum number of races in which this can be done.
-
++ 1-29. There are 25 horses. At most, 5 horses can race together at a time. You must determine the fastest, sencond fastest, and third fastest horses. Find the minimum number of races in which this can be done.
 
