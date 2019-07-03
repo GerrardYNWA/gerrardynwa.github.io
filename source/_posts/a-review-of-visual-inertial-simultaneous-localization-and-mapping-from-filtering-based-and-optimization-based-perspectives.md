@@ -5,3 +5,8 @@ categories: Translation
 
 tags: [computer vision]
 ---
+
+　　这篇不咋地，不想翻译了。。。
+
+<!-- more -->
+
