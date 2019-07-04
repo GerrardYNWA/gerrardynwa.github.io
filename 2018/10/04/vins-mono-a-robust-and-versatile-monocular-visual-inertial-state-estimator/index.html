@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017 | Master Lu</title>
+  <title>VINS-Mono---A Robust and Versatile Monocular Visual-Inertial State Estimator | Master Lu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Master Lu&apos;s Personal Blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Master Lu">
-<meta property="og:url" content="http://yoursite.com/archives/2017/index.html">
+  <meta name="description" content="VINS-Mono的粗略翻译。。。">
+<meta name="keywords" content="computer vision">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VINS-Mono---A Robust and Versatile Monocular Visual-Inertial State Estimator">
+<meta property="og:url" content="http://yoursite.com/2018/10/04/vins-mono-a-robust-and-versatile-monocular-visual-inertial-state-estimator/index.html">
 <meta property="og:site_name" content="Master Lu">
-<meta property="og:description" content="Master Lu&apos;s Personal Blog">
+<meta property="og:description" content="VINS-Mono的粗略翻译。。。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-07-04T14:17:47.326Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Master Lu">
-<meta name="twitter:description" content="Master Lu&apos;s Personal Blog">
+<meta name="twitter:title" content="VINS-Mono---A Robust and Versatile Monocular Visual-Inertial State Estimator">
+<meta name="twitter:description" content="VINS-Mono的粗略翻译。。。">
   
     <link rel="alternative" href="/atom.xml" title="Master Lu" type="application/atom+xml">
   
@@ -181,36 +183,36 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-vins-mono-a-robust-and-versatile-monocular-visual-inertial-state-estimator" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/08/basic-concepts-of-slam/" class="archive-article-date">
-  	<time datetime="2017-03-08T14:26:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-08</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/08/basic-concepts-of-slam/">SLAM的基本概念</a>
+    <h1 class="article-title" itemprop="name">
+      VINS-Mono---A Robust and Versatile Monocular Visual-Inertial State Estimator
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/10/04/vins-mono-a-robust-and-versatile-monocular-visual-inertial-state-estimator/" class="archive-article-date">
+  	<time datetime="2018-10-04T13:49:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>VINS-Mono的粗略翻译。。。</p>
+<a id="more"></a>
+<h4 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h4><h4 id="Index-Terms"><a href="#Index-Terms" class="headerlink" title="Index Terms-"></a>Index Terms-</h4><h3 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a>1. Introduction</h3><h3 id="2-Related-Work"><a href="#2-Related-Work" class="headerlink" title="2. Related Work"></a>2. Related Work</h3><h3 id="3-Overview"><a href="#3-Overview" class="headerlink" title="3. Overview"></a>3. Overview</h3><h3 id="4-Measurement-Preprocessing"><a href="#4-Measurement-Preprocessing" class="headerlink" title="4. Measurement Preprocessing"></a>4. Measurement Preprocessing</h3><h3 id="5-Estimator-Initialization"><a href="#5-Estimator-Initialization" class="headerlink" title="5. Estimator Initialization"></a>5. Estimator Initialization</h3><h3 id="6-Tightly-Coupled-Monocular-VIO"><a href="#6-Tightly-Coupled-Monocular-VIO" class="headerlink" title="6. Tightly Coupled Monocular VIO"></a>6. Tightly Coupled Monocular VIO</h3><h3 id="7-Relocalization"><a href="#7-Relocalization" class="headerlink" title="7. Relocalization"></a>7. Relocalization</h3><h3 id="8-Global-Pose-Graph-Optimization-and-Map-Reuse"><a href="#8-Global-Pose-Graph-Optimization-and-Map-Reuse" class="headerlink" title="8. Global Pose Graph Optimization and Map Reuse"></a>8. Global Pose Graph Optimization and Map Reuse</h3><h3 id="9-Experimental-Results"><a href="#9-Experimental-Results" class="headerlink" title="9. Experimental Results"></a>9. Experimental Results</h3><h3 id="10-Conclusion-and-Future-Work"><a href="#10-Conclusion-and-Future-Work" class="headerlink" title="10. Conclusion and Future Work"></a>10. Conclusion and Future Work</h3>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -222,30 +224,126 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Algorithm//" class="article-tag-list-link color5">Algorithm</a>
+        			<a href="/categories/Translation//" class="article-tag-list-link color2">Translation</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/10/04/vins-mono-a-robust-and-versatile-monocular-visual-inertial-state-estimator/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/01/12/3D-Point-Cloud-Hole-Filling/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          3D Point Cloud Hole Filling
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2018/06/30/a-review-of-viusal-inertial-odometry-from-filtering-and-optimisation-perspectives/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">A Review of Viusal Inertial Odometry from Filtering and Optimisation Perspectives</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -268,8 +366,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
