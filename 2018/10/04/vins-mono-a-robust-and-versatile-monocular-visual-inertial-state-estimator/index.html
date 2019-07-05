@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Master Lu">
 <meta property="og:description" content="VINS-Mono的粗略翻译。。。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-04T14:17:47.326Z">
+<meta property="og:updated_time" content="2019-07-05T15:27:44.303Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="VINS-Mono---A Robust and Versatile Monocular Visual-Inertial State Estimator">
 <meta name="twitter:description" content="VINS-Mono的粗略翻译。。。">
@@ -205,7 +205,8 @@
       
         <p>VINS-Mono的粗略翻译。。。</p>
 <a id="more"></a>
-<h4 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h4><h4 id="Index-Terms"><a href="#Index-Terms" class="headerlink" title="Index Terms-"></a>Index Terms-</h4><h3 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a>1. Introduction</h3><h3 id="2-Related-Work"><a href="#2-Related-Work" class="headerlink" title="2. Related Work"></a>2. Related Work</h3><h3 id="3-Overview"><a href="#3-Overview" class="headerlink" title="3. Overview"></a>3. Overview</h3><h3 id="4-Measurement-Preprocessing"><a href="#4-Measurement-Preprocessing" class="headerlink" title="4. Measurement Preprocessing"></a>4. Measurement Preprocessing</h3><h3 id="5-Estimator-Initialization"><a href="#5-Estimator-Initialization" class="headerlink" title="5. Estimator Initialization"></a>5. Estimator Initialization</h3><h3 id="6-Tightly-Coupled-Monocular-VIO"><a href="#6-Tightly-Coupled-Monocular-VIO" class="headerlink" title="6. Tightly Coupled Monocular VIO"></a>6. Tightly Coupled Monocular VIO</h3><h3 id="7-Relocalization"><a href="#7-Relocalization" class="headerlink" title="7. Relocalization"></a>7. Relocalization</h3><h3 id="8-Global-Pose-Graph-Optimization-and-Map-Reuse"><a href="#8-Global-Pose-Graph-Optimization-and-Map-Reuse" class="headerlink" title="8. Global Pose Graph Optimization and Map Reuse"></a>8. Global Pose Graph Optimization and Map Reuse</h3><h3 id="9-Experimental-Results"><a href="#9-Experimental-Results" class="headerlink" title="9. Experimental Results"></a>9. Experimental Results</h3><h3 id="10-Conclusion-and-Future-Work"><a href="#10-Conclusion-and-Future-Work" class="headerlink" title="10. Conclusion and Future Work"></a>10. Conclusion and Future Work</h3>
+<h4 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h4><p>由摄像机和低成本惯性测量单元(IMU)组成的单目视觉惯性系统(VINS)，构成了用于度量六自由度状态估计的最小传感器套件。然而，由于缺乏直接距离测量，这套系统在IMU处理、估计器初始化、外部标定和非线性优化等方面面临着诸多挑战。在本文中，我们提出了一种鲁棒的、通用的单目视觉惯性状态估计器VINS-Mono。我们的方法从一个稳健的程序开始，用于估计器初始化和故障恢复。采用一种基于紧耦合、非线性优化的方法，通过融合预计分的IMU测量数据和特征观测数据，获得高精度的视觉惯性里程计。结合我们紧耦合的公式，一个闭环检测模块能够以最小的计算开销进行重定位。除此之外，我们还对四自由度姿态图进行了优化，以加强全局一致性。我们验证了该系统在公共数据集和真实世界实验上的性能，并与其他最先进的算法进行了比较。我们还在MAV平台上执行星载闭环自主飞行，并将算法移植到基于IOS的演示中。我们强调，所提议的工作是一个可靠、完整和多功能的系统，适用于需要高精度定位的不同应用程序。我们为个人电脑和iOS移动设备开放了我们的实现方法。</p>
+<h4 id="Index-Terms"><a href="#Index-Terms" class="headerlink" title="Index Terms-"></a>Index Terms-</h4><h3 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a>1. Introduction</h3><h3 id="2-Related-Work"><a href="#2-Related-Work" class="headerlink" title="2. Related Work"></a>2. Related Work</h3><h3 id="3-Overview"><a href="#3-Overview" class="headerlink" title="3. Overview"></a>3. Overview</h3><h3 id="4-Measurement-Preprocessing"><a href="#4-Measurement-Preprocessing" class="headerlink" title="4. Measurement Preprocessing"></a>4. Measurement Preprocessing</h3><h3 id="5-Estimator-Initialization"><a href="#5-Estimator-Initialization" class="headerlink" title="5. Estimator Initialization"></a>5. Estimator Initialization</h3><h3 id="6-Tightly-Coupled-Monocular-VIO"><a href="#6-Tightly-Coupled-Monocular-VIO" class="headerlink" title="6. Tightly Coupled Monocular VIO"></a>6. Tightly Coupled Monocular VIO</h3><h3 id="7-Relocalization"><a href="#7-Relocalization" class="headerlink" title="7. Relocalization"></a>7. Relocalization</h3><h3 id="8-Global-Pose-Graph-Optimization-and-Map-Reuse"><a href="#8-Global-Pose-Graph-Optimization-and-Map-Reuse" class="headerlink" title="8. Global Pose Graph Optimization and Map Reuse"></a>8. Global Pose Graph Optimization and Map Reuse</h3><h3 id="9-Experimental-Results"><a href="#9-Experimental-Results" class="headerlink" title="9. Experimental Results"></a>9. Experimental Results</h3><h3 id="10-Conclusion-and-Future-Work"><a href="#10-Conclusion-and-Future-Work" class="headerlink" title="10. Conclusion and Future Work"></a>10. Conclusion and Future Work</h3>
       
 
       
@@ -465,6 +466,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">university</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
@@ -474,10 +479,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">cuda</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">university</a>
               </li>
              
               <li class="article-tag-list-item">
