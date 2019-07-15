@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Master Lu">
 <meta property="og:description" content="VINS-Mono的粗略翻译。。。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-12T14:53:37.331Z">
+<meta property="og:updated_time" content="2019-07-14T14:53:31.276Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="VINS-Mono---A Robust and Versatile Monocular Visual-Inertial State Estimator">
 <meta name="twitter:description" content="VINS-Mono的粗略翻译。。。">
@@ -228,7 +228,9 @@
 <p>　　在实践中，IMU通常以比摄像机更高的速度获取数据。不同的方法被提出来处理高速率的IMU测量。最简单的方法是在基于EKF的方法中使用IMU进行状态传播。在图优化公式中，为了避免重复的IMU重复积分，提出了一种有效的方法，即IMU预积分，这种方法是在[22]中首次提出的，它用欧拉角来参数化旋转误差。在我们先前的工作中，我们提出了一种流形上的IMU-preIntegration旋转公式，该文利用连续IMU误差状态动力学推导了协方差传播。然而，IMU偏置被忽略了。文[23]通过增加后验IMU偏置校正，进一步改进了预积分理论。</p>
 <p>　　精确的初始值对于引导任何单目VINS是至关重要的。在[8]，[24]中提出了一种利用短期IMU预积分相对旋转的线性估计器初始化方法。但是，该方法不对陀螺仪偏置进行建模，无法在原始投影方程中对传感器噪声进行建模。在实际应用中，当视觉特性远离传感器套件时，这会导致不可靠的初始化。文[25]给出了单目视觉惯性初始化问题的一种封闭解.随后，文[26]提出了对这种封闭形式的解决方案的扩展，增加了陀螺仪的偏置校准。这些方法依赖于长时间内IMU测量的双重积分，无法模拟惯性积分的不确定性。在[27]中，提出了一种基于SVO的重初始化和故障恢复算法.这是一种基于松散耦合融合框架的实用方法。然而，需要额外的朝下的距离传感器来恢复公制尺度.在[17]中引入了一种建立在流行的ORB-SLAM之上的初始化算法.给出了一组ORB-SLAM的关键帧，计算了视觉惯性全BA的尺度、重力方向、速度和IMU偏置的初步估计。然而，据报道，规模收敛所需的时间可能超过10秒。这可能会给需要在一开始就进行规模评估的机器人导航任务带来问题。</p>
 <p>　　VIO方法，不管它们所依赖的基本数学公式，在全局的平移和旋转中长期受到漂移的影响。为此，回环检测在长期操作中起着重要的作用.ORBSLAM能够关闭循环并重新使用地图，它利用了词袋模型。一个7自由度（位置、方向和尺度)的姿态图优化遵循回环检测。相对于单目Vins，由于IMU的加入，漂移只发生在4自由度，即三维平移，并围绕重力方向(偏航角)旋转。因此，本文选择在最小四自由度设定下，优化具有回路约束的姿态图。</p>
-<h3 id="3-Overview"><a href="#3-Overview" class="headerlink" title="3. Overview"></a>3. Overview</h3><h3 id="4-Measurement-Preprocessing"><a href="#4-Measurement-Preprocessing" class="headerlink" title="4. Measurement Preprocessing"></a>4. Measurement Preprocessing</h3><h3 id="5-Estimator-Initialization"><a href="#5-Estimator-Initialization" class="headerlink" title="5. Estimator Initialization"></a>5. Estimator Initialization</h3><h3 id="6-Tightly-Coupled-Monocular-VIO"><a href="#6-Tightly-Coupled-Monocular-VIO" class="headerlink" title="6. Tightly Coupled Monocular VIO"></a>6. Tightly Coupled Monocular VIO</h3><h3 id="7-Relocalization"><a href="#7-Relocalization" class="headerlink" title="7. Relocalization"></a>7. Relocalization</h3><h3 id="8-Global-Pose-Graph-Optimization-and-Map-Reuse"><a href="#8-Global-Pose-Graph-Optimization-and-Map-Reuse" class="headerlink" title="8. Global Pose Graph Optimization and Map Reuse"></a>8. Global Pose Graph Optimization and Map Reuse</h3><h3 id="9-Experimental-Results"><a href="#9-Experimental-Results" class="headerlink" title="9. Experimental Results"></a>9. Experimental Results</h3><h3 id="10-Conclusion-and-Future-Work"><a href="#10-Conclusion-and-Future-Work" class="headerlink" title="10. Conclusion and Future Work"></a>10. Conclusion and Future Work</h3>
+<h3 id="3-Overview"><a href="#3-Overview" class="headerlink" title="3. Overview"></a>3. Overview</h3><p>　　提出的单目视觉惯性状态估计器的结构如图2所示。该系统从测量预处理(IV)开始，在其中提取和跟踪特征，对两个连续帧间的IMU测量值进行预积分。初始化过程(V)提供了所有必要的值，包括姿态、速度、重力向量、陀螺仪偏置和三维特征位置，用于引导随后的基于非线性优化的VIO。VIO(VI)与重定位(VII)模块紧密地融合了预先积分的IMU测量、特征观测和回环重新检测到的特征。最后，位姿图优化模块(VIII)接受几何验证的重定位结果，并进行全局优化以消除漂移。VIO、重新定位和位姿图优化模块在多线程设置中同时运行。每个模块有不同的运行速度和实时保证，以确保在任何时候可靠运行。</p>
+<p>　　我们现在对整篇论文中使用的符号和坐标系进行定义。我们认为$ (·)^{\omega} $是世界坐标系(world frame)。重力方向与世界坐标系$ z $轴对齐。$ (·)^b $是本体坐标系(body frame)，我们把它定义为与IMU坐标系相同。$ (·)^c $是相机坐标系(camera frame)。我们同时使用旋转矩阵$ R $和Hamilton四元数$ q $来表示旋转。我们主要在状态向量中使用四元数，也用旋转矩阵来表示三维向量的旋转。$ q_{b}^{\omega} $、$ p_{b}^{\omega} $表示从本体坐标系到世界坐标系的旋转和平移。$ b_k $表示获取第$ k $个图像时的相机坐标系。$ \otimes $表示两个四元数之间的乘法运算。$ g_{\omega} = [0, 0, g]^T $是世界坐标系上的重力向量。最后，我们将$ (\hat{}) $表示为某一具体量的噪声测量值或估计值。</p>
+<h3 id="4-Measurement-Preprocessing"><a href="#4-Measurement-Preprocessing" class="headerlink" title="4. Measurement Preprocessing"></a>4. Measurement Preprocessing</h3><h3 id="5-Estimator-Initialization"><a href="#5-Estimator-Initialization" class="headerlink" title="5. Estimator Initialization"></a>5. Estimator Initialization</h3><h3 id="6-Tightly-Coupled-Monocular-VIO"><a href="#6-Tightly-Coupled-Monocular-VIO" class="headerlink" title="6. Tightly Coupled Monocular VIO"></a>6. Tightly Coupled Monocular VIO</h3><h3 id="7-Relocalization"><a href="#7-Relocalization" class="headerlink" title="7. Relocalization"></a>7. Relocalization</h3><h3 id="8-Global-Pose-Graph-Optimization-and-Map-Reuse"><a href="#8-Global-Pose-Graph-Optimization-and-Map-Reuse" class="headerlink" title="8. Global Pose Graph Optimization and Map Reuse"></a>8. Global Pose Graph Optimization and Map Reuse</h3><h3 id="9-Experimental-Results"><a href="#9-Experimental-Results" class="headerlink" title="9. Experimental Results"></a>9. Experimental Results</h3><h3 id="10-Conclusion-and-Future-Work"><a href="#10-Conclusion-and-Future-Work" class="headerlink" title="10. Conclusion and Future Work"></a>10. Conclusion and Future Work</h3>
       
 
       
@@ -397,7 +399,7 @@
 		toc_hide_index: true,
 		root: "/",
 		innerArchive: true,
-		showTags: false
+		showTags: true
 	}
 </script>
 
