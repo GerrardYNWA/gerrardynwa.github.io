@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Master Lu">
 <meta property="og:description" content="VINS-Mono的粗略翻译。。。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-18T11:35:24.498Z">
+<meta property="og:updated_time" content="2019-07-19T14:53:32.126Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="VINS-Mono---A Robust and Versatile Monocular Visual-Inertial State Estimator">
 <meta name="twitter:description" content="VINS-Mono的粗略翻译。。。">
@@ -259,7 +259,13 @@
 <p>　　其中g是已知的重力大小，gˆ‾‾\overline {\hat g}<em>g</em>^是表示重力方向的单位向量，b1和b2是跨越切平面的两个正交基，如图5所示，w1和w2分别是在b1和b2上的对应位移。通过算法1的叉乘运算，可以找到一组b1、b2。然后用</p>
 <p>　　代替(17)中的g，并与其它状态变量一起求解w1和w2。此过程迭代到gˆ‾‾\overline {\hat g}<em>g</em>^收敛为止。</p>
 <p>　　4) Completing Initialization: 经过对重力向量的细化，通过将重力旋转到z轴上，得到世界坐标系与摄像机坐标系c0之间的旋转qwc0q_{c_0}^w<em>q**c</em>0<em>w</em>。然后我们将所有变量从参考坐标系(·)c0 旋转到世界坐标系(·)w。本体坐标系的速度也将被旋转到世界坐标系。视觉SfM的变换矩阵将被缩放到度量单位。此时，初始化过程已经完成，所有这些度量值都将被输入到一个紧耦合的单目VIO中。</p>
-<h3 id="6-Tightly-Coupled-Monocular-VIO"><a href="#6-Tightly-Coupled-Monocular-VIO" class="headerlink" title="6. Tightly Coupled Monocular VIO"></a>6. Tightly Coupled Monocular VIO</h3><h3 id="7-Relocalization"><a href="#7-Relocalization" class="headerlink" title="7. Relocalization"></a>7. Relocalization</h3><h3 id="8-Global-Pose-Graph-Optimization-and-Map-Reuse"><a href="#8-Global-Pose-Graph-Optimization-and-Map-Reuse" class="headerlink" title="8. Global Pose Graph Optimization and Map Reuse"></a>8. Global Pose Graph Optimization and Map Reuse</h3><h3 id="9-Experimental-Results"><a href="#9-Experimental-Results" class="headerlink" title="9. Experimental Results"></a>9. Experimental Results</h3><h3 id="10-Conclusion-and-Future-Work"><a href="#10-Conclusion-and-Future-Work" class="headerlink" title="10. Conclusion and Future Work"></a>10. Conclusion and Future Work</h3>
+<h3 id="6-Tightly-Coupled-Monocular-VIO"><a href="#6-Tightly-Coupled-Monocular-VIO" class="headerlink" title="6. Tightly Coupled Monocular VIO"></a>6. Tightly Coupled Monocular VIO</h3><p>　　在估计器初始化后，我们采用基于滑动窗口的紧耦合单目VIO进行高精度和鲁棒的状态估计。图3显示了滑动窗口的图示。</p>
+<h4 id="A-Formulation"><a href="#A-Formulation" class="headerlink" title="A. Formulation"></a>A. Formulation</h4><p>　　滑动窗口中的完整状态向量定义为：</p>
+<p>　　其中xk是捕获第k图像时的IMU状态。它包含了IMU在世界坐标系中的位置、速度和方向，以及在IMU本体坐标系中的加速度计偏置和陀螺仪偏置。n是关键帧的总数，m是滑动窗口中的特征总数，λl是第一次观测到第l个特征的逆深度。</p>
+<p>　　我们使用视觉惯性BA。我们最小化所有测量残差的先验和Mahalanobis范数之和，得到最大后验估计：</p>
+<p>　　其中Huber范数[37]被定义为：</p>
+<p><em>　　r**B</em>(<em>z</em>^<em>b**k</em>+1<em>b**k</em>,<em>X</em>)和rC(zˆcjl,X)r_C(\hat z_l^{c_j},X)<em>r**C</em>(<em>z</em>^<em>l<strong>c</strong>j</em>,<em>X</em>)分别是IMU和视觉测量的残差。残差的详细定义将在第六节的B和C中提出。B是所有IMU测量的集合，C是在当前滑动窗口中至少观察到两次的一组特征。{rp,<strong>H</strong>p}{r_p,\textbf H_p}{<em>r**p</em>,<strong>H*</strong>p*}是来自边缘化的先验信息。Ceres Solver[38]被用来解决这个非线性问题。</p>
+<h3 id="7-Relocalization"><a href="#7-Relocalization" class="headerlink" title="7. Relocalization"></a>7. Relocalization</h3><h3 id="8-Global-Pose-Graph-Optimization-and-Map-Reuse"><a href="#8-Global-Pose-Graph-Optimization-and-Map-Reuse" class="headerlink" title="8. Global Pose Graph Optimization and Map Reuse"></a>8. Global Pose Graph Optimization and Map Reuse</h3><h3 id="9-Experimental-Results"><a href="#9-Experimental-Results" class="headerlink" title="9. Experimental Results"></a>9. Experimental Results</h3><h3 id="10-Conclusion-and-Future-Work"><a href="#10-Conclusion-and-Future-Work" class="headerlink" title="10. Conclusion and Future Work"></a>10. Conclusion and Future Work</h3>
       
 
       
@@ -503,11 +509,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">pcl</a>
+                <a href="javascript:void(0)" class="js-tag color1">computer vision</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">computer vision</a>
+                <a href="javascript:void(0)" class="js-tag color4">pcl</a>
               </li>
              
               <li class="article-tag-list-item">
