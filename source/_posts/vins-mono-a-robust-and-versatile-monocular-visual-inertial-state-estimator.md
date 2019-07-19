@@ -128,6 +128,20 @@ VINS-Mono的粗略翻译。。。
 
 ### 6. Tightly Coupled Monocular VIO
 
+　　在估计器初始化后，我们采用基于滑动窗口的紧耦合单目VIO进行高精度和鲁棒的状态估计。图3显示了滑动窗口的图示。
+
+#### A. Formulation
+
+　　滑动窗口中的完整状态向量定义为：
+
+　　其中xk是捕获第k图像时的IMU状态。它包含了IMU在世界坐标系中的位置、速度和方向，以及在IMU本体坐标系中的加速度计偏置和陀螺仪偏置。n是关键帧的总数，m是滑动窗口中的特征总数，λl是第一次观测到第l个特征的逆深度。
+
+　　我们使用视觉惯性BA。我们最小化所有测量残差的先验和Mahalanobis范数之和，得到最大后验估计：
+
+　　其中Huber范数[37]被定义为：
+
+*　　r**B*(*z*^*b**k*+1*b**k*,*X*)和rC(zˆcjl,X)r_C(\hat z_l^{c_j},X)*r**C*(*z*^*l**c**j*,*X*)分别是IMU和视觉测量的残差。残差的详细定义将在第六节的B和C中提出。B是所有IMU测量的集合，C是在当前滑动窗口中至少观察到两次的一组特征。{rp,**H**p}\{r_p,\textbf H_p\}{*r**p*,**H***p*}是来自边缘化的先验信息。Ceres Solver[38]被用来解决这个非线性问题。
+
 ### 7. Relocalization
 
 ### 8. Global Pose Graph Optimization and Map Reuse
