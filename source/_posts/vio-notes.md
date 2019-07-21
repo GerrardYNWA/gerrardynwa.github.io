@@ -4,11 +4,8 @@ categories: Algorithm
 
 tags: [computer vision, slam]
 ---
-
-　　深蓝学院《从零开始手写VIO》课程笔记——第1讲：概述与课程介绍
-
-<!-- more -->　　
-
+　　[深蓝学院《从零开始手写VIO》](http://www.shenlanxueyuan.com/course/160)课程笔记——第1讲：概述与课程介绍
+<!-- more -->
 ## Section 1 - 课程内容与提要
 
 ### 重点内容
