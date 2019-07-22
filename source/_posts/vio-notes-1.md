@@ -1,5 +1,5 @@
 title: VIO课程笔记（第1讲）
-date: 2019-06-15 22:50:53
+date: 2019-06-16 22:50:53
 categories: Algorithm
 
 tags: [computer vision, slam]
