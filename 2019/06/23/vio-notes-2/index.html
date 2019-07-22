@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>《The Algorithm Design Manual》第二章 | Master Lu</title>
+  <title>vio notes 2 | Master Lu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="《The ALgorithm Design Manual(2nd Ed.)》俗称算法中的红宝书，其第一部分讨论实用算法思路，第二部分进行实例分析，这本ADM相比CLRS显得通俗易懂许多，而且侧重在算法设计的思路上，很适合进行闲时翻阅和面试备战。　　以下将分几个小节讲述第二章的内容要点和课后习题，课后习题主要讲解其中的Interview Problems。">
-<meta name="keywords" content="interview problems">
+  <meta name="description" content="深蓝学院《从零开始手写VIO》课程笔记——第2讲：IMU传感器">
+<meta name="keywords" content="computer vision,slam">
 <meta property="og:type" content="article">
-<meta property="og:title" content="《The Algorithm Design Manual》第二章">
-<meta property="og:url" content="http://yoursite.com/2019/03/16/the-algorithm-design-manual-2/index.html">
+<meta property="og:title" content="vio notes 2">
+<meta property="og:url" content="http://yoursite.com/2019/06/23/vio-notes-2/index.html">
 <meta property="og:site_name" content="Master Lu">
-<meta property="og:description" content="《The ALgorithm Design Manual(2nd Ed.)》俗称算法中的红宝书，其第一部分讨论实用算法思路，第二部分进行实例分析，这本ADM相比CLRS显得通俗易懂许多，而且侧重在算法设计的思路上，很适合进行闲时翻阅和面试备战。　　以下将分几个小节讲述第二章的内容要点和课后习题，课后习题主要讲解其中的Interview Problems。">
+<meta property="og:description" content="深蓝学院《从零开始手写VIO》课程笔记——第2讲：IMU传感器">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-05T15:04:19.040Z">
+<meta property="og:updated_time" content="2019-07-22T14:21:36.931Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="《The Algorithm Design Manual》第二章">
-<meta name="twitter:description" content="《The ALgorithm Design Manual(2nd Ed.)》俗称算法中的红宝书，其第一部分讨论实用算法思路，第二部分进行实例分析，这本ADM相比CLRS显得通俗易懂许多，而且侧重在算法设计的思路上，很适合进行闲时翻阅和面试备战。　　以下将分几个小节讲述第二章的内容要点和课后习题，课后习题主要讲解其中的Interview Problems。">
+<meta name="twitter:title" content="vio notes 2">
+<meta name="twitter:description" content="深蓝学院《从零开始手写VIO》课程笔记——第2讲：IMU传感器">
   
     <link rel="alternative" href="/atom.xml" title="Master Lu" type="application/atom+xml">
   
@@ -183,49 +183,164 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-the-algorithm-design-manual-2" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-vio-notes-2" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      《The Algorithm Design Manual》第二章
+      vio notes 2
     </h1>
   
 
         
-        <a href="/2019/03/16/the-algorithm-design-manual-2/" class="archive-article-date">
-  	<time datetime="2019-03-16T07:55:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-16</time>
+        <a href="/2019/06/23/vio-notes-2/" class="archive-article-date">
+  	<time datetime="2019-06-23T14:18:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>《The ALgorithm Design Manual(2nd Ed.)》俗称算法中的红宝书，其第一部分讨论实用算法思路，第二部分进行实例分析，这本ADM相比CLRS显得通俗易懂许多，而且侧重在算法设计的思路上，很适合进行闲时翻阅和面试备战。<br>　　以下将分几个小节讲述第二章的内容要点和课后习题，课后习题主要讲解其中的Interview Problems。</p>
-<a id="more"></a>
-<h3 id="Chapter-2-Algorithm-Analysis"><a href="#Chapter-2-Algorithm-Analysis" class="headerlink" title="Chapter 2. Algorithm Analysis"></a>Chapter 2. Algorithm Analysis</h3><h4 id="内容要点"><a href="#内容要点" class="headerlink" title="内容要点"></a>内容要点</h4><h4 id="课后习题"><a href="#课后习题" class="headerlink" title="课后习题"></a>课后习题</h4><h6 id="Interview-Problems"><a href="#Interview-Problems" class="headerlink" title="Interview Problems"></a>Interview Problems</h6><ul>
-<li><p>2-43. You are given a set $S$ of $n$ numbers. You must pick a subset $S’$ of $k$ numbers from $S$ such that the probablity of each elements of $S$ occurring in $S’$ is equal (i.e., each is selected with probability $k/n$). You may make only one pass over the numbers. What if $n$ is unknown?</p>
+        <p>　　<a href="http://www.shenlanxueyuan.com/course/160">深蓝学院《从零开始手写VIO》</a>课程笔记——第2讲：IMU传感器<br><a id="more"></a></p>
+<h2 id="Section-1-旋转运动学"><a href="#Section-1-旋转运动学" class="headerlink" title="Section 1 - 旋转运动学"></a>Section 1 - 旋转运动学</h2><h3 id="1-线速度与角速度"><a href="#1-线速度与角速度" class="headerlink" title="1. 线速度与角速度"></a>1. 线速度与角速度</h3><ul>
+<li>线速度 = 角速度 X 半径</li>
+</ul>
+<h3 id="2-旋转坐标系下的运动学"><a href="#2-旋转坐标系下的运动学" class="headerlink" title="2. 旋转坐标系下的运动学"></a>2. 旋转坐标系下的运动学</h3><ul>
+<li>inertial frame 和 body frame</li>
+<li>*旋转坐标系下的加速度 = 惯性系下的加速度 - 科氏力 - 欧拉力 - 离心力</li>
+<li>在旋转坐标系下观察，运动的物体（运动方向和旋转轴不为同一个轴时）会受到科氏力的作用。</li>
+</ul>
+<h3 id="3-定义清楚问题"><a href="#3-定义清楚问题" class="headerlink" title="3. 定义清楚问题"></a>3. 定义清楚问题</h3><ul>
+<li>惯性坐标系（世界坐标系）</li>
+<li>机器人坐标系（Body坐标系）（角速度+加速度）</li>
+<li>机器人位移和姿态</li>
+</ul>
+<h2 id="Section-2-IMU测量模型及运动模型"><a href="#Section-2-IMU测量模型及运动模型" class="headerlink" title="Section 2 - IMU测量模型及运动模型"></a>Section 2 - IMU测量模型及运动模型</h2><h3 id="1-MEMS加速度计工作原理"><a href="#1-MEMS加速度计工作原理" class="headerlink" title="1. MEMS加速度计工作原理"></a>1. MEMS加速度计工作原理</h3><ul>
+<li>测量原理可以用简单的质量块 + 弹簧 + 指示计来表示</li>
+<li>加速度计测量值$ a_m = f / m = a - g $</li>
+<li>MEMS加速度计利用电容或电阻桥等原理来测量</li>
+<li>东北天坐标系（ENU）<ul>
+<li>$ g = (0, 0, - 9.81) ^ T $</li>
+<li>假设IMU坐标系就是EMU坐标系， $ R_{IB} = I $<ul>
+<li>静止时有: $ a = 0, a_m = -g $</li>
+<li>自由落体时有：$ a = g, a_m = 0 $</li>
+</ul>
 </li>
-<li><p>2-44. We have 1,000 data items to store on 1,000 nodes. Each node can store copies of exactly three different items. Propose a replication scheme to minimize data loss as nodes fail. What is the expected number of data entries that get lost when three random nodes fail?</p>
+</ul>
 </li>
-<li><p>2-45. Consider the following algorithm to find the minimum element in an array of numbers $A[0，…，n]$. One extra variable tmp is allocated to hold the current minimum value. Start from <em>A[0]</em>; <em>”tmp”</em> is compared against $A[1]，A[2]，…，A[N]$ in order. When $A[i] &lt; tmp$, $tmp = A[i]$. What is the expected number of times that the assignment operation $tmp = A[i]$ is performed?</p>
+</ul>
+<h3 id="2-陀螺仪测量原理"><a href="#2-陀螺仪测量原理" class="headerlink" title="2. 陀螺仪测量原理"></a>2. 陀螺仪测量原理</h3><ul>
+<li>陀螺仪主要用来测量物体的旋转角速度，按测量原理分为振动陀螺、光纤陀螺等。</li>
+<li>低端MEMS一般采用振动陀螺原理，通过测量科氏力来间接的到角速度</li>
+<li>在旋转坐标系中，运动的物体受到科氏力作用</li>
+<li>MEMS陀螺仪：一个主动运动轴 + 一个敏感轴</li>
+</ul>
+<h3 id="3-音叉振动陀螺原理"><a href="#3-音叉振动陀螺原理" class="headerlink" title="3. 音叉振动陀螺原理"></a>3. 音叉振动陀螺原理</h3><ul>
+<li>音叉振动陀螺<ul>
+<li>叉子的中间为旋转轴，叉子左右两个质量块，作方向相反的正弦运动，质量块受到的科氏力方向相反。</li>
+<li>为啥用两个质量块？<ul>
+<li>两倍的科氏力使得电信号更大一点，测的更准一点</li>
+<li>外部的加速度影响会被抵消掉，得到纯的科氏力</li>
+</ul>
 </li>
-<li><p>2-46. You have a 100-story building and a couple of marbles. You must dentify the lowest floor for which a marble will break if you drop it from this floor. How fast can you find this floor if you are given an infinite supply of marbles? What if you have only two marbles?</p>
+<li>陀螺仪的G-sensitivity（两个质量块不可能完全一致，也就是陀螺仪的测量会受到外部加速度的影响）</li>
+<li>加速度计没有一个主动运动的轴，不会做高速运动，所以可以忽略受到科氏力的影响（运动的物体（运动方向和旋转轴不为同一个轴时）会受到科氏力的作用）</li>
+</ul>
 </li>
-<li><p>2-47. You are given 10 bags of gold coins. Nine bags contain coins that each weigh 10 grams. One bag contains all false coins that weigh one gram less. You must identify this bag in just one weighing. You have a digital balance that reports the weight of what is placed on it.</p>
+</ul>
+<h2 id="Section-3-IMU误差模型"><a href="#Section-3-IMU误差模型" class="headerlink" title="Section 3 - IMU误差模型"></a>Section 3 - IMU误差模型</h2><h3 id="1-误差分类"><a href="#1-误差分类" class="headerlink" title="1. 误差分类"></a>1. 误差分类</h3><ul>
+<li>加速度计和陀螺仪的误差可以分为：确定性误差和随机误差</li>
+<li>确定性误差可以事先标定确定，包括：bias、scale…</li>
+<li>随机误差通常假设噪声服从高斯分布，包括：高斯白噪声、bias随机游走</li>
+</ul>
+<h3 id="2-确定性误差"><a href="#2-确定性误差" class="headerlink" title="2. 确定性误差"></a>2. 确定性误差</h3><ul>
+<li>Bias - 理论上，当没有外部作用时，IMU传感器的输出应该为0。但是，实际数据存在一个偏置$ b $ 。加速度计bias对位姿估计的影响：<ul>
+<li>（速度）$ v_{err} = b_{a}t $</li>
+<li>（平移）$ p_{err} = 1/ 2 * b_{a}t^2 $</li>
+</ul>
 </li>
-<li><p>2-48. You have eight balls all of the same size. Seven of them weigh the same, and one of them weighs slightly more. How can you find the ball that is heavier by using a balance and only two weighings?</p>
+<li>Scale - 可以看成是实际数值和传感器输出值之间的比值</li>
+<li>Nonorthogonality / Misalignment Errors - 多轴IMU传感器制作的时候，由于制作工艺的问题，会使得$ xyz $轴可能不垂直。</li>
+<li>Others(电场、温度、电容影响)<ul>
+<li>Run-to-Run Bias / Scale Factor</li>
+<li>In Run (Stability) Bias / Scale Factor</li>
+<li>Temperature-Dependent Bias / Scale Factor</li>
+<li>…</li>
+</ul>
 </li>
-<li><p>2-49. Suppose we start with $n$ companies that eventually merge into one big company. How many different ways are there for them to merge?</p>
+</ul>
+<h3 id="3-六面法标定加速度"><a href="#3-六面法标定加速度" class="headerlink" title="3. 六面法标定加速度"></a>3. 六面法标定加速度</h3><ul>
+<li>六面法是指将加速度计的三个轴分别朝上或者朝下水平放置一段时间，采集六个面的数据完成标定。<ul>
+<li>如果各个轴都是正交的，很容易得到bias和scale</li>
+<li>考虑轴间误差的时候，利用最小二乘就能求解12个变量</li>
+</ul>
 </li>
-<li><p>2-50. A <strong>Ramanujam number</strong> can be written two different ways as the sum of two cubes—i.e., there exist distinct $a, b, c$, and $d$ such that $a^3 + b^3 = c^3 + d^3$. Generate all Ramanujam numbers where $a, b, c, d &lt; n$.</p>
+</ul>
+<h3 id="4-六面法标定陀螺仪"><a href="#4-六面法标定陀螺仪" class="headerlink" title="4. 六面法标定陀螺仪"></a>4. 六面法标定陀螺仪</h3><ul>
+<li>和加速度计六面法不同的是，陀螺仪的真实值由高精度转台提供，这里的6面是指各个轴顺时针和逆时针旋转</li>
+</ul>
+<h3 id="5-温度相关的参数标定"><a href="#5-温度相关的参数标定" class="headerlink" title="5. 温度相关的参数标定"></a>5. 温度相关的参数标定</h3><ul>
+<li>目的：对传感器估计的bias和scale进行温度补偿，获取不同温度时bias和scale的值，绘制成曲线</li>
+<li>两种标定方法：<ol>
+<li>soak method（实际-精度高）：控制恒温室的温度值，然后读取传感器数值进行标定</li>
+<li>ramp method：记录一段时间内线性升温和降温时传感器的数据来进行标定</li>
+</ol>
 </li>
-<li><p>2-51. Six pirates must divide $300 dollars among themselves. The division is to proceed as follows. The senior pirate proposes a way to divide the money. Then the pirates vote. If the senior pirate gets at least half the votes he wins, and that division remains. If he doesn’t, he is killed and then the next senior-most pirate gets a chance to do the division. Now you have to tell what will happen and why (i.e., how many pirates survive and how the division is done)? All the pirates are intelligent and the first priority is to stay alive and the next priority is to get as much money as possible.</p>
+</ul>
+<h3 id="6-IMU随机误差"><a href="#6-IMU随机误差" class="headerlink" title="6. IMU随机误差"></a>6. IMU随机误差</h3><ul>
+<li>高斯白噪声<ul>
+<li>实际上，IMU传感器获取的数据为离散采样，离散和连续高斯白噪声的方差之间存在如下转换关系：$ \sigma_{d} = \sigma / \sqrt{\Delta t} $</li>
+<li>也就是说高斯白噪声的连续时间到离散时间之间差一个$ 1 / \sqrt{\Delta t} $，而$ \sqrt{\Delta t} $是传感器的采样时间</li>
+</ul>
 </li>
-<li><p>2-52. Reconsider the pirate problem above, where only one indivisible dollar is to be divided. Who gets the dollar and how many are killed?</p>
+<li>Bias随机游走：通常用维纳过程（wiener process）来建模bias随时间连续变化的过程，离散时间下称之为随机游走<ul>
+<li>离散和连续之间的变换：$ \sigma_{bd} = \sigma_{b} \sqrt{\Delta t} $</li>
+<li>bias随机游走的噪声方差从连续时间到离散之间需要乘以$ \sqrt{\Delta t} $</li>
+</ul>
 </li>
+</ul>
+<h3 id="7-IMU随机误差的标定"><a href="#7-IMU随机误差的标定" class="headerlink" title="7. IMU随机误差的标定"></a>7. IMU随机误差的标定</h3><ul>
+<li>艾伦方差标定（random walk noise）：基于时域的分析方法<ol>
+<li>保持传感器绝对静止获取数据</li>
+<li>对数据进行分段，设定时间段的时长</li>
+<li>将传感器数据按照时间段进行平均</li>
+<li>计算方差，绘制艾伦曲线</li>
+</ol>
+</li>
+</ul>
+<h3 id="8-加速度计数学模型"><a href="#8-加速度计数学模型" class="headerlink" title="8. 加速度计数学模型"></a>8. 加速度计数学模型</h3><ul>
+<li>导航系$ G $ 为东北天，$ g^G = (0, 0, -9.81)^T $</li>
+<li>理论测量值：$ a^{B}<em>m = R</em>{BG}(a^G - g^G) $</li>
+<li>考虑高斯白噪声、bias以及尺度因子（通常假设尺度因子为单位矩阵）：$ a^{B}_m = S_a R_{BG}(a^G - g^G) + n_a + b_a $</li>
+</ul>
+<h3 id="9-陀螺仪数学模型"><a href="#9-陀螺仪数学模型" class="headerlink" title="9. 陀螺仪数学模型"></a>9. 陀螺仪数学模型</h3><ul>
+<li>考虑尺度因子、高斯白噪声以及bias，陀螺仪的误差模型：$ \omega^{B}_m = S_g \omega^B + n_g + b_g $</li>
+<li>低端传感器，考虑加速度对陀螺仪的影响，即g-灵敏度：$ \omega^{B}_m = S_g \omega^B + s_{ga} a^B + n_g + b_g $</li>
+</ul>
+<h2 id="Section-4-运动模型离散时间处理"><a href="#Section-4-运动模型离散时间处理" class="headerlink" title="Section 4 - 运动模型离散时间处理"></a>Section 4 - 运动模型离散时间处理</h2><h3 id="1-VIO中的IMU模型"><a href="#1-VIO中的IMU模型" class="headerlink" title="1. VIO中的IMU模型"></a>1. VIO中的IMU模型</h3><ul>
+<li>忽略scale的影响，只考虑白噪声和bias随机游走</li>
+<li>q需要归一化</li>
+</ul>
+<h3 id="2-连续时间下IMU运动模型"><a href="#2-连续时间下IMU运动模型" class="headerlink" title="2. 连续时间下IMU运动模型"></a>2. 连续时间下IMU运动模型</h3><h3 id="3-运动模型的离散积分-欧拉法"><a href="#3-运动模型的离散积分-欧拉法" class="headerlink" title="3. 运动模型的离散积分-欧拉法"></a>3. 运动模型的离散积分-欧拉法</h3><ul>
+<li>使用欧拉法，即两个相邻时刻 k 到 k + 1的位姿是用第 k 时刻的测量值$ a $、$ \omega $ 来计算</li>
+</ul>
+<h3 id="4-运动模型的离散积分-中值法"><a href="#4-运动模型的离散积分-中值法" class="headerlink" title="4. 运动模型的离散积分-中值法"></a>4. 运动模型的离散积分-中值法</h3><ul>
+<li>使用欧拉法，即两个相邻时刻 k 到 k + 1的位姿是用两个时刻的测量值$ a $、$ \omega $ 的平均值来计算</li>
+</ul>
+<h2 id="Section-5-IMU数据仿真"><a href="#Section-5-IMU数据仿真" class="headerlink" title="Section 5 - IMU数据仿真"></a>Section 5 - IMU数据仿真</h2><h3 id="1-仿真思路"><a href="#1-仿真思路" class="headerlink" title="1. 仿真思路"></a>1. 仿真思路</h3><ul>
+<li>思路1: 指定轨迹方程，求一阶导得到速度、角速度，求二阶导得到加速度</li>
+<li>思路2: 已有pose轨迹，不知道方程，利用B-Spline产生IMU数据</li>
+</ul>
+<h3 id="2-旋转基础知识"><a href="#2-旋转基础知识" class="headerlink" title="2. 旋转基础知识"></a>2. 旋转基础知识</h3><ul>
+<li>旋转积分的几种方式<ol>
+<li>四元数形式：</li>
+<li>SO3形式：</li>
+<li>欧拉角形式：</li>
+</ol>
+</li>
+<li>欧拉角</li>
 </ul>
 
       
@@ -240,7 +355,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">interview problems</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">computer vision</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">slam</a>
         		</li>
       		
 		</ul>
@@ -307,7 +426,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/16/the-algorithm-design-manual-2/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/06/23/vio-notes-2/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -321,18 +440,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/03/19/dynamic-programming/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/07/02/a-review-of-visual-inertial-simultaneous-localization-and-mapping-from-filtering-based-and-optimization-based-perspectives/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          动态规划： DP一时爽，一直DP一直爽
+          A Review of Visual-Inertial Simultaneous Localization and Mapping from Filtering-Based and Optimization-Based Perspectives
         
       </div>
     </a>
   
   
-    <a href="/2019/03/14/the-algorithm-design-manual-1/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">《The Algorithm Design Manual》第一章</div>
+    <a href="/2019/06/16/vio-notes-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">VIO课程笔记（第1讲）</div>
       <i class="icon-circle-right"></i>
     </a>
   

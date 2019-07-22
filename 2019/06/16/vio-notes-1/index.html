@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>《The Algorithm Design Manual》第二章 | Master Lu</title>
+  <title>VIO课程笔记（第1讲） | Master Lu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="《The ALgorithm Design Manual(2nd Ed.)》俗称算法中的红宝书，其第一部分讨论实用算法思路，第二部分进行实例分析，这本ADM相比CLRS显得通俗易懂许多，而且侧重在算法设计的思路上，很适合进行闲时翻阅和面试备战。　　以下将分几个小节讲述第二章的内容要点和课后习题，课后习题主要讲解其中的Interview Problems。">
-<meta name="keywords" content="interview problems">
+  <meta name="description" content="深蓝学院《从零开始手写VIO》课程笔记——第1讲：概述与课程介绍">
+<meta name="keywords" content="computer vision,slam">
 <meta property="og:type" content="article">
-<meta property="og:title" content="《The Algorithm Design Manual》第二章">
-<meta property="og:url" content="http://yoursite.com/2019/03/16/the-algorithm-design-manual-2/index.html">
+<meta property="og:title" content="VIO课程笔记（第1讲）">
+<meta property="og:url" content="http://yoursite.com/2019/06/16/vio-notes-1/index.html">
 <meta property="og:site_name" content="Master Lu">
-<meta property="og:description" content="《The ALgorithm Design Manual(2nd Ed.)》俗称算法中的红宝书，其第一部分讨论实用算法思路，第二部分进行实例分析，这本ADM相比CLRS显得通俗易懂许多，而且侧重在算法设计的思路上，很适合进行闲时翻阅和面试备战。　　以下将分几个小节讲述第二章的内容要点和课后习题，课后习题主要讲解其中的Interview Problems。">
+<meta property="og:description" content="深蓝学院《从零开始手写VIO》课程笔记——第1讲：概述与课程介绍">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-05T15:04:19.040Z">
+<meta property="og:updated_time" content="2019-07-22T14:21:51.821Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="《The Algorithm Design Manual》第二章">
-<meta name="twitter:description" content="《The ALgorithm Design Manual(2nd Ed.)》俗称算法中的红宝书，其第一部分讨论实用算法思路，第二部分进行实例分析，这本ADM相比CLRS显得通俗易懂许多，而且侧重在算法设计的思路上，很适合进行闲时翻阅和面试备战。　　以下将分几个小节讲述第二章的内容要点和课后习题，课后习题主要讲解其中的Interview Problems。">
+<meta name="twitter:title" content="VIO课程笔记（第1讲）">
+<meta name="twitter:description" content="深蓝学院《从零开始手写VIO》课程笔记——第1讲：概述与课程介绍">
   
     <link rel="alternative" href="/atom.xml" title="Master Lu" type="application/atom+xml">
   
@@ -183,51 +183,64 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-the-algorithm-design-manual-2" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-vio-notes-1" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      《The Algorithm Design Manual》第二章
+      VIO课程笔记（第1讲）
     </h1>
   
 
         
-        <a href="/2019/03/16/the-algorithm-design-manual-2/" class="archive-article-date">
-  	<time datetime="2019-03-16T07:55:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-16</time>
+        <a href="/2019/06/16/vio-notes-1/" class="archive-article-date">
+  	<time datetime="2019-06-16T14:50:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-16</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>《The ALgorithm Design Manual(2nd Ed.)》俗称算法中的红宝书，其第一部分讨论实用算法思路，第二部分进行实例分析，这本ADM相比CLRS显得通俗易懂许多，而且侧重在算法设计的思路上，很适合进行闲时翻阅和面试备战。<br>　　以下将分几个小节讲述第二章的内容要点和课后习题，课后习题主要讲解其中的Interview Problems。</p>
-<a id="more"></a>
-<h3 id="Chapter-2-Algorithm-Analysis"><a href="#Chapter-2-Algorithm-Analysis" class="headerlink" title="Chapter 2. Algorithm Analysis"></a>Chapter 2. Algorithm Analysis</h3><h4 id="内容要点"><a href="#内容要点" class="headerlink" title="内容要点"></a>内容要点</h4><h4 id="课后习题"><a href="#课后习题" class="headerlink" title="课后习题"></a>课后习题</h4><h6 id="Interview-Problems"><a href="#Interview-Problems" class="headerlink" title="Interview Problems"></a>Interview Problems</h6><ul>
-<li><p>2-43. You are given a set $S$ of $n$ numbers. You must pick a subset $S’$ of $k$ numbers from $S$ such that the probablity of each elements of $S$ occurring in $S’$ is equal (i.e., each is selected with probability $k/n$). You may make only one pass over the numbers. What if $n$ is unknown?</p>
-</li>
-<li><p>2-44. We have 1,000 data items to store on 1,000 nodes. Each node can store copies of exactly three different items. Propose a replication scheme to minimize data loss as nodes fail. What is the expected number of data entries that get lost when three random nodes fail?</p>
-</li>
-<li><p>2-45. Consider the following algorithm to find the minimum element in an array of numbers $A[0，…，n]$. One extra variable tmp is allocated to hold the current minimum value. Start from <em>A[0]</em>; <em>”tmp”</em> is compared against $A[1]，A[2]，…，A[N]$ in order. When $A[i] &lt; tmp$, $tmp = A[i]$. What is the expected number of times that the assignment operation $tmp = A[i]$ is performed?</p>
-</li>
-<li><p>2-46. You have a 100-story building and a couple of marbles. You must dentify the lowest floor for which a marble will break if you drop it from this floor. How fast can you find this floor if you are given an infinite supply of marbles? What if you have only two marbles?</p>
-</li>
-<li><p>2-47. You are given 10 bags of gold coins. Nine bags contain coins that each weigh 10 grams. One bag contains all false coins that weigh one gram less. You must identify this bag in just one weighing. You have a digital balance that reports the weight of what is placed on it.</p>
-</li>
-<li><p>2-48. You have eight balls all of the same size. Seven of them weigh the same, and one of them weighs slightly more. How can you find the ball that is heavier by using a balance and only two weighings?</p>
-</li>
-<li><p>2-49. Suppose we start with $n$ companies that eventually merge into one big company. How many different ways are there for them to merge?</p>
-</li>
-<li><p>2-50. A <strong>Ramanujam number</strong> can be written two different ways as the sum of two cubes—i.e., there exist distinct $a, b, c$, and $d$ such that $a^3 + b^3 = c^3 + d^3$. Generate all Ramanujam numbers where $a, b, c, d &lt; n$.</p>
-</li>
-<li><p>2-51. Six pirates must divide $300 dollars among themselves. The division is to proceed as follows. The senior pirate proposes a way to divide the money. Then the pirates vote. If the senior pirate gets at least half the votes he wins, and that division remains. If he doesn’t, he is killed and then the next senior-most pirate gets a chance to do the division. Now you have to tell what will happen and why (i.e., how many pirates survive and how the division is done)? All the pirates are intelligent and the first priority is to stay alive and the next priority is to get as much money as possible.</p>
-</li>
-<li><p>2-52. Reconsider the pirate problem above, where only one indivisible dollar is to be divided. Who gets the dollar and how many are killed?</p>
-</li>
+        <p>　　<a href="http://www.shenlanxueyuan.com/course/160">深蓝学院《从零开始手写VIO》</a>课程笔记——第1讲：概述与课程介绍<br><a id="more"></a></p>
+<h2 id="Section-1-课程内容与提要"><a href="#Section-1-课程内容与提要" class="headerlink" title="Section 1 - 课程内容与提要"></a>Section 1 - 课程内容与提要</h2><h3 id="重点内容"><a href="#重点内容" class="headerlink" title="重点内容"></a>重点内容</h3><ul>
+<li>IMU的工作原理和噪声方程</li>
+<li>视觉与IMU紧耦合的基础理论</li>
+<li>从零开始实现VIO紧耦合优化器（仅基于Eigen）</li>
 </ul>
-
+<h2 id="Section-2-VIO概述"><a href="#Section-2-VIO概述" class="headerlink" title="Section 2 - VIO概述"></a>Section 2 - VIO概述</h2><h3 id="1-VIO（IMU-Visual-Odometry）"><a href="#1-VIO（IMU-Visual-Odometry）" class="headerlink" title="1. VIO（IMU + Visual Odometry）"></a>1. VIO（IMU + Visual Odometry）</h3><h3 id="2-IMU与视觉定位方案优势与劣势对比"><a href="#2-IMU与视觉定位方案优势与劣势对比" class="headerlink" title="2. IMU与视觉定位方案优势与劣势对比"></a>2. IMU与视觉定位方案优势与劣势对比</h3><h3 id="3-松耦合-紧耦合（为什么要使用紧耦合？）"><a href="#3-松耦合-紧耦合（为什么要使用紧耦合？）" class="headerlink" title="3. 松耦合/紧耦合（为什么要使用紧耦合？）"></a>3. 松耦合/紧耦合（为什么要使用紧耦合？）</h3><h3 id="4-探讨的问题"><a href="#4-探讨的问题" class="headerlink" title="4. 探讨的问题"></a>4. 探讨的问题</h3><ol>
+<li>IMU的测量数据表达了系统的什么状态，受到哪些噪声影响？</li>
+<li>如何建立一个带有IMU测量信息的视觉特征点信息的非线性优化问题并求解？</li>
+<li>该问题随着时间将发生怎样的演变？</li>
+</ol>
+<h2 id="Section-3-预备知识回顾"><a href="#Section-3-预备知识回顾" class="headerlink" title="Section 3 - 预备知识回顾"></a>Section 3 - 预备知识回顾</h2><h3 id="1-三维刚体运动"><a href="#1-三维刚体运动" class="headerlink" title="1. 三维刚体运动"></a>1. 三维刚体运动</h3><ul>
+<li>坐标系（世界坐标系/IMU坐标系/相机坐标系）</li>
+</ul>
+<h3 id="2-四元数"><a href="#2-四元数" class="headerlink" title="2. 四元数"></a>2. 四元数</h3><ul>
+<li>1实部 + 3虚部</li>
+<li>四元数运算</li>
+<li>单位四元数-&gt;任意旋转（角轴）</li>
+<li>四元数q vs 时间导数</li>
+<li>李代数-&gt;旋转求导</li>
+<li>旋转矩阵R vs 时间导数</li>
+</ul>
+<h3 id="3-so-3-导数"><a href="#3-so-3-导数" class="headerlink" title="3. so(3)导数"></a>3. so(3)导数</h3><ul>
+<li>旋转点的左扰动雅可比</li>
+<li>旋转点的右扰动雅可比</li>
+<li>旋转连乘的雅可比</li>
+<li>SO(3)的伴随性质</li>
+</ul>
+<h3 id="4-SE-3-李代数"><a href="#4-SE-3-李代数" class="headerlink" title="4. SE(3)李代数"></a>4. SE(3)李代数</h3><h2 id="习题"><a href="#习题" class="headerlink" title="习题"></a>习题</h2><h3 id="1-VIO文献阅读"><a href="#1-VIO文献阅读" class="headerlink" title="1. VIO文献阅读"></a>1. VIO文献阅读</h3><ul>
+<li>视觉与IMU进行融合之后有何优势？</li>
+<li>有哪些常见的视觉+IMU融合方案？有没有工业界应用的例子？</li>
+<li>在学术界，VIO研究有哪些新进展？有没有将学习方法用到VIO中的例子？</li>
+</ul>
+<h3 id="2-四元数和李代数更新"><a href="#2-四元数和李代数更新" class="headerlink" title="2. 四元数和李代数更新"></a>2. 四元数和李代数更新</h3><ul>
+<li>R / q 更新</li>
+<li>重投影（R） vs 旋转连乘（q）</li>
+</ul>
+<h3 id="3-右乘so-3"><a href="#3-右乘so-3" class="headerlink" title="3. 右乘so(3)"></a>3. 右乘so(3)</h3>
       
 
       
@@ -240,7 +253,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">interview problems</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">computer vision</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">slam</a>
         		</li>
       		
 		</ul>
@@ -307,7 +324,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/16/the-algorithm-design-manual-2/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/06/16/vio-notes-1/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -321,18 +338,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/03/19/dynamic-programming/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/06/23/vio-notes-2/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          动态规划： DP一时爽，一直DP一直爽
+          vio notes 2
         
       </div>
     </a>
   
   
-    <a href="/2019/03/14/the-algorithm-design-manual-1/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">《The Algorithm Design Manual》第一章</div>
+    <a href="/2019/05/19/contrast-limited-adaptive-histgram-equalization/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">直方图均衡化（AHE和CLAHE）</div>
       <i class="icon-circle-right"></i>
     </a>
   
