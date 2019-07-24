@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Master Lu</title>
+  <title>VIO课程笔记（第3讲） | Master Lu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Master Lu&apos;s Personal Blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Master Lu">
-<meta property="og:url" content="http://yoursite.com/page/3/index.html">
+  <meta name="description" content="Section 1 - 基于Bundle Adjustment的VIO融合1. 视觉SLAM里的Bundle Adjustment问题 已知： 状态量初始值：特征点的三维坐标、相机的位姿 系统测量值：特征点在不同图像上的图像坐标   问题：如何估计状态量的最优值？ 解决方式：构建误差函数，利用最小二乘得到状态量的最优估计  Section 2 - 最小二乘问题的求解1. 最小二乘基础概念 定义 损">
+<meta name="keywords" content="computer vision,slam">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VIO课程笔记（第3讲）">
+<meta property="og:url" content="http://yoursite.com/2019/06/30/vio-notes-3/index.html">
 <meta property="og:site_name" content="Master Lu">
-<meta property="og:description" content="Master Lu&apos;s Personal Blog">
+<meta property="og:description" content="Section 1 - 基于Bundle Adjustment的VIO融合1. 视觉SLAM里的Bundle Adjustment问题 已知： 状态量初始值：特征点的三维坐标、相机的位姿 系统测量值：特征点在不同图像上的图像坐标   问题：如何估计状态量的最优值？ 解决方式：构建误差函数，利用最小二乘得到状态量的最优估计  Section 2 - 最小二乘问题的求解1. 最小二乘基础概念 定义 损">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-07-24T15:01:53.009Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Master Lu">
-<meta name="twitter:description" content="Master Lu&apos;s Personal Blog">
+<meta name="twitter:title" content="VIO课程笔记（第3讲）">
+<meta name="twitter:description" content="Section 1 - 基于Bundle Adjustment的VIO融合1. 视觉SLAM里的Bundle Adjustment问题 已知： 状态量初始值：特征点的三维坐标、相机的位姿 系统测量值：特征点在不同图像上的图像坐标   问题：如何估计状态量的最优值？ 解决方式：构建误差函数，利用最小二乘得到状态量的最优估计  Section 2 - 最小二乘问题的求解1. 最小二乘基础概念 定义 损">
   
     <link rel="alternative" href="/atom.xml" title="Master Lu" type="application/atom+xml">
   
@@ -181,30 +183,164 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-the-history-of-bundle-adjustment" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+            <article id="post-vio-notes-3" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/06/the-history-of-bundle-adjustment/">The History of Bundle Adjustment</a>
+    <h1 class="article-title" itemprop="name">
+      VIO课程笔记（第3讲）
     </h1>
   
 
         
-        <a href="/2016/08/06/the-history-of-bundle-adjustment/" class="archive-article-date">
-  	<time datetime="2016-08-06T03:46:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-06</time>
+        <a href="/2019/06/30/vio-notes-3/" class="archive-article-date">
+  	<time datetime="2019-06-30T14:57:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-30</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>　　转载自知乎versatran01的回答：<a href="https://www.zhihu.com/question/29082659/answer/62472382">Bundle Adjustment到底是什么？</a></p>
-        
+        <h2 id="Section-1-基于Bundle-Adjustment的VIO融合"><a href="#Section-1-基于Bundle-Adjustment的VIO融合" class="headerlink" title="Section 1 - 基于Bundle Adjustment的VIO融合"></a>Section 1 - 基于Bundle Adjustment的VIO融合</h2><h3 id="1-视觉SLAM里的Bundle-Adjustment问题"><a href="#1-视觉SLAM里的Bundle-Adjustment问题" class="headerlink" title="1. 视觉SLAM里的Bundle Adjustment问题"></a>1. 视觉SLAM里的Bundle Adjustment问题</h3><ul>
+<li>已知：<ol>
+<li>状态量初始值：特征点的三维坐标、相机的位姿</li>
+<li>系统测量值：特征点在不同图像上的图像坐标</li>
+</ol>
+</li>
+<li>问题：如何估计状态量的最优值？</li>
+<li>解决方式：构建误差函数，利用最小二乘得到状态量的最优估计</li>
+</ul>
+<h2 id="Section-2-最小二乘问题的求解"><a href="#Section-2-最小二乘问题的求解" class="headerlink" title="Section 2 - 最小二乘问题的求解"></a>Section 2 - 最小二乘问题的求解</h2><h3 id="1-最小二乘基础概念"><a href="#1-最小二乘基础概念" class="headerlink" title="1. 最小二乘基础概念"></a>1. 最小二乘基础概念</h3><ul>
+<li>定义</li>
+<li>损失函数泰勒展开<ul>
+<li>雅可比矩阵</li>
+<li>海塞矩阵</li>
+</ul>
+</li>
+<li>损失函数泰勒展开性质</li>
+<li>求解法<ul>
+<li>直接解</li>
+<li>迭代下降法</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-迭代下降法求解：下降法"><a href="#2-迭代下降法求解：下降法" class="headerlink" title="2. 迭代下降法求解：下降法"></a>2. 迭代下降法求解：下降法</h3><ul>
+<li>最速下降法：适用于迭代的开始阶段<ul>
+<li>缺点：最优值附近震荡，收敛慢</li>
+</ul>
+</li>
+<li>牛顿法：适用于最优值附近<ul>
+<li>缺点：二阶导矩阵计算复杂</li>
+</ul>
+</li>
+<li>阻尼牛顿法：限制不要走的太远</li>
+</ul>
+<h3 id="3-非线性最小二乘"><a href="#3-非线性最小二乘" class="headerlink" title="3. 非线性最小二乘"></a>3. 非线性最小二乘</h3><ul>
+<li>Gauss-Newton和LM</li>
+<li>LM中阻尼因子的作用</li>
+<li>阻尼因子初始值的选取<ul>
+<li>韦达定理：矩阵特征值的和为矩阵的迹</li>
+</ul>
+</li>
+<li>阻尼因子$ \mu $的更新策略<ul>
+<li>定性分析</li>
+<li>定量分析</li>
+</ul>
+</li>
+<li>Marquardt策略</li>
+<li>Nielsen策略（被g2o、Ceres采用）</li>
+</ul>
+<h3 id="4-鲁棒和函数的实现"><a href="#4-鲁棒和函数的实现" class="headerlink" title="4. 鲁棒和函数的实现"></a>4. 鲁棒和函数的实现</h3><ul>
+<li>最小二乘outlier如何处理？</li>
+<li>Triggs Correction（g2o、Ceres）</li>
+<li>（M-Estimation）</li>
+<li>Cauchy Cost Function</li>
+</ul>
+<h3 id="5-核函数拓展"><a href="#5-核函数拓展" class="headerlink" title="5. 核函数拓展"></a>5. 核函数拓展</h3><ul>
+<li>核函数控制参数的设定<ul>
+<li>残差正态分布</li>
+<li>残差非正态分布</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-回顾最小二乘求解"><a href="#6-回顾最小二乘求解" class="headerlink" title="6. 回顾最小二乘求解"></a>6. 回顾最小二乘求解</h3><ul>
+<li>步骤：<ol>
+<li>找到一个合适的关于状态量x的残差函数f（x），后续用r、err等表示</li>
+<li>计算残差函数对状态量x的雅可比J</li>
+<li>选定cost function以及其参数</li>
+<li>LM算法求解</li>
+</ol>
+</li>
+</ul>
+<h2 id="Section-3-VIO残差函数的构建"><a href="#Section-3-VIO残差函数的构建" class="headerlink" title="Section 3 - VIO残差函数的构建"></a>Section 3 - VIO残差函数的构建</h2><h3 id="1-系统需要优化的状态量"><a href="#1-系统需要优化的状态量" class="headerlink" title="1. 系统需要优化的状态量"></a>1. 系统需要优化的状态量</h3><ul>
+<li>系统状态量（15维向量）</li>
+</ul>
+<h3 id="2-视觉重投影误差"><a href="#2-视觉重投影误差" class="headerlink" title="2. 视觉重投影误差"></a>2. 视觉重投影误差</h3><ul>
+<li>视觉重投影误差（三维）</li>
+<li>逆深度参数化（一维）<ul>
+<li>有些点非常远（更新量很小）</li>
+<li>参数量少</li>
+<li>逆深度更像高斯分布一些</li>
+</ul>
+</li>
+<li>VIO中基于逆深度的重投影误差（T = [R， t，0，1]）</li>
+</ul>
+<h3 id="3-IMU测量值积分"><a href="#3-IMU测量值积分" class="headerlink" title="3. IMU测量值积分"></a>3. IMU测量值积分</h3><ul>
+<li>每次q优化更新后，都需要重新进行积分，运算量较大</li>
+</ul>
+<h3 id="4-IMU预积分"><a href="#4-IMU预积分" class="headerlink" title="4. IMU预积分"></a>4. IMU预积分</h3><ul>
+<li>公式转换</li>
+<li>预积分量：仅仅跟IMU测量值有关，它将一段时间内的IMU数据直接积分起来就得到了预积分量</li>
+<li>$ \alpha 、\beta、q $，物理意义上的位移、速度和旋转</li>
+<li>重新整理下PVQ的积分公式</li>
+</ul>
+<h3 id="5-IMU的预积分误差"><a href="#5-IMU的预积分误差" class="headerlink" title="5. IMU的预积分误差"></a>5. IMU的预积分误差</h3><ul>
+<li>预积分误差（一段时间内IMU构建的预积分量作为测量值，对两时刻之间的状态量进行约束）<ul>
+<li>位移、速度和偏置都是直接相减，第二项是关于四元数的旋转误差</li>
+<li>15维向量</li>
+</ul>
+</li>
+<li>预积分的离散形式<ul>
+<li>欧拉法</li>
+<li>中值法</li>
+<li>RK4</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-预积分量的方差"><a href="#6-预积分量的方差" class="headerlink" title="6. 预积分量的方差"></a>6. 预积分量的方差</h3><ul>
+<li>一个IMU数据作为测量值的噪声方差我们能够标定。现在，一段时间内多个IMU数据积分形成的预积分量的方差呢？</li>
+<li>Covariance Propagation</li>
+<li>所以，要推导预积分量的协方差，我们需要知道IMU噪声和预积分量之间的线形递推关系</li>
+<li>假设已知了相邻时刻误差的线形传递方程，误差的传递由两部分组成：当前时刻的误差传递给下一时刻，当前时刻测量噪声传递给下一时刻</li>
+</ul>
+<h3 id="7-状态误差线形递推公式的推导"><a href="#7-状态误差线形递推公式的推导" class="headerlink" title="7. 状态误差线形递推公式的推导"></a>7. 状态误差线形递推公式的推导</h3><ul>
+<li>两种方法来推导状态误差传递的线形递推关系<ol>
+<li>一种是基于一阶泰勒展开的误差递推方程</li>
+<li>一种是基于误差随时间变化的递推方程</li>
+</ol>
+</li>
+</ul>
+<h3 id="8-基于一阶泰勒展开的误差递推方程"><a href="#8-基于一阶泰勒展开的误差递推方程" class="headerlink" title="8. 基于一阶泰勒展开的误差递推方程"></a>8. 基于一阶泰勒展开的误差递推方程</h3><ul>
+<li>基于泰勒展开的误差传递（应用于EKF的协方差预测）</li>
+</ul>
+<h3 id="9-基于误差随时间变化的递推方程"><a href="#9-基于误差随时间变化的递推方程" class="headerlink" title="9. 基于误差随时间变化的递推方程"></a>9. 基于误差随时间变化的递推方程</h3><ul>
+<li>传递方程</li>
+<li>两种方法对比？</li>
+<li>一般VIO中采用第二种（基于误差随时间变化的递推方程），因为VIO系统中已经知道了状态的倒数和状态之间的转移矩阵，就可以推导误差和状态误差之间的关系？</li>
+</ul>
+<h3 id="9-预积分的误差递推公式推导"><a href="#9-预积分的误差递推公式推导" class="headerlink" title="9. 预积分的误差递推公式推导"></a>9. 预积分的误差递推公式推导</h3><ul>
+<li>预积分误差传递的形式（F、G为两个时刻间的协方差传递矩阵）</li>
+<li>雅可比矩阵F、G的推导</li>
+</ul>
+<h3 id="10-雅可比矩阵F、G的推导"><a href="#10-雅可比矩阵F、G的推导" class="headerlink" title="10. 雅可比矩阵F、G的推导"></a>10. 雅可比矩阵F、G的推导</h3><ul>
+<li>B对各状态量的雅可比推导（第三行）</li>
+</ul>
+<h2 id="Section-4-残差Jacobian的推导（整个系统）"><a href="#Section-4-残差Jacobian的推导（整个系统）" class="headerlink" title="Section 4 - 残差Jacobian的推导（整个系统）"></a>Section 4 - 残差Jacobian的推导（整个系统）</h2><h3 id="1-视觉重投影残差的Jacobian"><a href="#1-视觉重投影残差的Jacobian" class="headerlink" title="1. 视觉重投影残差的Jacobian"></a>1. 视觉重投影残差的Jacobian</h3><h3 id="2-IMU误差相对于优化变量的Jacobian"><a href="#2-IMU误差相对于优化变量的Jacobian" class="headerlink" title="2. IMU误差相对于优化变量的Jacobian"></a>2. IMU误差相对于优化变量的Jacobian</h3><ul>
+<li>IMU角度误差相对优化变量的Jacobian</li>
+</ul>
+
       
 
       
@@ -218,6 +354,10 @@
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">computer vision</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">slam</a>
         		</li>
       		
 		</ul>
@@ -237,16 +377,84 @@
 
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/08/06/the-history-of-bundle-adjustment/">阅读全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/06/30/vio-notes-3/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/07/02/a-review-of-visual-inertial-simultaneous-localization-and-mapping-from-filtering-based-and-optimization-based-perspectives/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          A Review of Visual-Inertial Simultaneous Localization and Mapping from Filtering-Based and Optimization-Based Perspectives
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/06/23/vio-notes-2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">VIO课程笔记（第2讲）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -266,597 +474,14 @@
 
 
 
-
-  
-    <article id="post-summer-camp" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/26/summer-camp/">Summer Camp</a>
-    </h1>
-  
-
-        
-        <a href="/2016/07/26/summer-camp/" class="archive-article-date">
-  	<time datetime="2016-07-26T03:26:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-07-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>　　无话可说</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">university</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Life//" class="article-tag-list-link color5">Life</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/07/26/summer-camp/">阅读全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-free-e-books-about-cv" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/17/free-e-books-about-cv/">Free E-books about Computer Vision</a>
-    </h1>
-  
-
-        
-        <a href="/2016/02/17/free-e-books-about-cv/" class="archive-article-date">
-  	<time datetime="2016-02-17T01:57:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-02-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>　　闲暇之余，整理了一些计算机视觉中可能会用到的参考书籍，适合于从事Computer Vision工作的科研人员或对此有兴趣的读者。</p>
-<p>　　PS：所提供的书籍均为百度云盘链接的PDF电子版，读者也可购买相应纸质书进行阅读，不过可能有些书籍的纸质版已经绝版…</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">computer vision</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Resource//" class="article-tag-list-link color4">Resource</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/02/17/free-e-books-about-cv/">阅读全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-learn-markdown" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/02/learn-markdown/">Learn Markdown</a>
-    </h1>
-  
-
-        
-        <a href="/2016/02/02/learn-markdown/" class="archive-article-date">
-  	<time datetime="2016-02-02T09:01:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-02-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>　　Markdown 是一种轻量级的“标记语言”，它的优点很多，目前也被越来越多的写作爱好者广泛使用。Markdown 的语法十分简单。常用的标记符号也不超过十个，这种相对于更为复杂的HTML 标记语言来说， 可谓是十分轻量的，学习成本也不需要太多，且一旦熟悉这种语法规则，会有一劳永逸的效果。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">markdown</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Learning//" class="article-tag-list-link color4">Learning</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/02/02/learn-markdown/">阅读全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-public-licenses" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/02/public-licenses/">选择开源许可证</a>
-    </h1>
-  
-
-        
-        <a href="/2016/02/02/public-licenses/" class="archive-article-date">
-  	<time datetime="2016-02-02T06:15:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-02-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>　　开源许可证种类众多，如何选择合适的许可证甚是费劲。目前最流行的开源许可证有六种：BSD、MIT、Mozilla、Apache、GPL和LGPL，对大多数人而言也是很难抉择的。有幸在网上看到了简单比较这几种许可证的分析图，真是一图胜千言！<br>
-        
-      
-
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Learning//" class="article-tag-list-link color4">Learning</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/02/02/public-licenses/">阅读全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-the-great-gatsby" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/26/the-great-gatsby/">The Great Gatsby</a>
-    </h1>
-  
-
-        
-        <a href="/2016/01/26/the-great-gatsby/" class="archive-article-date">
-  	<time datetime="2016-01-26T02:15:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-01-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>　　《The Great Gatsby》————弗·司各特·菲茨杰拉德（1896-1940），美国二十世纪最杰出的作家之一，《The Great Gatsby》是他最著名的代表作，被美国学术界权威评为二十世纪百年英语文学长河中一百部最优秀的小说第二位。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">movies</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Life//" class="article-tag-list-link color5">Life</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/01/26/the-great-gatsby/">阅读全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-win10-install" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/16/win10-install/">U盘启动安装win10</a>
-    </h1>
-  
-
-        
-        <a href="/2016/01/16/win10-install/" class="archive-article-date">
-  	<time datetime="2016-01-16T11:42:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-01-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>　　心血来潮装了win10英文版，原来win8.1卡出翔，现在世界终于清静了…<br>
-        
-      
-
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">windows</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Skill//" class="article-tag-list-link color1">Skill</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/01/16/win10-install/">阅读全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-winter-vacation-schedule" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/13/winter-vacation-schedule/">寒假日程</a>
-    </h1>
-  
-
-        
-        <a href="/2016/01/13/winter-vacation-schedule/" class="archive-article-date">
-  	<time datetime="2016-01-13T04:15:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-01-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>　　最近比较颓废，事情多起来就都不想干了，这种隐形强迫症啥时候能改…大三的这次寒假早在12月30号就放了，浑浑噩噩过了近半个月，实验室干点活，进展很慢，又干点自己的杂事，比较烦心，生活作息还没调整到最佳状态。近日，规划一下寒假日程，来约束调整自身状态。<br>
-        
-      
-
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">university</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Life//" class="article-tag-list-link color5">Life</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/01/13/winter-vacation-schedule/">阅读全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -879,8 +504,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
