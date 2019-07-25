@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>VIO课程笔记（第3讲） | Master Lu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Section 1 - 基于Bundle Adjustment的VIO融合1. 视觉SLAM里的Bundle Adjustment问题 已知： 状态量初始值：特征点的三维坐标、相机的位姿 系统测量值：特征点在不同图像上的图像坐标   问题：如何估计状态量的最优值？ 解决方式：构建误差函数，利用最小二乘得到状态量的最优估计  Section 2 - 最小二乘问题的求解1. 最小二乘基础概念 定义 损">
+  <meta name="description" content="深蓝学院《从零开始手写VIO》课程笔记——第3讲：基于优化的IMU与视觉信息融合">
 <meta name="keywords" content="computer vision,slam">
 <meta property="og:type" content="article">
 <meta property="og:title" content="VIO课程笔记（第3讲）">
 <meta property="og:url" content="http://yoursite.com/2019/06/30/vio-notes-3/index.html">
 <meta property="og:site_name" content="Master Lu">
-<meta property="og:description" content="Section 1 - 基于Bundle Adjustment的VIO融合1. 视觉SLAM里的Bundle Adjustment问题 已知： 状态量初始值：特征点的三维坐标、相机的位姿 系统测量值：特征点在不同图像上的图像坐标   问题：如何估计状态量的最优值？ 解决方式：构建误差函数，利用最小二乘得到状态量的最优估计  Section 2 - 最小二乘问题的求解1. 最小二乘基础概念 定义 损">
+<meta property="og:description" content="深蓝学院《从零开始手写VIO》课程笔记——第3讲：基于优化的IMU与视觉信息融合">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-24T15:01:53.009Z">
+<meta property="og:updated_time" content="2019-07-25T11:09:17.058Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="VIO课程笔记（第3讲）">
-<meta name="twitter:description" content="Section 1 - 基于Bundle Adjustment的VIO融合1. 视觉SLAM里的Bundle Adjustment问题 已知： 状态量初始值：特征点的三维坐标、相机的位姿 系统测量值：特征点在不同图像上的图像坐标   问题：如何估计状态量的最优值？ 解决方式：构建误差函数，利用最小二乘得到状态量的最优估计  Section 2 - 最小二乘问题的求解1. 最小二乘基础概念 定义 损">
+<meta name="twitter:description" content="深蓝学院《从零开始手写VIO》课程笔记——第3讲：基于优化的IMU与视觉信息融合">
   
     <link rel="alternative" href="/atom.xml" title="Master Lu" type="application/atom+xml">
   
@@ -203,7 +203,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Section-1-基于Bundle-Adjustment的VIO融合"><a href="#Section-1-基于Bundle-Adjustment的VIO融合" class="headerlink" title="Section 1 - 基于Bundle Adjustment的VIO融合"></a>Section 1 - 基于Bundle Adjustment的VIO融合</h2><h3 id="1-视觉SLAM里的Bundle-Adjustment问题"><a href="#1-视觉SLAM里的Bundle-Adjustment问题" class="headerlink" title="1. 视觉SLAM里的Bundle Adjustment问题"></a>1. 视觉SLAM里的Bundle Adjustment问题</h3><ul>
+        <p>　　<a href="http://www.shenlanxueyuan.com/course/160">深蓝学院《从零开始手写VIO》</a>课程笔记——第3讲：基于优化的IMU与视觉信息融合<br><a id="more"></a></p>
+<h2 id="Section-1-基于Bundle-Adjustment的VIO融合"><a href="#Section-1-基于Bundle-Adjustment的VIO融合" class="headerlink" title="Section 1 - 基于Bundle Adjustment的VIO融合"></a>Section 1 - 基于Bundle Adjustment的VIO融合</h2><h3 id="1-视觉SLAM里的Bundle-Adjustment问题"><a href="#1-视觉SLAM里的Bundle-Adjustment问题" class="headerlink" title="1. 视觉SLAM里的Bundle Adjustment问题"></a>1. 视觉SLAM里的Bundle Adjustment问题</h3><ul>
 <li>已知：<ol>
 <li>状态量初始值：特征点的三维坐标、相机的位姿</li>
 <li>系统测量值：特征点在不同图像上的图像坐标</li>

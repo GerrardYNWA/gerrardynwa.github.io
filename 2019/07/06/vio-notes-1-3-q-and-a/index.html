@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Master Lu</title>
+  <title>VIO课程笔记（第1-3讲答疑） | Master Lu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Master Lu&apos;s Personal Blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Master Lu">
-<meta property="og:url" content="http://yoursite.com/archives/page/4/index.html">
+  <meta name="description" content="深蓝学院《从零开始手写VIO》课程笔记——第1-3讲答疑">
+<meta name="keywords" content="computer vision,slam">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VIO课程笔记（第1-3讲答疑）">
+<meta property="og:url" content="http://yoursite.com/2019/07/06/vio-notes-1-3-q-and-a/index.html">
 <meta property="og:site_name" content="Master Lu">
-<meta property="og:description" content="Master Lu&apos;s Personal Blog">
+<meta property="og:description" content="深蓝学院《从零开始手写VIO》课程笔记——第1-3讲答疑">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-07-25T11:10:29.487Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Master Lu">
-<meta name="twitter:description" content="Master Lu&apos;s Personal Blog">
+<meta name="twitter:title" content="VIO课程笔记（第1-3讲答疑）">
+<meta name="twitter:description" content="深蓝学院《从零开始手写VIO》课程笔记——第1-3讲答疑">
   
     <link rel="alternative" href="/atom.xml" title="Master Lu" type="application/atom+xml">
   
@@ -181,85 +183,73 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-vio-notes-1-3-q-and-a" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/01/13/winter-vacation-schedule/" class="archive-article-date">
-  	<time datetime="2016-01-13T04:15:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-01-13</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/13/winter-vacation-schedule/">寒假日程</a>
+    <h1 class="article-title" itemprop="name">
+      VIO课程笔记（第1-3讲答疑）
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">university</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Life//" class="article-tag-list-link color5">Life</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/01/12/bundle-adjustment/" class="archive-article-date">
-  	<time datetime="2016-01-12T13:15:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-01-12</time>
+        
+        <a href="/2019/07/06/vio-notes-1-3-q-and-a/" class="archive-article-date">
+  	<time datetime="2019-07-06T11:02:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-06</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/12/bundle-adjustment/">Bundle Adjustment</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>　　<a href="http://www.shenlanxueyuan.com/course/160">深蓝学院《从零开始手写VIO》</a>课程笔记——第1-3讲答疑<br><a id="more"></a></p>
+<ol>
+<li>预积分误差传递中的F矩阵f33为什么是三阶单位阵？<ul>
+<li>矩阵求导（雅可比维数）</li>
+</ul>
+</li>
+<li>为什么需要算误差的传递？误差传递在后面是用协方差形式传递的么？<ul>
+<li>噪声高斯分布</li>
+<li>直观来讲，协方差是用来归一化误差的</li>
+</ul>
+</li>
+<li>第三讲公式（59）是delta_theta对delta_theta求偏导，而公式（48）直接是belta对delta_belta求偏导？<ul>
+<li>因为旋转四元数的特殊性，需要表示成delta_theta的线形形式来求</li>
+<li>*也可以不用雅可比，直接用线形传递方程来求得</li>
+</ul>
+</li>
+<li>第三讲PPT-41中，是k-1</li>
+<li>第三讲PPT-61中，拆成三维坐标形式<ul>
+<li>$$ T^{-1} = {\begin{bmatrix}<br>R &amp; t \<br>0 &amp; 1<br>\end{bmatrix}}^{-1} = {\begin{bmatrix}<br>R^T &amp; -R^{T}t \<br>0 &amp; 1<br>\end{bmatrix}} $$</li>
+</ul>
+</li>
+<li>归一化坐标和相机坐标（视觉SLAM十四讲第五章）</li>
+<li>bias随机游走误差和确定性误差bias是一个东西吗？<ul>
+<li>bias能估计出来，所以是确定性的，但它也是随机游走的</li>
+</ul>
+</li>
+<li>PPT中强调了中值积分添加白噪声，在后面推导的时候又忽略了白噪声呢？<ul>
+<li>只是显式地写出来了，后面则融合进里面了</li>
+</ul>
+</li>
+<li>按理说把body坐标系下的加速度转换到惯性系下，是要受到科氏力的影响的，那为什么在IMU的加速度误差模型中，直接乘qbw，就可以完成加速度在不同坐标系下的转换呢？<ul>
+<li>因为直接测的body坐标系的加速度，忽略了地球旋转的加速度，有相对的概念？因为不是转换到旋转坐标系，所以不用考虑科氏力</li>
+</ul>
+</li>
+<li>K时刻和K+1时刻的w为什么都是减去K时刻的bias？<ul>
+<li>假设bias在短时间内是不变的</li>
+</ul>
+</li>
+</ol>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -267,11 +257,15 @@
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">computer vision</a>
         		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">slam</a>
+        		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -284,58 +278,103 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/06/vio-notes-1-3-q-and-a/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/01/01/hello-world/" class="archive-article-date">
-  	<time datetime="2015-12-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-01-01</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/07/02/a-review-of-visual-inertial-simultaneous-localization-and-mapping-from-filtering-based-and-optimization-based-perspectives/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">A Review of Visual-Inertial Simultaneous Localization and Mapping from Filtering-Based and Optimization-Based Perspectives</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/01/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Life//" class="article-tag-list-link color5">Life</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
   
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/page/3/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><span class="page-number current">4</span>
-    </nav>
+  
+
+  
+
   
 
 
@@ -359,8 +398,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
