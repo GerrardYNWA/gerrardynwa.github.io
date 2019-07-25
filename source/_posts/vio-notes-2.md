@@ -5,7 +5,7 @@ categories: Algorithm
 tags: [computer vision, slam]
 ---
 
-　　[深蓝学院《从零开始手写VIO》](http://www.shenlanxueyuan.com/course/160)课程笔记——第3讲：基于优化的IMU与视觉信息融合
+　　[深蓝学院《从零开始手写VIO》](http://www.shenlanxueyuan.com/course/160)课程笔记——第2讲：IMU传感器
 <!-- more -->
 ## Section 1 - 旋转运动学
 
