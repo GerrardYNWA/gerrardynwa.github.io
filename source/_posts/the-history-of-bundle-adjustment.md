@@ -1,7 +1,8 @@
 title: The History of Bundle Adjustment
 date: 2016-08-06 11:46:43
 categories: Algorithm
-tags: [computer vision]
+
+tags: [computer vision, slam]
 ---
 
 　　转载自知乎versatran01的回答：[Bundle Adjustment到底是什么？](https://www.zhihu.com/question/29082659/answer/62472382)

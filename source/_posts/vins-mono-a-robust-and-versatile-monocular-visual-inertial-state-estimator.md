@@ -2,10 +2,10 @@ title: VINS-Mono---A Robust and Versatile Monocular Visual-Inertial State Estima
 date: 2018-10-04 21:49:48
 categories: Translation
 
-tags: [computer vision]
+tags: [computer vision, slam]
 ---
 
-VINS-Mono的粗略翻译。。。
+　　VINS-Mono的粗略翻译。。。
 
 <!-- more -->
 

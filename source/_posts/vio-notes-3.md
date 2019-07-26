@@ -2,9 +2,8 @@ title: VIO课程笔记（第3讲）
 date: 2019-06-30 22:57:07
 categories: Algorithm
 
-tags: [computer vision, slam]
+tags: [computer vision, slam, vio]
 ---
-
 　　[深蓝学院《从零开始手写VIO》](http://www.shenlanxueyuan.com/course/160)课程笔记——第3讲：基于优化的IMU与视觉信息融合
 <!-- more -->
 ## Section 1 - 基于Bundle Adjustment的VIO融合

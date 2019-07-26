@@ -2,9 +2,8 @@ title: VIO课程笔记（第1-3讲答疑）
 date: 2019-07-06 19:02:58
 categories: Algorithm
 
-tags: [computer vision, slam]
+tags: [computer vision, slam, vio]
 ---
-
 　　[深蓝学院《从零开始手写VIO》](http://www.shenlanxueyuan.com/course/160)课程笔记——第1-3讲答疑
 <!-- more -->
 1. 预积分误差传递中的F矩阵f33为什么是三阶单位阵？

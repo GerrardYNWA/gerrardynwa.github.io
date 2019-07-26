@@ -2,7 +2,7 @@ title: VIO课程笔记（第1讲）
 date: 2019-06-16 22:50:53
 categories: Algorithm
 
-tags: [computer vision, slam]
+tags: [computer vision, slam, vio]
 ---
 　　[深蓝学院《从零开始手写VIO》](http://www.shenlanxueyuan.com/course/160)课程笔记——第1讲：概述与课程介绍
 <!-- more -->

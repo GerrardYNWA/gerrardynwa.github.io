@@ -1,7 +1,8 @@
 title: SLAM的基本概念
-date: 2017-03-08 22:26:08
+date: 2017-05-08 22:26:08
 categories: Algorithm
-tags: [computer vision]
+
+tags: [computer vision, slam]
 ---
 
 　　以下是我在看高博的《SLAM十四讲》的过程中，整理出来的有关SLAM的基本概念，分章节归纳，以备复习查用。
