@@ -9,14 +9,14 @@
   <title>VINS-Mono---A Robust and Versatile Monocular Visual-Inertial State Estimator | Master Lu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="VINS-Mono的粗略翻译。。。">
-<meta name="keywords" content="computer vision">
+<meta name="keywords" content="computer vision,slam">
 <meta property="og:type" content="article">
 <meta property="og:title" content="VINS-Mono---A Robust and Versatile Monocular Visual-Inertial State Estimator">
 <meta property="og:url" content="http://yoursite.com/2018/10/04/vins-mono-a-robust-and-versatile-monocular-visual-inertial-state-estimator/index.html">
 <meta property="og:site_name" content="Master Lu">
 <meta property="og:description" content="VINS-Mono的粗略翻译。。。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-19T14:53:32.126Z">
+<meta property="og:updated_time" content="2019-07-26T08:39:50.542Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="VINS-Mono---A Robust and Versatile Monocular Visual-Inertial State Estimator">
 <meta name="twitter:description" content="VINS-Mono的粗略翻译。。。">
@@ -203,7 +203,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>VINS-Mono的粗略翻译。。。</p>
+        <p>　　VINS-Mono的粗略翻译。。。</p>
 <a id="more"></a>
 <h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>　　由摄像机和低成本惯性测量单元(IMU)组成的单目视觉惯性系统(VINS)，构成了用于度量六自由度状态估计的最小传感器套件。然而，由于缺乏直接距离测量，这套系统在IMU处理、估计器初始化、外部标定和非线性优化等方面面临着诸多挑战。在本文中，我们提出了一种鲁棒的、通用的单目视觉惯性状态估计器VINS-Mono。我们的方法从一个稳健的程序开始，用于估计器初始化和故障恢复。采用一种基于紧耦合、非线性优化的方法，通过融合预计分的IMU测量数据和特征观测数据，获得高精度的视觉惯性里程计。结合我们紧耦合的公式，一个闭环检测模块能够以最小的计算开销进行重定位。除此之外，我们还对四自由度姿态图进行了优化，以加强全局一致性。我们验证了该系统在公共数据集和真实环境实验的性能，并与其他最先进的算法进行了比较。我们还在MAV平台上执行机载闭环自主飞行，并将算法移植到基于iOS的demo中。特别强调的是，本文提出的工作是一个可靠、完整和通用的系统，适用于需要高精度定位的不同应用。我们为PC和iOS移动设备开源了我们的实现方法。</p>
 <h3 id="Index-Terms-单目视觉惯性系统，状态估计，传感器融合，SLAM"><a href="#Index-Terms-单目视觉惯性系统，状态估计，传感器融合，SLAM" class="headerlink" title="Index Terms-单目视觉惯性系统，状态估计，传感器融合，SLAM"></a>Index Terms-单目视觉惯性系统，状态估计，传感器融合，SLAM</h3><h3 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a>1. Introduction</h3><p>　　状态估计无疑是机器人导航、自主驾驶、虚拟现实(VR)和增强现实(AR)等广泛应用中最基本的模块。仅使用单目摄像机的方法由于其体积小、成本低和硬件设置简单而获得了社会的极大兴趣[1]-[5]。然而，单目视觉系统无法恢复度量尺度，因此限制了它们在实际机器人中的应用。近年来，我们看到了一种发展趋势，即用低成本惯性测量单元(IMU)辅助单目视觉系统。这种单目视觉-惯性系统(VINS)的主要优点是具有可观测的度量尺度，以及翻滚角(roll)和俯仰角(pitch)。这让需要有尺度的状态估计的导航任务成为可能。此外，对IMU测量值的积分可以显著提高运动跟踪性能，弥补光照变化、缺少纹理的区域或运动模糊的视觉轨迹损失的差距。事实上，单目VINS不仅广泛应用于移动机器人、无人机和移动设备上，还是满足充分自我感知和环境感知的最小传感器。</p>
@@ -279,6 +279,10 @@
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">computer vision</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">slam</a>
         		</li>
       		
 		</ul>
@@ -359,11 +363,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/01/12/3D-Point-Cloud-Hole-Filling/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/10/26/visual-slam-14-lectures-loop-closure/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          3D Point Cloud Hole Filling
+          视觉SLAM十四讲——回环检测
         
       </div>
     </a>
@@ -509,11 +513,19 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">computer vision</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">slam</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">pcl</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">computer vision</a>
+                <a href="javascript:void(0)" class="js-tag color4">vio</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -525,11 +537,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
+                <a href="javascript:void(0)" class="js-tag color1">university</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">university</a>
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -538,10 +550,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">cuda</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">slam</a>
               </li>
              
               <li class="article-tag-list-item">
