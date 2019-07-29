@@ -2,7 +2,7 @@ title: VIO课程笔记（第4讲）
 date: 2019-07-13 22:46:37
 categories: Algorithm
 
-tags: [computer vision, slam]
+tags: [computer vision, slam, vio]
 ---
 　　[深蓝学院《从零开始手写VIO》](http://www.shenlanxueyuan.com/course/160)课程笔记——第4讲：基于滑动窗口算法的VIO系统-可观性和一致性
 <!-- more -->
