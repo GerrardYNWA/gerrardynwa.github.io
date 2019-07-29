@@ -1,11 +1,12 @@
 title: VIO课程笔记（第5讲）
-date: 2019-07-19 21:25:19
+date: 2019-07-16 21:25:19
 categories: Algorithm
 
 tags: [computer vision, slam, vio]
 ---
 　　[深蓝学院《从零开始手写VIO》](http://www.shenlanxueyuan.com/course/160)课程笔记——第5讲：滑动窗口算法实践
 <!-- more -->
+
 ## Section 1 - 非线性最小二乘问题求解
 
 ### 1. 非线性最小二乘问题求解：solver
