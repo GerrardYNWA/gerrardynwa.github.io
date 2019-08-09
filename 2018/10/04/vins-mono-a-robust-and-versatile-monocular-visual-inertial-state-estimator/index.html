@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>VINS-Mono---A Robust and Versatile Monocular Visual-Inertial State Estimator | Master Lu</title>
+  <title>(译)VINS-Mono---A Robust and Versatile Monocular Visual-Inertial State Estimator | Master Lu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="VINS-Mono的粗略翻译。。。">
 <meta name="keywords" content="computer vision,slam">
 <meta property="og:type" content="article">
-<meta property="og:title" content="VINS-Mono---A Robust and Versatile Monocular Visual-Inertial State Estimator">
+<meta property="og:title" content="(译)VINS-Mono---A Robust and Versatile Monocular Visual-Inertial State Estimator">
 <meta property="og:url" content="http://yoursite.com/2018/10/04/vins-mono-a-robust-and-versatile-monocular-visual-inertial-state-estimator/index.html">
 <meta property="og:site_name" content="Master Lu">
 <meta property="og:description" content="VINS-Mono的粗略翻译。。。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-26T08:39:50.542Z">
+<meta property="og:updated_time" content="2019-08-09T14:48:06.433Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="VINS-Mono---A Robust and Versatile Monocular Visual-Inertial State Estimator">
+<meta name="twitter:title" content="(译)VINS-Mono---A Robust and Versatile Monocular Visual-Inertial State Estimator">
 <meta name="twitter:description" content="VINS-Mono的粗略翻译。。。">
   
     <link rel="alternative" href="/atom.xml" title="Master Lu" type="application/atom+xml">
@@ -190,7 +190,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      VINS-Mono---A Robust and Versatile Monocular Visual-Inertial State Estimator
+      (译)VINS-Mono---A Robust and Versatile Monocular Visual-Inertial State Estimator
     </h1>
   
 
@@ -363,11 +363,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/01/12/3D-Point-Cloud-Hole-Filling/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/03/14/the-algorithm-design-manual-1/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          3D Point Cloud Hole Filling
+          《The Algorithm Design Manual》第一章
         
       </div>
     </a>
@@ -393,6 +393,19 @@
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Abstract"><span class="toc-number">1.</span> <span class="toc-text">Abstract</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Index-Terms-单目视觉惯性系统，状态估计，传感器融合，SLAM"><span class="toc-number">2.</span> <span class="toc-text">Index Terms-单目视觉惯性系统，状态估计，传感器融合，SLAM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Introduction"><span class="toc-number">3.</span> <span class="toc-text">1. Introduction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Related-Work"><span class="toc-number">4.</span> <span class="toc-text">2. Related Work</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Overview"><span class="toc-number">5.</span> <span class="toc-text">3. Overview</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Measurement-Preprocessing"><span class="toc-number">6.</span> <span class="toc-text">4. Measurement Preprocessing</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#A-Vision-Processing-Front-End"><span class="toc-number">6.1.</span> <span class="toc-text">A. Vision Processing Front End</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#B-IMU-Preinteration"><span class="toc-number">6.2.</span> <span class="toc-text">B. IMU Preinteration</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-Estimator-Initialization"><span class="toc-number">7.</span> <span class="toc-text">5. Estimator Initialization</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#A-Vision-Only-SfM-in-Sliding-Window"><span class="toc-number">7.1.</span> <span class="toc-text">A. Vision-Only SfM in Sliding Window</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#B-Visual-Inertial-Alignment"><span class="toc-number">7.2.</span> <span class="toc-text">B. Visual-Inertial Alignment</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-Tightly-Coupled-Monocular-VIO"><span class="toc-number">8.</span> <span class="toc-text">6. Tightly Coupled Monocular VIO</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#A-Formulation"><span class="toc-number">8.1.</span> <span class="toc-text">A. Formulation</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-Relocalization"><span class="toc-number">9.</span> <span class="toc-text">7. Relocalization</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-Global-Pose-Graph-Optimization-and-Map-Reuse"><span class="toc-number">10.</span> <span class="toc-text">8. Global Pose Graph Optimization and Map Reuse</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-Experimental-Results"><span class="toc-number">11.</span> <span class="toc-text">9. Experimental Results</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-Conclusion-and-Future-Work"><span class="toc-number">12.</span> <span class="toc-text">10. Conclusion and Future Work</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
@@ -513,10 +526,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">pcl</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">computer vision</a>
               </li>
              
@@ -526,6 +535,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vio</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">pcl</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -605,7 +618,7 @@ MathJax.Hub.Queue(function() {
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://www.slamcn.org" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>SLAMCN</a>
+              <a href="http://paopaorobot.org/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>泡泡机器人</a>
             </li>
           
             <li class="search-li">
@@ -614,6 +627,10 @@ MathJax.Hub.Queue(function() {
           
             <li class="search-li">
               <a href="https://blog.csdn.net/YhL_Leo" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>yhl_leo</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://cvrs.whu.edu.cn/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>CVRS</a>
             </li>
           
         </ul>

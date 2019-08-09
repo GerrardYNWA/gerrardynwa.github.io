@@ -382,11 +382,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/06/30/a-review-of-viusal-inertial-odometry-from-filtering-and-optimisation-perspectives/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/02/12/3D-Point-Cloud-Hole-Filling/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          A Review of Viusal Inertial Odometry from Filtering and Optimisation Perspectives
+          3D Point Cloud Hole Filling
         
       </div>
     </a>
@@ -412,6 +412,19 @@
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-回环检测与词袋"><span class="toc-number">1.</span> <span class="toc-text">1. 回环检测与词袋</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-回环检测的意义"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 回环检测的意义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-Loop-Closing步骤"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 Loop Closing步骤</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-如何检测回环是否发生——回环检测"><span class="toc-number">2.</span> <span class="toc-text">1.3 如何检测回环是否发生——回环检测</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-回环检测指标"><span class="toc-number">2.1.</span> <span class="toc-text">1.4 回环检测指标</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-ROC曲线（Precision-Recal曲线）"><span class="toc-number">2.2.</span> <span class="toc-text">1.5 ROC曲线（Precision-Recal曲线）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-6-Appearance-based主要方法：词袋"><span class="toc-number">2.3.</span> <span class="toc-text">1.6 Appearance-based主要方法：词袋</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-7-Word的形成"><span class="toc-number">2.4.</span> <span class="toc-text">1.7 Word的形成</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-8-字典的结构"><span class="toc-number">2.5.</span> <span class="toc-text">1.8 字典的结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-9-相似度计算"><span class="toc-number">2.6.</span> <span class="toc-text">1.9 相似度计算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-10-SLAM中的回环检测"><span class="toc-number">2.7.</span> <span class="toc-text">1.10 SLAM中的回环检测</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
@@ -532,10 +545,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">pcl</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">computer vision</a>
               </li>
              
@@ -545,6 +554,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vio</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">pcl</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -624,7 +637,7 @@ MathJax.Hub.Queue(function() {
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://www.slamcn.org" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>SLAMCN</a>
+              <a href="http://paopaorobot.org/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>泡泡机器人</a>
             </li>
           
             <li class="search-li">
@@ -633,6 +646,10 @@ MathJax.Hub.Queue(function() {
           
             <li class="search-li">
               <a href="https://blog.csdn.net/YhL_Leo" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>yhl_leo</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://cvrs.whu.edu.cn/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>CVRS</a>
             </li>
           
         </ul>
