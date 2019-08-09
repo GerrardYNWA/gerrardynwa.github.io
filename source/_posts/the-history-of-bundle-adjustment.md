@@ -15,16 +15,16 @@ tags: [computer vision, slam]
 
 ---
 
-　　这些东西归根结底就是Gauss大神“发明”的least squares method。当年天文学家Piazzi整天闲得没事看星星，在1801年1月1号早上发现了一个从来没观测到的星星，再接下来的42天里做了19次观测之后这个星星就消失了。当时的天文学家为了确定这玩意到底是什么绞尽了脑汁，这时候Gauss出现了，（最初）只用了3个观察数据，就用least squares算出了这个小行星的轨道，接下来天文学家根据Gauss的预测，也重新发现了这个小行星（虽然有小小的偏差），并将其命名为Ceres，也就是谷神星。Google的ceres-solver就是根据这个来命名的。**ref: ** *How Gauss Determined the Orbit of Ceres.*
+　　这些东西归根结底就是Gauss大神“发明”的least squares method。当年天文学家Piazzi整天闲得没事看星星，在1801年1月1号早上发现了一个从来没观测到的星星，再接下来的42天里做了19次观测之后这个星星就消失了。当时的天文学家为了确定这玩意到底是什么绞尽了脑汁，这时候Gauss出现了，（最初）只用了3个观察数据，就用least squares算出了这个小行星的轨道，接下来天文学家根据Gauss的预测，也重新发现了这个小行星（虽然有小小的偏差），并将其命名为Ceres，也就是谷神星。Google的ceres-solver就是根据这个来命名的。
 
-　　关于究竟是谁发明了Least Squares历史上有争论，Legendre是最早publish这个方法的（1805），但是几年后（1809）Gauss跳出来说：“你太naive了，我1795年就开始用least squares了，微不足道”。虽然有人认为Gauss这样的大神没必要说谎来和Legendre这种小叼丝（相对，长了一副反派脸）抢成果，但是至今没有definitive的证据证明确实是Gauss最早发明Least Squares。有人认为least squares的方法对Gauss来说太简单以至于Gauss根本没觉得有必要把它publish出来（hehe）。**ref: ** *Gauss and the Invention of Least Squares.*
+　　关于究竟是谁发明了Least Squares历史上有争论，Legendre是最早publish这个方法的（1805），但是几年后（1809）Gauss跳出来说：“你太naive了，我1795年就开始用least squares了，微不足道”。虽然有人认为Gauss这样的大神没必要说谎来和Legendre这种小叼丝（相对，长了一副反派脸）抢成果，但是至今没有definitive的证据证明确实是Gauss最早发明Least Squares。有人认为least squares的方法对Gauss来说太简单以至于Gauss根本没觉得有必要把它publish出来（hehe）。
 
 ---
 
-![Gauss](/img/gauss.jpg)
-Gauss
-![Legendre](/img/legendre.jpg)
-Legendre
+<center>![Gauss](/img/gauss.jpg)</center>
+<center>Gauss</center>
+<center>![Legendre](/img/legendre.jpg)</center>
+<center>Legendre</center>
 
 ---
 
@@ -47,7 +47,7 @@ Legendre
 ### **Reference**
 
 > 1. **Bundle Adjustment** - A Modern Synthesis, Bill Triggs, et al.
-2. H. Johannsson, M. Kaess, M. Fallon, and J. J. Leonard, **“Temporally >scalable visual slam using a reduced pose graph”**, in Proceedings of the IEEE International Conference on Robotics and Automation (ICRA), 2013, pp. 54–61.
-3. G. Grisetti, R. Kummerle, C. Stachniss, and W. Burgard, **“A tutorial on graph-based SLAM”**, IEEE Transactions on Intelligent Transportation Systems Magazine, vol. 2, pp. 32–43, 2010.
-4. **A Survey of Geodetic Approaches to Mapping and the Relationship to Graph-based SLAM**.
-5. **Multiple View Geometry in Computer Vision**, Richard Hartley, Andrew Zisserman.
+> 2. H. Johannsson, M. Kaess, M. Fallon, and J. J. Leonard, **“Temporally >scalable visual slam using a reduced pose graph”**, in Proceedings of the IEEE International Conference on Robotics and Automation (ICRA), 2013, pp. 54–61.
+> 3. G. Grisetti, R. Kummerle, C. Stachniss, and W. Burgard, **“A tutorial on graph-based SLAM”**, IEEE Transactions on Intelligent Transportation Systems Magazine, vol. 2, pp. 32–43, 2010.
+> 4. **A Survey of Geodetic Approaches to Mapping and the Relationship to Graph-based SLAM**.
+> 5. **Multiple View Geometry in Computer Vision**, Richard Hartley, Andrew Zisserman.

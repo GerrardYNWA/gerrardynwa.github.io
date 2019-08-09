@@ -1,13 +1,14 @@
 title: The Great Gatsby
 date: 2016-01-26 10:15:48
 categories: Life
+
 tags: [movies]
 ---
 　　《The Great Gatsby》————弗·司各特·菲茨杰拉德（1896-1940），美国二十世纪最杰出的作家之一，《The Great Gatsby》是他最著名的代表作，被美国学术界权威评为二十世纪百年英语文学长河中一百部最优秀的小说第二位。
 
 <!--more-->
 
-![The Great Gatsby](/img/gatsby.jpg)
+<center>![The Great Gatsby](/img/gatsby.jpg)</center>
 
 ---
 
@@ -21,5 +22,5 @@ tags: [movies]
 
 　　对于电影，我没什么好说的，改编的并不算成功，这并不能当做一部爱情片来拍，很多批判并没有体现，导致我在观影过程中一度还为Daisy可怜，too young!网友如是评论道：“伟大的人总是被成就他的东西毁去，无一例外！” 而我想共勉的是：你我都是平凡的盖茨比，曾经比所有人都优秀，但如何做到伟大，是一个永恒的命题。
 
-![梦想的本质](/img/dream.png)
+<center>![梦想的本质](/img/dream.png)</center>
 

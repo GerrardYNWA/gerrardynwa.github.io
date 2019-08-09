@@ -1,4 +1,4 @@
-title: VINS-Mono---A Robust and Versatile Monocular Visual-Inertial State Estimator
+title: (译)VINS-Mono---A Robust and Versatile Monocular Visual-Inertial State Estimator
 date: 2018-10-04 21:49:48
 categories: Translation
 

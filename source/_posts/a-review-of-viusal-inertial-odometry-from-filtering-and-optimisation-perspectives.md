@@ -1,4 +1,4 @@
-title: A Review of Viusal Inertial Odometry from Filtering and Optimisation
+title: (译)A Review of Viusal Inertial Odometry from Filtering and Optimisation
   Perspectives
 date: 2018-06-30 22:59:52
 categories: Translation
