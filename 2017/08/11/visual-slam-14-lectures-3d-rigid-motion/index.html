@@ -6,23 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>CUDA——从入门到转行(一) | Master Lu</title>
+  <title>视觉SLAM十四讲——三维空间刚体运动 | Master Lu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="CUDA，Compute Unified Device Architecture的简称，是由NVIDIA公司创立的基于他们公司生产的图形处理器GPUs（Graphics Processing Units,可以通俗的理解为显卡）的一个并行计算平台和编程模型。 　　通过CUDA，GPUs可以很方便地被用来进行通用计算（有点像在CPU中进行的数值计算等等）。在没有CUDA之前，GPUs一般只用来进行">
-<meta name="keywords" content="cuda">
+  <meta name="description" content="重新整理学习《视觉SLAM十四讲》：三维空间刚体运动">
+<meta name="keywords" content="computer vision,slam">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CUDA——从入门到转行(一)">
-<meta property="og:url" content="http://yoursite.com/2016/08/09/the-journey-of-learning-cuda-1/index.html">
+<meta property="og:title" content="视觉SLAM十四讲——三维空间刚体运动">
+<meta property="og:url" content="http://yoursite.com/2017/08/11/visual-slam-14-lectures-3d-rigid-motion/index.html">
 <meta property="og:site_name" content="Master Lu">
-<meta property="og:description" content="CUDA，Compute Unified Device Architecture的简称，是由NVIDIA公司创立的基于他们公司生产的图形处理器GPUs（Graphics Processing Units,可以通俗的理解为显卡）的一个并行计算平台和编程模型。 　　通过CUDA，GPUs可以很方便地被用来进行通用计算（有点像在CPU中进行的数值计算等等）。在没有CUDA之前，GPUs一般只用来进行">
+<meta property="og:description" content="重新整理学习《视觉SLAM十四讲》：三维空间刚体运动">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/img/cuda1-1.jpg">
-<meta property="og:image" content="http://yoursite.com/img/cuda1-2.jpg">
-<meta property="og:updated_time" content="2019-08-09T15:13:26.866Z">
+<meta property="og:updated_time" content="2019-08-11T14:29:48.423Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CUDA——从入门到转行(一)">
-<meta name="twitter:description" content="CUDA，Compute Unified Device Architecture的简称，是由NVIDIA公司创立的基于他们公司生产的图形处理器GPUs（Graphics Processing Units,可以通俗的理解为显卡）的一个并行计算平台和编程模型。 　　通过CUDA，GPUs可以很方便地被用来进行通用计算（有点像在CPU中进行的数值计算等等）。在没有CUDA之前，GPUs一般只用来进行">
-<meta name="twitter:image" content="http://yoursite.com/img/cuda1-1.jpg">
+<meta name="twitter:title" content="视觉SLAM十四讲——三维空间刚体运动">
+<meta name="twitter:description" content="重新整理学习《视觉SLAM十四讲》：三维空间刚体运动">
   
     <link rel="alternative" href="/atom.xml" title="Master Lu" type="application/atom+xml">
   
@@ -186,35 +183,62 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-the-journey-of-learning-cuda-1" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-visual-slam-14-lectures-3d-rigid-motion" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      CUDA——从入门到转行(一)
+      视觉SLAM十四讲——三维空间刚体运动
     </h1>
   
 
         
-        <a href="/2016/08/09/the-journey-of-learning-cuda-1/" class="archive-article-date">
-  	<time datetime="2016-08-09T00:28:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-09</time>
+        <a href="/2017/08/11/visual-slam-14-lectures-3d-rigid-motion/" class="archive-article-date">
+  	<time datetime="2017-08-11T14:27:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>　　CUDA，Compute Unified Device Architecture的简称，是由NVIDIA公司创立的基于他们公司生产的图形处理器GPUs（Graphics Processing Units,可以通俗的理解为显卡）的一个并行计算平台和编程模型。</p>
-<p>　　通过CUDA，GPUs可以很方便地被用来进行通用计算（有点像在CPU中进行的数值计算等等）。在没有CUDA之前，GPUs一般只用来进行图形渲染（如通过OpenGL，DirectX）。</p>
-<p>　　开发人员可以通过调用CUDA的API来进行并行编程，达到高性能计算目的。NVIDIA公司为了吸引更多的开发人员，对CUDA进行了编程语言扩展，如CUDA C/C++、CUDA Fortran语言。注意CUDA C/C++可以看作一个新的编程语言，因为NVIDIA配置了相应的编译器nvcc。</p>
-<a id="more"></a>
-<p>　　GPU并不是一个独立运行的计算平台，而需要与CPU协同工作，可以看成是CPU的协处理器，因此当我们在说GPU并行计算时，其实是指的基于CPU+GPU的异构计算架构。在异构计算架构中，GPU与CPU通过PCIe总线连接在一起来协同工作，CPU所在位置称为为主机端（host），而GPU所在位置称为设备端（device）。</p>
-<center><img src="/img/cuda1-1.jpg" alt="基于CPU+GPU的异构计算"></center>
+        <p>　　重新整理学习《视觉SLAM十四讲》：三维空间刚体运动<br><a id="more"></a></p>
+<h3 id="1-向量和坐标系（参考系）"><a href="#1-向量和坐标系（参考系）" class="headerlink" title="1. 向量和坐标系（参考系）"></a>1. 向量和坐标系（参考系）</h3><h4 id="1-1-向量"><a href="#1-1-向量" class="headerlink" title="1.1 向量"></a>1.1 向量</h4><p>　　向量是线性空间中的一个元素，可以把它想象成从原点指向某处的一个箭头。只有当我们指定三维空间的坐标系时，才可以讨论该向量在此坐标系下的坐标。如果我们确定了一个坐标系，也就是一个线性空间的基 $ (\mathbf{e}_1, \mathbf{e}_2, \mathbf{e}_3)$，那么向量在这组基下的坐标为：<br>$$<br>\mathbf{a} = [\mathbf{e}_1, \mathbf{e}_2, \mathbf{e}_3][a_1, a_2, a_3]^T = a_1 \mathbf{e}_1 + a_2 \mathbf{e}_2 + a_3 \mathbf{e}_3<br>$$</p>
+<h5 id="点积（内积）"><a href="#点积（内积）" class="headerlink" title="点积（内积）"></a>点积（内积）</h5><p>内积是一个标量，对应位一一相乘之后求和可得，可以描述向量间的投影关系。</p>
+<h5 id="叉积（外积）"><a href="#叉积（外积）" class="headerlink" title="叉积（外积）"></a>叉积（外积）</h5><p>外积只对三维向量存在定义，外积的方向垂直于这两个向量，大小为这两个向量张成的面积。</p>
+<h4 id="1-2-坐标系"><a href="#1-2-坐标系" class="headerlink" title="1.2 坐标系"></a>1.2 坐标系</h4><ul>
+<li>左手坐标系</li>
+<li>右手坐标系</li>
+</ul>
+<h3 id="2-旋转表示方式"><a href="#2-旋转表示方式" class="headerlink" title="2. 旋转表示方式"></a>2. 旋转表示方式</h3><h4 id="2-1-旋转矩阵与欧氏变换"><a href="#2-1-旋转矩阵与欧氏变换" class="headerlink" title="2.1 旋转矩阵与欧氏变换"></a>2.1 旋转矩阵与欧氏变换</h4><ul>
+<li>欧拉定理（Euler’s Rotation Theorem）:刚体在三维空间里的一般运动，可分解为刚体上方某一点的平移，以及绕经过此点的旋转轴的转动</li>
+<li>齐次坐标与变换矩阵</li>
+<li>旋转加平移在表达复合情况下有不便之处</li>
+<li>齐次坐标乘任意非零常数时仍表达同一坐标</li>
+<li>变换矩阵逆形式</li>
+</ul>
+<h4 id="2-2-旋转向量-轴角"><a href="#2-2-旋转向量-轴角" class="headerlink" title="2.2 旋转向量(轴角)"></a>2.2 旋转向量(轴角)</h4><ul>
+<li>旋转矩阵R有九个元素，但仅有三个自由度</li>
+<li>旋转向量与矩阵的不同（仅有三个量、无约束、更直观）</li>
+<li>罗德里格斯公式（旋转向量-&gt;旋转矩）</li>
+<li>旋转矩阵转旋转向量</li>
+</ul>
+<h4 id="2-3-欧拉角"><a href="#2-3-欧拉角" class="headerlink" title="2.3 欧拉角"></a>2.3 欧拉角</h4><ul>
+<li>将旋转分解为三个方向上的转动</li>
+<li>yaw-pitch-roll，东北天</li>
+<li>万向锁（欧拉角的奇异性问题，欧拉角不适合插值或迭代）</li>
+<li>仅用三个实数表达旋转时，不可避免地存在奇异性问题</li>
+<li>SLAM中很少用欧拉角表达姿态</li>
+</ul>
+<h4 id="2-4-四元数"><a href="#2-4-四元数" class="headerlink" title="2.4 四元数"></a>2.4 四元数</h4><ul>
+<li>2D情况，可用单位复数表达旋转</li>
+<li>3D情况，四元数可作为复数的扩充</li>
+<li>四元数到角轴（角轴到四元数）</li>
+<li>如何用四元数旋转一个空间点</li>
+<li>四元数相比角轴、欧拉角的优势（紧凑、无奇异性）</li>
+</ul>
 
-<p>　　可以看到GPU包括更多的运算核心，其特别适合数据并行的计算密集型任务，如大型矩阵运算，而CPU的运算核心较少，但是其可以实现复杂的逻辑运算，因此其适合控制密集型任务。另外，CPU上的线程是重量级的，上下文切换开销大，但是GPU由于存在很多核心，其线程是轻量级的。因此，基于CPU+GPU的异构计算平台可以优势互补，CPU负责处理逻辑复杂的串行程序，而GPU重点处理数据密集型的并行计算程序，从而发挥最大功效。</p>
-<center><img src="/img/cuda1-2.jpg" alt="基于CPU+GPU的异构计算应用执行逻辑"></center>
       
 
       
@@ -227,7 +251,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">cuda</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">computer vision</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">slam</a>
         		</li>
       		
 		</ul>
@@ -239,7 +267,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Column//" class="article-tag-list-link color2">Column</a>
+        			<a href="/categories/Algorithm//" class="article-tag-list-link color5">Algorithm</a>
         		</li>
       		
 		</ul>
@@ -294,7 +322,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2016/08/09/the-journey-of-learning-cuda-1/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/08/11/visual-slam-14-lectures-3d-rigid-motion/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -308,18 +336,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2016/08/09/the-journey-of-learning-cuda-3/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/10/26/visual-slam-14-lectures-loop-closure/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          CUDA——从入门到转行(二)
+          视觉SLAM十四讲——回环检测
         
       </div>
     </a>
   
   
-    <a href="/2016/08/06/the-history-of-bundle-adjustment/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">The History of Bundle Adjustment</div>
+    <a href="/2017/05/08/basic-concepts-of-slam/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">SLAM的基本概念</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -346,7 +374,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-向量和坐标系（参考系）"><span class="toc-number">1.</span> <span class="toc-text">1. 向量和坐标系（参考系）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-向量"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 向量</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#点积（内积）"><span class="toc-number">1.1.1.</span> <span class="toc-text">点积（内积）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#叉积（外积）"><span class="toc-number">1.1.2.</span> <span class="toc-text">叉积（外积）</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-坐标系"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 坐标系</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-旋转表示方式"><span class="toc-number">2.</span> <span class="toc-text">2. 旋转表示方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-旋转矩阵与欧氏变换"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 旋转矩阵与欧氏变换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-旋转向量-轴角"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 旋转向量(轴角)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-欧拉角"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 欧拉角</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-四元数"><span class="toc-number">2.4.</span> <span class="toc-text">2.4 四元数</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
