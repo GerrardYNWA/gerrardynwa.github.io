@@ -210,11 +210,9 @@
 <li><p>多次观测时，各个测量值相互独立，则多个测量$ r = (r_1, …, r_n)^T $构建的似然概率为它们的连乘。</p>
 </li>
 <li><p>如果知道机器人状态的先验信息$ p(\xi) $，如GPS、车轮码盘信息等，则根据Bayes法则，有后验概率：</p>
-<p>$$  p(\xi | r) = \frac{p(r | \xi) p(\xi)}{p(r)} $$</p>
-</li>
+<script type="math/tex; mode=display">p(\xi | r) = \frac{p(r | \xi) p(\xi)}{p(r)}</script></li>
 <li><p>通过最大后验估计，获得系统状态的最优估计：</p>
-<p>$$ {\xi}<em>{MAP} = \mathop{\arg \max}</em>{\xi} p(\xi | r) $$</p>
-</li>
+<script type="math/tex; mode=display">{\xi}_{MAP} = \mathop{\arg \max}_{\xi} p(\xi | r)</script></li>
 </ul>
 <h3 id="2-SLAM问题求解"><a href="#2-SLAM问题求解" class="headerlink" title="2. SLAM问题求解"></a>2. SLAM问题求解</h3><ul>
 <li>Todo</li>
@@ -256,7 +254,13 @@
 <h2 id="Section-2-舒尔补应用-边际概率和条件概率"><a href="#Section-2-舒尔补应用-边际概率和条件概率" class="headerlink" title="Section 2 - 舒尔补应用-边际概率和条件概率"></a>Section 2 - 舒尔补应用-边际概率和条件概率</h2><h3 id="1-舒尔补定义"><a href="#1-舒尔补定义" class="headerlink" title="1. 舒尔补定义"></a>1. 舒尔补定义</h3><ul>
 <li>由来：高斯消元法会遇到舒尔补，将M矩阵变形成对角块，又能从对角块恢复成矩阵M</li>
 <li>快速求解矩阵M的逆</li>
-<li>$$ {\begin{bmatrix}<br>I &amp; -A^{-1}B \<br>0 &amp; I<br>\end{bmatrix}} {\begin{bmatrix}<br>I &amp; A^{-1}B \<br>0 &amp; I<br>\end{bmatrix}} = I $$</li>
+<li><script type="math/tex; mode=display">{\begin{bmatrix}
+I & -A^{-1}B \\
+0 & I
+\end{bmatrix}} {\begin{bmatrix}
+I & A^{-1}B \\
+0 & I
+\end{bmatrix}} = I</script></li>
 </ul>
 <h3 id="2-舒尔补应用与多元高斯分布"><a href="#2-舒尔补应用与多元高斯分布" class="headerlink" title="2. 舒尔补应用与多元高斯分布"></a>2. 舒尔补应用与多元高斯分布</h3><ul>
 <li><p>假设多元变量x服从高斯分布，且由两部分组成，则变量x的概率分布为：$ P(a, b) = P(a) P(b | a) $，利用舒尔补对高斯部分进行分解</p>
@@ -275,16 +279,29 @@
 <p>因为基于优化的SLAM问题中，我们往往直接操作的是信息矩阵，而不是协方差矩阵。所以有必要知道边际概率、条件概率的信息矩阵是何形式</p>
 </li>
 <li><p>假设已知信息矩阵：</p>
-<p>$$ {\begin{bmatrix}<br>A &amp; C^T \<br>C &amp; D<br>\end{bmatrix}}^{-1} = {\begin{bmatrix}<br>\Lambda_{aa} &amp; \Lambda_{ab} \<br>\Lambda_{ba} &amp; \Lambda_{bb}<br>\end{bmatrix}} $$</p>
-</li>
+<script type="math/tex; mode=display">{\begin{bmatrix}
+A & C^T \\
+C & D
+\end{bmatrix}}^{-1} = {\begin{bmatrix}
+\Lambda_{aa} & \Lambda_{ab} \\
+\Lambda_{ba} & \Lambda_{bb}
+\end{bmatrix}}</script></li>
 <li><p>由公式（29）可知，协方差矩阵各块和信息矩阵之间的关系:</p>
-<p>$$ {\begin{bmatrix}<br>A &amp; C^T \<br>C &amp; D<br>\end{bmatrix}}^{-1} = {\begin{bmatrix}<br>A^{-1} + A^{-1}C^{T}\Delta_{A}^{-1} CA^{-1} &amp; -A^{-1}C^{T}\Delta_{A}^{-1} \<br>-\Delta_{A}^{-1} CA^{-1} &amp; -\Delta_{A}^{-1}<br>\end{bmatrix}}^{-1} = {\begin{bmatrix}<br>\Lambda_{aa} &amp; \Lambda_{ab} \<br>\Lambda_{ba} &amp; \Lambda_{bb}<br>\end{bmatrix}} $$</p>
-</li>
+<script type="math/tex; mode=display">{\begin{bmatrix}
+A & C^T \\
+C & D
+\end{bmatrix}}^{-1} = {\begin{bmatrix}
+A^{-1} + A^{-1}C^{T}\Delta_{A}^{-1} CA^{-1} & -A^{-1}C^{T}\Delta_{A}^{-1} \\
+-\Delta_{A}^{-1} CA^{-1} & -\Delta_{A}^{-1}
+\end{bmatrix}}^{-1} = {\begin{bmatrix}
+\Lambda_{aa} & \Lambda_{ab} \\
+\Lambda_{ba} & \Lambda_{bb}
+\end{bmatrix}}</script></li>
 <li><p>由条件概率P(b|a)的协方差为$ \Delta_A $以及上式，易得其信息矩阵为：</p>
-<p>$ \Delta_{A}^{-1} = \Lambda _{bb} $</p>
+<p>$ \Delta<em>{A}^{-1} = \Lambda </em>{bb} $</p>
 </li>
 <li><p>由边际概率P(a)的协方差为A以及上式，易得其信息矩阵为：</p>
-<p>$ A^{-1} = \Lambda _{aa} - \Lambda _{ab} \Lambda _{bb}^{-1} \Lambda _{ba}   $</p>
+<p>$ A^{-1} = \Lambda <em>{aa} - \Lambda </em>{ab} \Lambda <em>{bb}^{-1} \Lambda </em>{ba}   $</p>
 </li>
 </ul>
 </li>
@@ -354,8 +371,7 @@
 </ul>
 <h3 id="3-可观性的一种定义"><a href="#3-可观性的一种定义" class="headerlink" title="3. 可观性的一种定义"></a>3. 可观性的一种定义</h3><ul>
 <li><p>对于测量系统$ z = h(\theta) + \epsilon $，其中$ z \in \mathbb{R}^{n} $为测量值，$ \theta \in \mathbb{R}^{d} $为 系统状态量，$ \epsilon $为测量 噪声向量。$ h(·) $是非线性函数，将状态量映射成测量。对于理想数据，如果以下条件成立，则系统状态量$ \theta $可观：</p>
-<p>$$ \forall \theta, {\theta}’ \in \mathbb{R}^d,  {\theta} \not= {\theta}’ \Rightarrow h({\theta}) \not= h({\theta}’) $$</p>
-</li>
+<script type="math/tex; mode=display">\forall \theta, {\theta}' \in \mathbb{R}^d,  {\theta} \not= {\theta}' \Rightarrow h({\theta}) \not= h({\theta}')</script></li>
 <li><p>对于SLAM系统而言（如单目VO），当我们改变状态量时，测量不变意味着损失函数不会改变，更意味着求解最小二乘时对应的信息矩阵存在着零空间。</p>
 </li>
 <li><p>单目SLAM系统7自由度不可观：6自由度姿态+尺度</p>
@@ -659,19 +675,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">university</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">cuda</a>
+                <a href="javascript:void(0)" class="js-tag color1">university</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">movies</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">cuda</a>
               </li>
              
               <li class="article-tag-list-item">
