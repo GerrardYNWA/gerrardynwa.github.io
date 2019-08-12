@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: computer vision | Master Lu</title>
+  <title>visual slam 14 lectures lie group and lie algebra | Master Lu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Master Lu&apos;s Personal Blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Master Lu">
-<meta property="og:url" content="http://yoursite.com/tags/computer-vision/page/3/index.html">
+  <meta name="description" content="重新整理学习《视觉SLAM十四讲》：李群与李代数">
+<meta name="keywords" content="computer vision,slam">
+<meta property="og:type" content="article">
+<meta property="og:title" content="visual slam 14 lectures lie group and lie algebra">
+<meta property="og:url" content="http://yoursite.com/2019/08/15/visual-slam-14-lectures-lie-group-and-lie-algebra/index.html">
 <meta property="og:site_name" content="Master Lu">
-<meta property="og:description" content="Master Lu&apos;s Personal Blog">
+<meta property="og:description" content="重新整理学习《视觉SLAM十四讲》：李群与李代数">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-08-12T11:01:00.608Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Master Lu">
-<meta name="twitter:description" content="Master Lu&apos;s Personal Blog">
+<meta name="twitter:title" content="visual slam 14 lectures lie group and lie algebra">
+<meta name="twitter:description" content="重新整理学习《视觉SLAM十四讲》：李群与李代数">
   
     <link rel="alternative" href="/atom.xml" title="Master Lu" type="application/atom+xml">
   
@@ -181,36 +183,89 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-visual-slam-14-lectures-lie-group-and-lie-algebra" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/08/basic-concepts-of-slam/" class="archive-article-date">
-  	<time datetime="2017-05-08T14:26:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-08</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/08/basic-concepts-of-slam/">SLAM的基本概念</a>
+    <h1 class="article-title" itemprop="name">
+      visual slam 14 lectures lie group and lie algebra
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/08/15/visual-slam-14-lectures-lie-group-and-lie-algebra/" class="archive-article-date">
+  	<time datetime="2019-08-15T10:59:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>　　重新整理学习《视觉SLAM十四讲》：李群与李代数<br><a id="more"></a></p>
+<h3 id="1-群"><a href="#1-群" class="headerlink" title="1. 群"></a>1. 群</h3><ul>
+<li>三维旋转矩阵构成特殊正交群（矩阵乘法）</li>
+<li>三维变换矩阵构成特殊欧式群（矩阵乘法）</li>
+<li>群是一种集合加上一种运算的代数集合</li>
+<li>封闭性-结合律-幺元-逆</li>
+</ul>
+<h3 id="2-李群和李代数"><a href="#2-李群和李代数" class="headerlink" title="2. 李群和李代数"></a>2. 李群和李代数</h3><ul>
+<li>李群<ul>
+<li>具有连续（光滑）性质的群</li>
+<li>既是群也是流形</li>
+<li>SO(3)和SE(3)只有定义好的乘法，没有加法，所以难以进行取极限求导等操作</li>
+</ul>
+</li>
+<li>李代数<ul>
+<li>与李群对应的一种结构，位于向量空间</li>
+<li>通常记作小写的so(3)和se(3)</li>
+<li>事实上是李群单位元处的正切空间</li>
+<li>每个李群都有与之对应的李代数</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-指数映射与对数映射"><a href="#3-指数映射与对数映射" class="headerlink" title="3. 指数映射与对数映射"></a>3. 指数映射与对数映射</h3><ul>
+<li>指数映射反映了从李代数到李群的对应关系</li>
+<li>两个性质</li>
+<li>罗德里格斯公式（关联旋转矩阵和轴角）</li>
+<li>so(3)的物理意义就是旋转向量</li>
+<li>反之，根据对数映射，亦能求李代数</li>
+<li>李群&lt;-&gt;李代数</li>
+</ul>
+<h3 id="4-求导与扰动模型"><a href="#4-求导与扰动模型" class="headerlink" title="4. 求导与扰动模型"></a>4. 求导与扰动模型</h3><ul>
+<li>SLAM的定位即位姿估计</li>
+<li>但李群无加法，导数无从定义</li>
+<li>解决办法：<ul>
+<li>利用李代数上加法定义李群元素的导数</li>
+<li>利用指数映射和对数映射完成变换关系</li>
+</ul>
+</li>
+<li>基本问题：当在李代数中做加法时，是否等价于在李群上做乘法？<ul>
+<li>完整形式由BCH公式给出</li>
+<li>当其中一个量为小量时，忽略其高阶项，BCH具有线性近似形式</li>
+<li>根据1和2的小量分为左雅可比和右雅可比（取相反数）（Tcw和Twc）</li>
+</ul>
+</li>
+<li>李代数上的导数<ul>
+<li>考虑一个基本的问题：旋转后的点关于旋转的导数</li>
+<li>由于R没有加法，导数无从定义</li>
+<li>存在两种解决方法<ul>
+<li>对R对应的李代数加上小量，求相对于小量的变化率（导数模型）（仍含有雅可比的计算）</li>
+<li>对R左乘或右乘一个小量，求相对于小量的李代数的变化率（扰动模型）（简洁实用）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-面试题"><a href="#5-面试题" class="headerlink" title="5. 面试题"></a>5. 面试题</h3>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -226,7 +281,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -239,230 +294,116 @@
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
       
-        </div></section>
+
       
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/15/visual-slam-14-lectures-lie-group-and-lie-algebra/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/08/09/bundle-adjustment-in-the-large/" class="archive-article-date">
-  	<time datetime="2016-08-09T11:04:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/08/09/bundle-adjustment-in-the-large/">Bundle Adjustment in the Large</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">computer vision</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Translation//" class="article-tag-list-link color2">Translation</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/08/06/the-history-of-bundle-adjustment/" class="archive-article-date">
-  	<time datetime="2016-08-06T03:46:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-06</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/08/02/vio-notes-7/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">VIO课程笔记（第7讲）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/08/06/the-history-of-bundle-adjustment/">The History of Bundle Adjustment</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">computer vision</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">slam</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Algorithm//" class="article-tag-list-link color5">Algorithm</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-群"><span class="toc-number">1.</span> <span class="toc-text">1. 群</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-李群和李代数"><span class="toc-number">2.</span> <span class="toc-text">2. 李群和李代数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-指数映射与对数映射"><span class="toc-number">3.</span> <span class="toc-text">3. 指数映射与对数映射</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-求导与扰动模型"><span class="toc-number">4.</span> <span class="toc-text">4. 求导与扰动模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-面试题"><span class="toc-number">5.</span> <span class="toc-text">5. 面试题</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/02/17/free-e-books-about-cv/" class="archive-article-date">
-  	<time datetime="2016-02-17T01:57:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-02-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/02/17/free-e-books-about-cv/">Free E-books about Computer Vision</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">computer vision</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Resource//" class="article-tag-list-link color4">Resource</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/01/12/bundle-adjustment/" class="archive-article-date">
-  	<time datetime="2016-01-12T13:15:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-01-12</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/12/bundle-adjustment/">Bundle Adjustment</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">computer vision</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Algorithm//" class="article-tag-list-link color5">Algorithm</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/tags/computer-vision/page/2/">&laquo; Prev</a><a class="page-number" href="/tags/computer-vision/">1</a><a class="page-number" href="/tags/computer-vision/page/2/">2</a><span class="page-number current">3</span>
-    </nav>
+  
+
   
 
 
@@ -486,9 +427,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

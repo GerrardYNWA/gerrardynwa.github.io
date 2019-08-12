@@ -206,10 +206,10 @@
         <p>　　<a href="http://www.shenlanxueyuan.com/course/160">深蓝学院《从零开始手写VIO》</a>课程笔记——第7讲：VINS系统构建<br><a id="more"></a></p>
 <h2 id="Section-1-VIO相关知识回顾"><a href="#Section-1-VIO相关知识回顾" class="headerlink" title="Section 1 - VIO相关知识回顾"></a>Section 1 - VIO相关知识回顾</h2><h3 id="1-IMU预积分"><a href="#1-IMU预积分" class="headerlink" title="1. IMU预积分"></a>1. IMU预积分</h3><h4 id="IMU传感器模型"><a href="#IMU传感器模型" class="headerlink" title="IMU传感器模型"></a>IMU传感器模型</h4><blockquote>
 <ul>
-<li>$$ \tilde{\omega}^{b} = {\omega}^{b} + b^g + n^g $$</li>
-<li>$$ \tilde{a}^{b} = q_{b\omega}(a^{\omega} - g^{\omega}) + b^a + n^a $$</li>
+<li><script type="math/tex; mode=display">\tilde{\omega}^{b} = {\omega}^{b} + b^g + n^g</script></li>
+<li><script type="math/tex; mode=display">\tilde{a}^{b} = q_{b\omega}(a^{\omega} - g^{\omega}) + b^a + n^a</script></li>
 <li>g的正负在不同的论文会有不同的定义</li>
-<li>将一段时间内的IMU数据直接积分起来就能得到两时刻$ i $和$ j $之间关于IMU的测量约束，即预积分量${\alpha}_{b_ib_j}$、${\beta}_{b_i b_j}$、${q}_{b_i b_j}$</li>
+<li>将一段时间内的IMU数据直接积分起来就能得到两时刻$ i $和$ j $之间关于IMU的测量约束，即预积分量${\alpha}<em>{b_ib_j}$、${\beta}</em>{b<em>i b_j}$、${q}</em>{b_i b_j}$</li>
 <li>协方差传递</li>
 </ul>
 </blockquote>
@@ -240,7 +240,7 @@
 <li>利用旋转约束来估计陀螺仪bias</li>
 <li>利用平移约束估计重力方向、速度以及尺度初始值</li>
 <li>对重力向量$ g^{c_0} $进行进一步优化</li>
-<li>求解世界坐标系$ \omega $和厨师相机坐标系$ c_0 $之间的旋转矩阵$ q_{\omega c_0} $，并将轨迹对其到世界坐标系</li>
+<li>求解世界坐标系$ \omega $和厨师相机坐标系$ c<em>0 $之间的旋转矩阵$ q</em>{\omega c_0} $，并将轨迹对其到世界坐标系</li>
 </ol>
 </blockquote>
 <h4 id="A-利用旋转约束估计外参数旋转-q-bc"><a href="#A-利用旋转约束估计外参数旋转-q-bc" class="headerlink" title="A. 利用旋转约束估计外参数旋转$ q_{bc} $"></a>A. 利用旋转约束估计外参数旋转$ q_{bc} $</h4><h4 id="B-基于旋转约束的陀螺仪-Gyroscope-Bias"><a href="#B-基于旋转约束的陀螺仪-Gyroscope-Bias" class="headerlink" title="B. 基于旋转约束的陀螺仪(Gyroscope)Bias"></a>B. 基于旋转约束的陀螺仪(Gyroscope)Bias</h4><ul>
@@ -255,7 +255,7 @@
 <li>重力向量参数化 </li>
 </ul>
 <h4 id="E-将相机坐标系对齐世界坐标系-对齐流程"><a href="#E-将相机坐标系对齐世界坐标系-对齐流程" class="headerlink" title="E. 将相机坐标系对齐世界坐标系(对齐流程)"></a>E. 将相机坐标系对齐世界坐标系(对齐流程)</h4><ol>
-<li>找到$ c_0 $到$ \omega $系的旋转矩阵$ R_{\omega c_0} = exp([{\theta}{u}]) $把所有$ c_0 $坐标系下的变量旋转到$ \omega $下</li>
+<li>找到$ c<em>0 $到$ \omega $系的旋转矩阵$ R</em>{\omega c_0} = exp([{\theta}{u}]) $把所有$ c_0 $坐标系下的变量旋转到$ \omega $下</li>
 <li>把相机平移和特征点尺度恢复到米制单位</li>
 <li>至此，完成了系统初始化过程</li>
 </ol>
@@ -382,6 +382,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/08/15/visual-slam-14-lectures-lie-group-and-lie-algebra/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          visual slam 14 lectures lie group and lie algebra
+        
+      </div>
+    </a>
   
   
     <a href="/2019/07/24/vio-notes-6/" id="article-nav-older" class="article-nav-link-wrap">

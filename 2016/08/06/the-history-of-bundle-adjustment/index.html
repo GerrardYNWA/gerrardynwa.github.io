@@ -16,13 +16,10 @@
 <meta property="og:site_name" content="Master Lu">
 <meta property="og:description" content="转载自知乎versatran01的回答：Bundle Adjustment到底是什么？">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/img/gauss.jpg">
-<meta property="og:image" content="http://yoursite.com/img/legendre.jpg">
 <meta property="og:updated_time" content="2019-08-09T15:16:54.896Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="The History of Bundle Adjustment">
 <meta name="twitter:description" content="转载自知乎versatran01的回答：Bundle Adjustment到底是什么？">
-<meta name="twitter:image" content="http://yoursite.com/img/gauss.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Master Lu" type="application/atom+xml">
   
@@ -214,7 +211,10 @@
 <p>　　这些东西归根结底就是Gauss大神“发明”的least squares method。当年天文学家Piazzi整天闲得没事看星星，在1801年1月1号早上发现了一个从来没观测到的星星，再接下来的42天里做了19次观测之后这个星星就消失了。当时的天文学家为了确定这玩意到底是什么绞尽了脑汁，这时候Gauss出现了，（最初）只用了3个观察数据，就用least squares算出了这个小行星的轨道，接下来天文学家根据Gauss的预测，也重新发现了这个小行星（虽然有小小的偏差），并将其命名为Ceres，也就是谷神星。Google的ceres-solver就是根据这个来命名的。</p>
 <p>　　关于究竟是谁发明了Least Squares历史上有争论，Legendre是最早publish这个方法的（1805），但是几年后（1809）Gauss跳出来说：“你太naive了，我1795年就开始用least squares了，微不足道”。虽然有人认为Gauss这样的大神没必要说谎来和Legendre这种小叼丝（相对，长了一副反派脸）抢成果，但是至今没有definitive的证据证明确实是Gauss最早发明Least Squares。有人认为least squares的方法对Gauss来说太简单以至于Gauss根本没觉得有必要把它publish出来（hehe）。</p>
 <hr>
-<center><img src="/img/gauss.jpg" alt="Gauss"></center><br><center>Gauss</center><br><center><img src="/img/legendre.jpg" alt="Legendre"></center><br><center>Legendre</center>
+<center>![Gauss](/img/gauss.jpg)</center>
+<center>Gauss</center>
+<center>![Legendre](/img/legendre.jpg)</center>
+<center>Legendre</center>
 
 <hr>
 <p>　　我们再来看看19，20世纪连电脑都没有的情况下，geodesy的人们面对的是什么样的问题吧。1927年的North American Datum有25000个观测塔，1983年的NAD有270000个观测塔。再来看看robotics community，最大的real-world SLAM datasets有21,000个pose<strong>[2]</strong>，最大的simulation datasets有200,000个pose<strong>[3]</strong>。看看时间，都是2010年以后的。拿NAD83来说，虽然1983年已经有电脑了，但是优化这样一个network，需要解1,800,000个equations。也就是说如果如果用Least Squares的话，每一步的normal equation J^T <em> J </em> x = J^T y 或者Ax = b，里面这个A的dimension是900,000 x 900,000。用dense method光是存这么一个matrix就要3000 Gb<strong>[4]</strong>。</p>

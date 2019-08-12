@@ -204,8 +204,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>　　重新整理学习《视觉SLAM十四讲》：三维空间刚体运动<br><a id="more"></a></p>
-<h3 id="1-向量和坐标系（参考系）"><a href="#1-向量和坐标系（参考系）" class="headerlink" title="1. 向量和坐标系（参考系）"></a>1. 向量和坐标系（参考系）</h3><h4 id="1-1-向量"><a href="#1-1-向量" class="headerlink" title="1.1 向量"></a>1.1 向量</h4><p>　　向量是线性空间中的一个元素，可以把它想象成从原点指向某处的一个箭头。只有当我们指定三维空间的坐标系时，才可以讨论该向量在此坐标系下的坐标。如果我们确定了一个坐标系，也就是一个线性空间的基 $ (\mathbf{e}_1, \mathbf{e}_2, \mathbf{e}_3)$，那么向量在这组基下的坐标为：<br>$$<br>\mathbf{a} = [\mathbf{e}_1, \mathbf{e}_2, \mathbf{e}_3][a_1, a_2, a_3]^T = a_1 \mathbf{e}_1 + a_2 \mathbf{e}_2 + a_3 \mathbf{e}_3<br>$$</p>
-<h5 id="点积（内积）"><a href="#点积（内积）" class="headerlink" title="点积（内积）"></a>点积（内积）</h5><p>内积是一个标量，对应位一一相乘之后求和可得，可以描述向量间的投影关系。</p>
+<h3 id="1-向量和坐标系（参考系）"><a href="#1-向量和坐标系（参考系）" class="headerlink" title="1. 向量和坐标系（参考系）"></a>1. 向量和坐标系（参考系）</h3><h4 id="1-1-向量"><a href="#1-1-向量" class="headerlink" title="1.1 向量"></a>1.1 向量</h4><p>　　向量是线性空间中的一个元素，可以把它想象成从原点指向某处的一个箭头。只有当我们指定三维空间的坐标系时，才可以讨论该向量在此坐标系下的坐标。如果我们确定了一个坐标系，也就是一个线性空间的基 $ (\mathbf{e}_1, \mathbf{e}_2, \mathbf{e}_3)$，那么向量在这组基下的坐标为：</p>
+<script type="math/tex; mode=display">
+\mathbf{a} = [\mathbf{e}_1, \mathbf{e}_2, \mathbf{e}_3][a_1, a_2, a_3]^T = a_1 \mathbf{e}_1 + a_2 \mathbf{e}_2 + a_3 \mathbf{e}_3</script><h5 id="点积（内积）"><a href="#点积（内积）" class="headerlink" title="点积（内积）"></a>点积（内积）</h5><p>内积是一个标量，对应位一一相乘之后求和可得，可以描述向量间的投影关系。</p>
 <h5 id="叉积（外积）"><a href="#叉积（外积）" class="headerlink" title="叉积（外积）"></a>叉积（外积）</h5><p>外积只对三维向量存在定义，外积的方向垂直于这两个向量，大小为这两个向量张成的面积。</p>
 <h4 id="1-2-坐标系"><a href="#1-2-坐标系" class="headerlink" title="1.2 坐标系"></a>1.2 坐标系</h4><ul>
 <li>左手坐标系</li>

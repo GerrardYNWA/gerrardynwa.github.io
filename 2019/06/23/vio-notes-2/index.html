@@ -257,8 +257,8 @@
 </ul>
 <h3 id="2-确定性误差"><a href="#2-确定性误差" class="headerlink" title="2. 确定性误差"></a>2. 确定性误差</h3><ul>
 <li>Bias - 理论上，当没有外部作用时，IMU传感器的输出应该为0。但是，实际数据存在一个偏置$ b $ 。加速度计bias对位姿估计的影响：<ul>
-<li>（速度）$ v_{err} = b_{a}t $</li>
-<li>（平移）$ p_{err} = 1/ 2 * b_{a}t^2 $</li>
+<li>（速度）$ v<em>{err} = b</em>{a}t $</li>
+<li>（平移）$ p<em>{err} = 1/ 2 * b</em>{a}t^2 $</li>
 </ul>
 </li>
 <li>Scale - 可以看成是实际数值和传感器输出值之间的比值</li>
@@ -296,7 +296,7 @@
 </ul>
 </li>
 <li>Bias随机游走：通常用维纳过程（wiener process）来建模bias随时间连续变化的过程，离散时间下称之为随机游走<ul>
-<li>离散和连续之间的变换：$ \sigma_{bd} = \sigma_{b} \sqrt{\Delta t} $</li>
+<li>离散和连续之间的变换：$ \sigma<em>{bd} = \sigma</em>{b} \sqrt{\Delta t} $</li>
 <li>bias随机游走的噪声方差从连续时间到离散之间需要乘以$ \sqrt{\Delta t} $</li>
 </ul>
 </li>
@@ -313,11 +313,11 @@
 <h3 id="8-加速度计数学模型"><a href="#8-加速度计数学模型" class="headerlink" title="8. 加速度计数学模型"></a>8. 加速度计数学模型</h3><ul>
 <li>导航系$ G $ 为东北天，$ g^G = (0, 0, -9.81)^T $</li>
 <li>理论测量值：$ a^{B}<em>m = R</em>{BG}(a^G - g^G) $</li>
-<li>考虑高斯白噪声、bias以及尺度因子（通常假设尺度因子为单位矩阵）：$ a^{B}_m = S_a R_{BG}(a^G - g^G) + n_a + b_a $</li>
+<li>考虑高斯白噪声、bias以及尺度因子（通常假设尺度因子为单位矩阵）：$ a^{B}<em>m = S_a R</em>{BG}(a^G - g^G) + n_a + b_a $</li>
 </ul>
 <h3 id="9-陀螺仪数学模型"><a href="#9-陀螺仪数学模型" class="headerlink" title="9. 陀螺仪数学模型"></a>9. 陀螺仪数学模型</h3><ul>
 <li>考虑尺度因子、高斯白噪声以及bias，陀螺仪的误差模型：$ \omega^{B}_m = S_g \omega^B + n_g + b_g $</li>
-<li>低端传感器，考虑加速度对陀螺仪的影响，即g-灵敏度：$ \omega^{B}_m = S_g \omega^B + s_{ga} a^B + n_g + b_g $</li>
+<li>低端传感器，考虑加速度对陀螺仪的影响，即g-灵敏度：$ \omega^{B}<em>m = S_g \omega^B + s</em>{ga} a^B + n_g + b_g $</li>
 </ul>
 <h2 id="Section-4-运动模型离散时间处理"><a href="#Section-4-运动模型离散时间处理" class="headerlink" title="Section 4 - 运动模型离散时间处理"></a>Section 4 - 运动模型离散时间处理</h2><h3 id="1-VIO中的IMU模型"><a href="#1-VIO中的IMU模型" class="headerlink" title="1. VIO中的IMU模型"></a>1. VIO中的IMU模型</h3><ul>
 <li>忽略scale的影响，只考虑白噪声和bias随机游走</li>
