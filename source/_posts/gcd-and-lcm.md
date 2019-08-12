@@ -87,7 +87,7 @@ int GCD(int a, int b) { // a和b不同时为0
 }
 
 /*
-解法二：交换
+解法二：迭代
 */
 int GCD(int a, int b) { // a和b不同时为0
   while (b) {
