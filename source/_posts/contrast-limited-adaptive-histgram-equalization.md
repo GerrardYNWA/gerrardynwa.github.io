@@ -41,7 +41,7 @@ tags: [computer vision]
 
 　　通常，直接忽略掉那些超出直方图裁剪限幅的部分是不好的，而应该将这些裁剪掉的部分均匀的分布到直方图的其他部分。如下图所示。
 
-<center>![Clahe-redist.svg](http://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Clahe-redist.svg/300px-Clahe-redist.svg.png)</center>
+<div align = center>![Clahe-redist.svg](http://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Clahe-redist.svg/300px-Clahe-redist.svg.png)
 
 　　这个重分布的过程可能会导致那些倍裁剪掉的部分由重新超过了裁剪值（如上图的绿色部分所示）。如果这不是所希望的，可以不带使用重复不的过程指导这个超出的部分已经变得微不足道了。
 
@@ -51,8 +51,7 @@ tags: [computer vision]
 
 　　而插值使得上述算法效率上有极大的提升，并且质量上没有下降。首先，将图像均匀分成等份矩形大小，如下图的右侧部分所示（8行8列64个块是常用的选择）。然后计算个块的直方图、CDF以及对应的变换函数。这个变换函数对于块的中心像素（下图左侧部分的黑色小方块）是完全符合原始定义的。而其他的像素通过哪些于其临近的四个块的变换函数插值获取。位于图中蓝色阴影部分的像素采用双线性查插值，而位于便于边缘的（绿色阴影）部分采用线性插值，角点处（红色阴影处）直接使用块所在的变换函数。
 
-<center>![Clahe-tileinterpol.svg](http://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Clahe-tileinterpol.svg/450px-Clahe-tileinterpol.svg.png)</center>
-
+<div align = center>![Clahe-tileinterpol.svg](http://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Clahe-tileinterpol.svg/450px-Clahe-tileinterpol.svg.png)
 　　这样的过程极大的降低了变换函数需要计算的次数，只是增加了一些双线性插值的计算量。
 
 ### 参考

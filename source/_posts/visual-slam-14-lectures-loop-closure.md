@@ -1,11 +1,12 @@
 title: 视觉SLAM十四讲——回环检测
-date: 2017-10-26 16:32:42
+date: 2018-01-09 16:32:42
 categories: Algorithm
 
 tags: [computer vision, slam]
 ---
 　　重新整理学习《视觉SLAM十四讲》：回环检测
 <!-- more -->
+
 ### 1. 回环检测与词袋
 
 #### 1.1 回环检测的意义

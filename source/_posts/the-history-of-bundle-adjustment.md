@@ -17,16 +17,13 @@ tags: [computer vision, slam]
 
 　　这些东西归根结底就是Gauss大神“发明”的least squares method。当年天文学家Piazzi整天闲得没事看星星，在1801年1月1号早上发现了一个从来没观测到的星星，再接下来的42天里做了19次观测之后这个星星就消失了。当时的天文学家为了确定这玩意到底是什么绞尽了脑汁，这时候Gauss出现了，（最初）只用了3个观察数据，就用least squares算出了这个小行星的轨道，接下来天文学家根据Gauss的预测，也重新发现了这个小行星（虽然有小小的偏差），并将其命名为Ceres，也就是谷神星。Google的ceres-solver就是根据这个来命名的。
 
-　　关于究竟是谁发明了Least Squares历史上有争论，Legendre是最早publish这个方法的（1805），但是几年后（1809）Gauss跳出来说：“你太naive了，我1795年就开始用least squares了，微不足道”。虽然有人认为Gauss这样的大神没必要说谎来和Legendre这种小叼丝（相对，长了一副反派脸）抢成果，但是至今没有definitive的证据证明确实是Gauss最早发明Least Squares。有人认为least squares的方法对Gauss来说太简单以至于Gauss根本没觉得有必要把它publish出来（hehe）。
+　　关于究竟是谁发明了Least Squares历史上有争论，Legendre是最早publish这个方法的（1805），但是几年后（1809）Gauss跳出来说：“你太naive了，我1795年就开始用least squares了，微不足道”。虽然有人认为Gauss这样的大神没必要说谎来和Legendre这种小叼丝（相对，长了一副反派脸）抢成果，但是至今没有definitive的证据证明确实是Gauss最早发明Least Squares。有人认为least squares的方法对Gauss来说太简单以至于Gauss根本没觉得有必要把它publish出来。
 
----
-
-<center>![Gauss](/img/gauss.jpg)</center>
+<div align=center>![Gauss](/img/gauss.jpg)
 <center>Gauss</center>
-<center>![Legendre](/img/legendre.jpg)</center>
-<center>Legendre</center>
 
----
+<div align=center>![Legendre](/img/legendre.jpg)
+<center>Legendre</center>
 
 　　我们再来看看19，20世纪连电脑都没有的情况下，geodesy的人们面对的是什么样的问题吧。1927年的North American Datum有25000个观测塔，1983年的NAD有270000个观测塔。再来看看robotics community，最大的real-world SLAM datasets有21,000个pose**[2]**，最大的simulation datasets有200,000个pose**[3]**。看看时间，都是2010年以后的。拿NAD83来说，虽然1983年已经有电脑了，但是优化这样一个network，需要解1,800,000个equations。也就是说如果如果用Least Squares的话，每一步的normal equation J^T * J * x = J^T y 或者Ax = b，里面这个A的dimension是900,000 x 900,000。用dense method光是存这么一个matrix就要3000 Gb**[4]**。
 

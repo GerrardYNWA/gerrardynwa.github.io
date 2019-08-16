@@ -16,7 +16,7 @@ tags: [computer vision, slam, vio]
 > - $$ \tilde{\omega}^{b} = {\omega}^{b} + b^g + n^g $$
 > - $$ \tilde{a}^{b} = q_{b\omega}(a^{\omega} - g^{\omega}) + b^a + n^a $$
 > - g的正负在不同的论文会有不同的定义
-> - 将一段时间内的IMU数据直接积分起来就能得到两时刻$ i $和$ j $之间关于IMU的测量约束，即预积分量${\alpha}_{b_ib_j}$、${\beta}_{b_i b_j}$、${q}_{b_i b_j}$
+> - 将一段时间内的IMU数据直接积分起来就能得到两时刻$ i $和$ j $之间关于IMU的测量约束，即预积分量$${\alpha}_{b_i b_j}$$、$${\beta}_{b_i b_j}$$、$${q}_{b_i b_j}$$
 > - 协方差传递
 
 ### 2. 视觉几何基础

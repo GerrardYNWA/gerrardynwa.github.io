@@ -1,4 +1,4 @@
-title: visual slam 14 lectures lie group and lie algebra
+title: 视觉SLAM十四讲——李群和李代数
 date: 2017-08-15 18:59:32
 categories: Algorithm
 
