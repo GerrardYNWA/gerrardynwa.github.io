@@ -1,5 +1,5 @@
 title: visual slam 14 lectures lie group and lie algebra
-date: 2019-08-15 18:59:32
+date: 2017-08-15 18:59:32
 categories: Algorithm
 
 tags: [computer vision, slam]
