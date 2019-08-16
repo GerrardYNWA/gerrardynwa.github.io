@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>CUDA——从入门到转行(二) | Master Lu</title>
+  <title>视觉SLAM十四讲——非线性优化 | Master Lu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Master Lu&apos;s Personal Blog">
-<meta name="keywords" content="cuda">
+  <meta name="description" content="重新整理学习《视觉SLAM十四讲》：非线性优化">
+<meta name="keywords" content="computer vision,slam">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CUDA——从入门到转行(二)">
-<meta property="og:url" content="http://yoursite.com/2016/08/09/the-journey-of-learning-cuda-3/index.html">
+<meta property="og:title" content="视觉SLAM十四讲——非线性优化">
+<meta property="og:url" content="http://yoursite.com/2017/09/20/visual-slam-14-lectures-nonlinear-optimization/index.html">
 <meta property="og:site_name" content="Master Lu">
-<meta property="og:description" content="Master Lu&apos;s Personal Blog">
+<meta property="og:description" content="重新整理学习《视觉SLAM十四讲》：非线性优化">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-05T15:04:19.041Z">
+<meta property="og:updated_time" content="2019-08-16T08:46:22.764Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CUDA——从入门到转行(二)">
-<meta name="twitter:description" content="Master Lu&apos;s Personal Blog">
+<meta name="twitter:title" content="视觉SLAM十四讲——非线性优化">
+<meta name="twitter:description" content="重新整理学习《视觉SLAM十四讲》：非线性优化">
   
     <link rel="alternative" href="/atom.xml" title="Master Lu" type="application/atom+xml">
   
@@ -183,27 +183,61 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-the-journey-of-learning-cuda-3" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-visual-slam-14-lectures-nonlinear-optimization" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      CUDA——从入门到转行(二)
+      视觉SLAM十四讲——非线性优化
     </h1>
   
 
         
-        <a href="/2016/08/09/the-journey-of-learning-cuda-3/" class="archive-article-date">
-  	<time datetime="2016-08-09T00:49:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-09</time>
+        <a href="/2017/09/20/visual-slam-14-lectures-nonlinear-optimization/" class="archive-article-date">
+  	<time datetime="2017-09-20T14:27:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-20</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>　　重新整理学习《视觉SLAM十四讲》：非线性优化<br><a id="more"></a></p>
+<h2 id="1-状态估计问题"><a href="#1-状态估计问题" class="headerlink" title="1. 状态估计问题"></a>1. 状态估计问题</h2><ul>
+<li>最大后验估计（MAP）</li>
+<li>最大似然估计（MLE）</li>
+<li>原问题的最大化，相当于负对数最小化</li>
+<li>把状态最大似然估计变成了最小二乘问题</li>
+<li>直观解释</li>
+<li>问题结构</li>
+<li>如何求解？</li>
+</ul>
+<h2 id="2-非线性最小二乘"><a href="#2-非线性最小二乘" class="headerlink" title="2. 非线性最小二乘"></a>2. 非线性最小二乘</h2><ul>
+<li>迭代方式求解</li>
+<li>确定增量的方式（即梯度下降策略）：一阶的或二阶的</li>
+<li>泰勒展开</li>
+<li>只保留一阶梯度（最速下降法，过于贪婪，zigzag问题）</li>
+<li>保留二阶梯度（牛顿法，计算复杂的Hessian矩阵）</li>
+<li>回避Hessian矩阵的计算<ul>
+<li>Gauss-Newton</li>
+<li>Levenberg-Marquadt（阻尼牛顿法）</li>
+<li>LM相比于GN，能够保证增量方程的正定性（认为近似只在一定范围内成立，如果近似不好则缩小范围）</li>
+<li>从增量方程上来看，可以看成一阶和二阶的混合（参数$\lambda$控制着两边的权重）</li>
+</ul>
+</li>
+<li>小结<ul>
+<li>主要方法：最速下降、牛顿、GN、LM、DogLeg</li>
+<li>与线性规划不同，非线性需要针对具体问题具体分析</li>
+<li>问题非凸时，对初值敏感，会陷入局部最优<ul>
+<li>目前没有非凸问题的通用最优值的寻找办法</li>
+<li>问题凸时，二阶方法通常一两步就能收敛</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-面试题"><a href="#3-面试题" class="headerlink" title="3. 面试题"></a>3. 面试题</h2>
       
 
       
@@ -216,7 +250,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">cuda</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">computer vision</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">slam</a>
         		</li>
       		
 		</ul>
@@ -228,7 +266,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Column//" class="article-tag-list-link color2">Column</a>
+        			<a href="/categories/Algorithm//" class="article-tag-list-link color5">Algorithm</a>
         		</li>
       		
 		</ul>
@@ -283,7 +321,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2016/08/09/the-journey-of-learning-cuda-3/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/09/20/visual-slam-14-lectures-nonlinear-optimization/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -297,18 +335,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2016/08/09/the-journey-of-learning-cuda-2/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/10/09/visual-slam-14-lectures-visual-odometry-feature-point/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          CUDA——从入门到转行(二)
+          视觉SLAM十四讲——视觉里程计（特征点法）
         
       </div>
     </a>
   
   
-    <a href="/2016/08/09/the-journey-of-learning-cuda-1/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">CUDA——从入门到转行(一)</div>
+    <a href="/2017/09/11/visual-slam-14-lectures-camera-and-image/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">视觉SLAM十四讲——相机与图像</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -335,7 +373,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-状态估计问题"><span class="toc-number">1.</span> <span class="toc-text">1. 状态估计问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-非线性最小二乘"><span class="toc-number">2.</span> <span class="toc-text">2. 非线性最小二乘</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-面试题"><span class="toc-number">3.</span> <span class="toc-text">3. 面试题</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -460,15 +498,15 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">pcl</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">computer vision</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">slam</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">pcl</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -480,15 +518,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">dynamic programming</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
+                <a href="javascript:void(0)" class="js-tag color3">graph theory</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">university</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">

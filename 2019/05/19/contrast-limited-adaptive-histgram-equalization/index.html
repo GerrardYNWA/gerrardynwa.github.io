@@ -16,10 +16,13 @@
 <meta property="og:site_name" content="Master Lu">
 <meta property="og:description" content="视觉SLAM中经常用到的图像处理算法——直方图均衡化">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-09T14:14:35.299Z">
+<meta property="og:image" content="http://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Clahe-redist.svg/300px-Clahe-redist.svg.png">
+<meta property="og:image" content="http://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Clahe-tileinterpol.svg/450px-Clahe-tileinterpol.svg.png">
+<meta property="og:updated_time" content="2019-08-16T10:32:55.016Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="直方图均衡化（AHE和CLAHE）">
 <meta name="twitter:description" content="视觉SLAM中经常用到的图像处理算法——直方图均衡化">
+<meta name="twitter:image" content="http://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Clahe-redist.svg/300px-Clahe-redist.svg.png">
   
     <link rel="alternative" href="/atom.xml" title="Master Lu" type="application/atom+xml">
   
@@ -215,14 +218,11 @@
 <h3 id="二、限制对比度自适应直方图均衡（Contrast-Limited-Adaptive-histgram-equalization-CLAHE"><a href="#二、限制对比度自适应直方图均衡（Contrast-Limited-Adaptive-histgram-equalization-CLAHE" class="headerlink" title="二、限制对比度自适应直方图均衡（Contrast Limited Adaptive histgram equalization/CLAHE)"></a>二、限制对比度自适应直方图均衡（Contrast Limited Adaptive histgram equalization/CLAHE)</h3><h4 id="1-简述-1"><a href="#1-简述-1" class="headerlink" title="1.简述"></a>1.简述</h4><p>　　CLAHE同普通的自适应直方图均衡不同的地方主要是其对比度限幅。这个特性也可以应用到全局直方图均衡化中，即构成所谓的限制对比度直方图均衡（CLHE），但这在实际中很少使用。在CLAHE中，对于每个小区域都必须使用对比度限幅。CLAHE主要是用来克服AHE的过度放大噪音的问题。 </p>
 <p>　　这主要是通过限制AHE算法的对比提高程度来达到的。在指定的像素值周边的对比度放大主要是由变换函数的斜度决定的。这个斜度和领域的累积直方图的斜度成比例。CLAHE通过在计算CDF前用预先定义的阈值来裁剪直方图以达到限制放大幅度的目的。这限制了CDF的斜度因此，也限制了变换函数的斜度。直方图被裁剪的值，也就是所谓的裁剪限幅，取决于直方图的分布因此也取决于领域大小的取值。</p>
 <p>　　通常，直接忽略掉那些超出直方图裁剪限幅的部分是不好的，而应该将这些裁剪掉的部分均匀的分布到直方图的其他部分。如下图所示。</p>
-<center>![Clahe-redist.svg](http://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Clahe-redist.svg/300px-Clahe-redist.svg.png)</center>
-
+<p><div align="center"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Clahe-redist.svg/300px-Clahe-redist.svg.png" alt="Clahe-redist.svg"></div></p>
 <p>　　这个重分布的过程可能会导致那些倍裁剪掉的部分由重新超过了裁剪值（如上图的绿色部分所示）。如果这不是所希望的，可以不带使用重复不的过程指导这个超出的部分已经变得微不足道了。</p>
 <h4 id="2-通过插值加快计算速度"><a href="#2-通过插值加快计算速度" class="headerlink" title="2. 通过插值加快计算速度"></a>2. 通过插值加快计算速度</h4><p>　　如上所述的直接的自适应直方图，不管是否带有对比度限制，都需要对图像中的每个像素计算器领域直方图以及对应的变换函数，这使得算法及其耗时。</p>
 <p>　　而插值使得上述算法效率上有极大的提升，并且质量上没有下降。首先，将图像均匀分成等份矩形大小，如下图的右侧部分所示（8行8列64个块是常用的选择）。然后计算个块的直方图、CDF以及对应的变换函数。这个变换函数对于块的中心像素（下图左侧部分的黑色小方块）是完全符合原始定义的。而其他的像素通过哪些于其临近的四个块的变换函数插值获取。位于图中蓝色阴影部分的像素采用双线性查插值，而位于便于边缘的（绿色阴影）部分采用线性插值，角点处（红色阴影处）直接使用块所在的变换函数。</p>
-<center>![Clahe-tileinterpol.svg](http://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Clahe-tileinterpol.svg/450px-Clahe-tileinterpol.svg.png)</center>
-
-<p>　　这样的过程极大的降低了变换函数需要计算的次数，只是增加了一些双线性插值的计算量。</p>
+<p><div align="center"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Clahe-tileinterpol.svg/450px-Clahe-tileinterpol.svg.png" alt="Clahe-tileinterpol.svg"><br>　　这样的过程极大的降低了变换函数需要计算的次数，只是增加了一些双线性插值的计算量。</div></p>
 <h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><blockquote>
 <ol>
 <li><a href="https://www.cnblogs.com/Imageshop/archive/2013/04/07/3006334.html">限制对比度自适应直方图均衡化算法原理、实现及效果</a></li>
@@ -485,15 +485,15 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">pcl</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">computer vision</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">slam</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">pcl</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -505,15 +505,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">dynamic programming</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
+                <a href="javascript:void(0)" class="js-tag color3">graph theory</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">university</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">

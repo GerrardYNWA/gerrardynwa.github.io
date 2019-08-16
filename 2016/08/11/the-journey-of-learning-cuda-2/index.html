@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>视觉SLAM十四讲——回环检测 | Master Lu</title>
+  <title>CUDA——从入门到转行(二) | Master Lu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="重新整理学习《视觉SLAM十四讲》：回环检测">
-<meta name="keywords" content="computer vision,slam">
+  <meta name="description" content="Master Lu&apos;s Personal Blog">
+<meta name="keywords" content="cuda">
 <meta property="og:type" content="article">
-<meta property="og:title" content="视觉SLAM十四讲——回环检测">
-<meta property="og:url" content="http://yoursite.com/2017/10/26/visual-slam-14-lectures-loop-closure/index.html">
+<meta property="og:title" content="CUDA——从入门到转行(二)">
+<meta property="og:url" content="http://yoursite.com/2016/08/11/the-journey-of-learning-cuda-2/index.html">
 <meta property="og:site_name" content="Master Lu">
-<meta property="og:description" content="重新整理学习《视觉SLAM十四讲》：回环检测">
+<meta property="og:description" content="Master Lu&apos;s Personal Blog">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-26T08:46:14.216Z">
+<meta property="og:updated_time" content="2019-08-16T08:36:47.193Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="视觉SLAM十四讲——回环检测">
-<meta name="twitter:description" content="重新整理学习《视觉SLAM十四讲》：回环检测">
+<meta name="twitter:title" content="CUDA——从入门到转行(二)">
+<meta name="twitter:description" content="Master Lu&apos;s Personal Blog">
   
     <link rel="alternative" href="/atom.xml" title="Master Lu" type="application/atom+xml">
   
@@ -183,108 +183,27 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-visual-slam-14-lectures-loop-closure" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-the-journey-of-learning-cuda-2" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      视觉SLAM十四讲——回环检测
+      CUDA——从入门到转行(二)
     </h1>
   
 
         
-        <a href="/2017/10/26/visual-slam-14-lectures-loop-closure/" class="archive-article-date">
-  	<time datetime="2017-10-26T08:32:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-26</time>
+        <a href="/2016/08/11/the-journey-of-learning-cuda-2/" class="archive-article-date">
+  	<time datetime="2016-08-11T00:49:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>　　重新整理学习《视觉SLAM十四讲》：回环检测<br><a id="more"></a></p>
-<h3 id="1-回环检测与词袋"><a href="#1-回环检测与词袋" class="headerlink" title="1. 回环检测与词袋"></a>1. 回环检测与词袋</h3><h4 id="1-1-回环检测的意义"><a href="#1-1-回环检测的意义" class="headerlink" title="1.1 回环检测的意义"></a>1.1 回环检测的意义</h4><ul>
-<li>VO和后端都存在误差</li>
-<li>SLAM的建图与定位是耦合的——误差将会累积（单目：R、t和Scale，Sim(3)）</li>
-</ul>
-<h4 id="1-2-Loop-Closing步骤"><a href="#1-2-Loop-Closing步骤" class="headerlink" title="1.2 Loop Closing步骤"></a>1.2 Loop Closing步骤</h4><ol>
-<li>检测到回环的发生</li>
-<li>计算回环候选帧与当前帧的运动</li>
-<li>验证回环是否成立</li>
-<li>闭环</li>
-</ol>
-<h3 id="1-3-如何检测回环是否发生——回环检测"><a href="#1-3-如何检测回环是否发生——回环检测" class="headerlink" title="1.3 如何检测回环是否发生——回环检测"></a>1.3 如何检测回环是否发生——回环检测</h3><ul>
-<li>最简单的方法：对任意两个关键帧进行特征匹配</li>
-<li>基于里程计的方法（Odometry based）（假设累积误差不大，逻辑有点矛盾）</li>
-<li>基于外观的方法（Appearance based）（摆脱了累积误差，使得回环检测模块相对独立）<ul>
-<li>外观的方法是主流</li>
-<li>核心在于衡量图像间的相似性</li>
-<li>朴素的想法：灰度相减$ s(A, B) = ||A - B|| $</li>
-<li>像素灰度是一种不稳定的测量值，严重受光照和相机曝光的影响。另外，当相机视角发生少量变化时，会有很大的差异值。</li>
-</ul>
-</li>
-</ul>
-<h4 id="1-4-回环检测指标"><a href="#1-4-回环检测指标" class="headerlink" title="1.4 回环检测指标"></a>1.4 回环检测指标</h4><ul>
-<li><p>Perceptual Aliasing（感知偏差，假阳性，FP）</p>
-</li>
-<li><p>Perceptual Variability（感知变异，假阴性，FN）</p>
-</li>
-<li><p>| 算法\事实 |          是回环          |         不是回环         |<br>| :———-: | :———————————: | :———————————: |<br>|  是回环   | 真阳性（True Positive）  | 假阳性（False Positive） |<br>| 不是回环  | 假阴性（False Negative） | 真阴性（True Positive）  |</p>
-</li>
-</ul>
-<h4 id="1-5-ROC曲线（Precision-Recal曲线）"><a href="#1-5-ROC曲线（Precision-Recal曲线）" class="headerlink" title="1.5 ROC曲线（Precision-Recal曲线）"></a>1.5 ROC曲线（Precision-Recal曲线）</h4><ul>
-<li>Precision = TP / (TP + FP)，Recall = TP / (TP + FN)</li>
-<li>Precision和Recall通常是矛盾的，P高则R低，R高则P低</li>
-</ul>
-<h4 id="1-6-Appearance-based主要方法：词袋"><a href="#1-6-Appearance-based主要方法：词袋" class="headerlink" title="1.6 Appearance-based主要方法：词袋"></a>1.6 Appearance-based主要方法：词袋</h4><ul>
-<li>Bag-of-Words，BoW</li>
-<li>BoW是对特征的聚类<ul>
-<li>特征聚类形成了Word</li>
-<li>许多Word组成了Dictonary</li>
-<li>图像的相似性 = Word的相似性</li>
-<li>只看Word的有无，无视Word的顺序</li>
-</ul>
-</li>
-</ul>
-<h4 id="1-7-Word的形成"><a href="#1-7-Word的形成" class="headerlink" title="1.7 Word的形成"></a>1.7 Word的形成</h4><ul>
-<li>聚类（无监督的机器学习）</li>
-<li>经典的k-means聚类，N个特征点-&gt;k个类<ol>
-<li>随机选取k个中心点：$ c_1, … , c_k $</li>
-<li>对每一个样本，计算它与每个中心点之间的距离，取最小的作为它的归类</li>
-<li>重新计算每个类的中心点</li>
-<li>如果每个中心点都变化很小，则算法收敛，退出；否则返回第2步。</li>
-</ol>
-</li>
-</ul>
-<h4 id="1-8-字典的结构"><a href="#1-8-字典的结构" class="headerlink" title="1.8 字典的结构"></a>1.8 字典的结构</h4><ul>
-<li>当实际拿到一个特征时，需要查询它对应的Word是什么</li>
-<li>遍历比较：$ O(n) $</li>
-<li>简历字典结构可以加速比较</li>
-<li>k-d tree：$ k $分支数，$ d $层</li>
-<li>$ k^d $个Word，$ d $次比较，$ O(kd) $</li>
-</ul>
-<h4 id="1-9-相似度计算"><a href="#1-9-相似度计算" class="headerlink" title="1.9 相似度计算"></a>1.9 相似度计算</h4><ul>
-<li>原则上比较Word即可计算图像相似度</li>
-<li>但一些Word很常见，另一些则很罕见</li>
-<li>TF-IDF（Term Frequency-Inverse Document Frequency）<ul>
-<li>思路：单词在字典中出现频率越高，则区分度越低；在图像中频率越高，则区分度越高</li>
-<li>IDF部分可在字典训练过程中计算</li>
-<li>TF部分则需要对图像的特征进行计算</li>
-</ul>
-</li>
-</ul>
-<h4 id="1-10-SLAM中的回环检测"><a href="#1-10-SLAM中的回环检测" class="headerlink" title="1.10 SLAM中的回环检测"></a>1.10 SLAM中的回环检测</h4><ul>
-<li>使用相对的评分而非绝对的评分</li>
-<li>思路：相邻关键帧是相似的，而回环的相似度应该约等于相邻关键帧</li>
-<li>检测成功以后：<ul>
-<li>根据PnP等算法计算运动关系</li>
-<li>根据重投影关系验证回环是否成立</li>
-<li>利用全局BA或Pose Graph进行优化</li>
-</ul>
-</li>
-</ul>
-
+        
       
 
       
@@ -297,11 +216,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">computer vision</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">slam</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">cuda</a>
         		</li>
       		
 		</ul>
@@ -313,7 +228,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Algorithm//" class="article-tag-list-link color5">Algorithm</a>
+        			<a href="/categories/Column//" class="article-tag-list-link color2">Column</a>
         		</li>
       		
 		</ul>
@@ -368,7 +283,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/10/26/visual-slam-14-lectures-loop-closure/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2016/08/11/the-journey-of-learning-cuda-2/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -382,18 +297,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/02/12/3D-Point-Cloud-Hole-Filling/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/08/21/the-journey-of-learning-cuda-3/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          3D Point Cloud Hole Filling
+          CUDA——从入门到转行(二)
         
       </div>
     </a>
   
   
-    <a href="/2017/08/11/visual-slam-14-lectures-3d-rigid-motion/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">视觉SLAM十四讲——三维空间刚体运动</div>
+    <a href="/2016/08/09/bundle-adjustment-in-the-large/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Bundle Adjustment in the Large</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -420,7 +335,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-回环检测与词袋"><span class="toc-number">1.</span> <span class="toc-text">1. 回环检测与词袋</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-回环检测的意义"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 回环检测的意义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-Loop-Closing步骤"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 Loop Closing步骤</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-如何检测回环是否发生——回环检测"><span class="toc-number">2.</span> <span class="toc-text">1.3 如何检测回环是否发生——回环检测</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-回环检测指标"><span class="toc-number">2.1.</span> <span class="toc-text">1.4 回环检测指标</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-ROC曲线（Precision-Recal曲线）"><span class="toc-number">2.2.</span> <span class="toc-text">1.5 ROC曲线（Precision-Recal曲线）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-6-Appearance-based主要方法：词袋"><span class="toc-number">2.3.</span> <span class="toc-text">1.6 Appearance-based主要方法：词袋</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-7-Word的形成"><span class="toc-number">2.4.</span> <span class="toc-text">1.7 Word的形成</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-8-字典的结构"><span class="toc-number">2.5.</span> <span class="toc-text">1.8 字典的结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-9-相似度计算"><span class="toc-number">2.6.</span> <span class="toc-text">1.9 相似度计算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-10-SLAM中的回环检测"><span class="toc-number">2.7.</span> <span class="toc-text">1.10 SLAM中的回环检测</span></a></li></ol></li></ol>
+                    目录，不存在的…
                     </div>
                 </span>
             </div>
@@ -545,15 +460,15 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">pcl</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">computer vision</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">slam</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">pcl</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -565,15 +480,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">dynamic programming</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
+                <a href="javascript:void(0)" class="js-tag color3">graph theory</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">university</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
