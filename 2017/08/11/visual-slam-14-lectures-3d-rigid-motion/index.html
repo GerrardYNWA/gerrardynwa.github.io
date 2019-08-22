@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Master Lu">
 <meta property="og:description" content="重新整理学习《视觉SLAM十四讲》：三维空间刚体运动">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-16T08:42:53.191Z">
+<meta property="og:updated_time" content="2019-08-18T13:48:29.988Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="视觉SLAM十四讲——三维空间刚体运动">
 <meta name="twitter:description" content="重新整理学习《视觉SLAM十四讲》：三维空间刚体运动">
@@ -239,7 +239,7 @@
 <li>如何用四元数旋转一个空间点</li>
 <li>四元数相比角轴、欧拉角的优势（紧凑、无奇异性）</li>
 </ul>
-<h2 id="3-面试题"><a href="#3-面试题" class="headerlink" title="3. 面试题"></a>3. 面试题</h2>
+<h2 id="3-面试题"><a href="#3-面试题" class="headerlink" title="3. 面试题"></a>3. 面试题</h2><h3 id="1-齐次坐标和非齐次坐标"><a href="#1-齐次坐标和非齐次坐标" class="headerlink" title="1. 齐次坐标和非齐次坐标"></a>1. 齐次坐标和非齐次坐标</h3><h3 id="2-点的齐次坐标和向量齐次坐标的区别及应用"><a href="#2-点的齐次坐标和向量齐次坐标的区别及应用" class="headerlink" title="2. 点的齐次坐标和向量齐次坐标的区别及应用"></a>2. 点的齐次坐标和向量齐次坐标的区别及应用</h3><h3 id="3-说一下3D空间的位姿如何去表达"><a href="#3-说一下3D空间的位姿如何去表达" class="headerlink" title="3. 说一下3D空间的位姿如何去表达?"></a>3. 说一下3D空间的位姿如何去表达?</h3><h3 id="4-位姿不同表示间的相互转换、旋转矩阵特征值和特征向量物理意义"><a href="#4-位姿不同表示间的相互转换、旋转矩阵特征值和特征向量物理意义" class="headerlink" title="4. 位姿不同表示间的相互转换、旋转矩阵特征值和特征向量物理意义"></a>4. 位姿不同表示间的相互转换、旋转矩阵特征值和特征向量物理意义</h3><h3 id="5-相似变换、仿射变换、射影变换的区别及自由度"><a href="#5-相似变换、仿射变换、射影变换的区别及自由度" class="headerlink" title="5. 相似变换、仿射变换、射影变换的区别及自由度"></a>5. 相似变换、仿射变换、射影变换的区别及自由度</h3>
       
 
       
@@ -375,7 +375,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-向量和坐标系（参考系）"><span class="toc-number">1.</span> <span class="toc-text">1. 向量和坐标系（参考系）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-向量"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 向量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#点积（内积）"><span class="toc-number">1.1.1.</span> <span class="toc-text">点积（内积）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#叉积（外积）"><span class="toc-number">1.1.2.</span> <span class="toc-text">叉积（外积）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-坐标系"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 坐标系</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-旋转表示方式"><span class="toc-number">2.</span> <span class="toc-text">2. 旋转表示方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-旋转矩阵与欧氏变换"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 旋转矩阵与欧氏变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-旋转向量-轴角"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 旋转向量(轴角)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-欧拉角"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 欧拉角</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-四元数"><span class="toc-number">2.4.</span> <span class="toc-text">2.4 四元数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-面试题"><span class="toc-number">3.</span> <span class="toc-text">3. 面试题</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-向量和坐标系（参考系）"><span class="toc-number">1.</span> <span class="toc-text">1. 向量和坐标系（参考系）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-向量"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 向量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#点积（内积）"><span class="toc-number">1.1.1.</span> <span class="toc-text">点积（内积）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#叉积（外积）"><span class="toc-number">1.1.2.</span> <span class="toc-text">叉积（外积）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-坐标系"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 坐标系</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-旋转表示方式"><span class="toc-number">2.</span> <span class="toc-text">2. 旋转表示方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-旋转矩阵与欧氏变换"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 旋转矩阵与欧氏变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-旋转向量-轴角"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 旋转向量(轴角)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-欧拉角"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 欧拉角</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-四元数"><span class="toc-number">2.4.</span> <span class="toc-text">2.4 四元数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-面试题"><span class="toc-number">3.</span> <span class="toc-text">3. 面试题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-齐次坐标和非齐次坐标"><span class="toc-number">3.1.</span> <span class="toc-text">1. 齐次坐标和非齐次坐标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-点的齐次坐标和向量齐次坐标的区别及应用"><span class="toc-number">3.2.</span> <span class="toc-text">2. 点的齐次坐标和向量齐次坐标的区别及应用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-说一下3D空间的位姿如何去表达"><span class="toc-number">3.3.</span> <span class="toc-text">3. 说一下3D空间的位姿如何去表达?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-位姿不同表示间的相互转换、旋转矩阵特征值和特征向量物理意义"><span class="toc-number">3.4.</span> <span class="toc-text">4. 位姿不同表示间的相互转换、旋转矩阵特征值和特征向量物理意义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-相似变换、仿射变换、射影变换的区别及自由度"><span class="toc-number">3.5.</span> <span class="toc-text">5. 相似变换、仿射变换、射影变换的区别及自由度</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -520,11 +520,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
+                <a href="javascript:void(0)" class="js-tag color5">dynamic programming</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">dynamic programming</a>
+                <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -532,11 +532,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">university</a>
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
+                <a href="javascript:void(0)" class="js-tag color1">university</a>
               </li>
              
               <li class="article-tag-list-item">
