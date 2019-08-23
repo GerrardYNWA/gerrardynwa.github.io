@@ -39,3 +39,11 @@ tags: [computer vision, slam]
 
 ## 3. 面试题
 
+### 1. 为什么SLAM中常用LM算法而不是高斯牛顿求解优化问题？
+### 2. BA求解的三种方法（最速下降法，GN,LM)
+### 3. 请写出L-M(Levenberg-Marquard)算法的流程并指出其相对于GN优化算法的优缺点。
+### 4. GN和LM的迭代过程及优劣
+### 5. 牛顿法、GN、LM的区别
+### 6. 说一下Dog-Leg算法
+### 7. 解释一下Gauss-Netwon和LM算法
+
