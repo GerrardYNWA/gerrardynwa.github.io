@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Master Lu">
 <meta property="og:description" content="重新整理学习《视觉SLAM十四讲》：非线性优化">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-16T08:46:22.764Z">
+<meta property="og:updated_time" content="2019-08-23T14:54:43.223Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="视觉SLAM十四讲——非线性优化">
 <meta name="twitter:description" content="重新整理学习《视觉SLAM十四讲》：非线性优化">
@@ -237,7 +237,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="3-面试题"><a href="#3-面试题" class="headerlink" title="3. 面试题"></a>3. 面试题</h2>
+<h2 id="3-面试题"><a href="#3-面试题" class="headerlink" title="3. 面试题"></a>3. 面试题</h2><h3 id="1-为什么SLAM中常用LM算法而不是高斯牛顿求解优化问题？"><a href="#1-为什么SLAM中常用LM算法而不是高斯牛顿求解优化问题？" class="headerlink" title="1. 为什么SLAM中常用LM算法而不是高斯牛顿求解优化问题？"></a>1. 为什么SLAM中常用LM算法而不是高斯牛顿求解优化问题？</h3><h3 id="2-BA求解的三种方法（最速下降法，GN-LM"><a href="#2-BA求解的三种方法（最速下降法，GN-LM" class="headerlink" title="2. BA求解的三种方法（最速下降法，GN,LM)"></a>2. BA求解的三种方法（最速下降法，GN,LM)</h3><h3 id="3-请写出L-M-Levenberg-Marquard-算法的流程并指出其相对于GN优化算法的优缺点。"><a href="#3-请写出L-M-Levenberg-Marquard-算法的流程并指出其相对于GN优化算法的优缺点。" class="headerlink" title="3. 请写出L-M(Levenberg-Marquard)算法的流程并指出其相对于GN优化算法的优缺点。"></a>3. 请写出L-M(Levenberg-Marquard)算法的流程并指出其相对于GN优化算法的优缺点。</h3><h3 id="4-GN和LM的迭代过程及优劣"><a href="#4-GN和LM的迭代过程及优劣" class="headerlink" title="4. GN和LM的迭代过程及优劣"></a>4. GN和LM的迭代过程及优劣</h3><h3 id="5-牛顿法、GN、LM的区别"><a href="#5-牛顿法、GN、LM的区别" class="headerlink" title="5. 牛顿法、GN、LM的区别"></a>5. 牛顿法、GN、LM的区别</h3><h3 id="6-说一下Dog-Leg算法"><a href="#6-说一下Dog-Leg算法" class="headerlink" title="6. 说一下Dog-Leg算法"></a>6. 说一下Dog-Leg算法</h3><h3 id="7-解释一下Gauss-Netwon和LM算法"><a href="#7-解释一下Gauss-Netwon和LM算法" class="headerlink" title="7. 解释一下Gauss-Netwon和LM算法"></a>7. 解释一下Gauss-Netwon和LM算法</h3>
       
 
       
@@ -373,7 +373,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-状态估计问题"><span class="toc-number">1.</span> <span class="toc-text">1. 状态估计问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-非线性最小二乘"><span class="toc-number">2.</span> <span class="toc-text">2. 非线性最小二乘</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-面试题"><span class="toc-number">3.</span> <span class="toc-text">3. 面试题</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-状态估计问题"><span class="toc-number">1.</span> <span class="toc-text">1. 状态估计问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-非线性最小二乘"><span class="toc-number">2.</span> <span class="toc-text">2. 非线性最小二乘</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-面试题"><span class="toc-number">3.</span> <span class="toc-text">3. 面试题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-为什么SLAM中常用LM算法而不是高斯牛顿求解优化问题？"><span class="toc-number">3.1.</span> <span class="toc-text">1. 为什么SLAM中常用LM算法而不是高斯牛顿求解优化问题？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-BA求解的三种方法（最速下降法，GN-LM"><span class="toc-number">3.2.</span> <span class="toc-text">2. BA求解的三种方法（最速下降法，GN,LM)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-请写出L-M-Levenberg-Marquard-算法的流程并指出其相对于GN优化算法的优缺点。"><span class="toc-number">3.3.</span> <span class="toc-text">3. 请写出L-M(Levenberg-Marquard)算法的流程并指出其相对于GN优化算法的优缺点。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-GN和LM的迭代过程及优劣"><span class="toc-number">3.4.</span> <span class="toc-text">4. GN和LM的迭代过程及优劣</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-牛顿法、GN、LM的区别"><span class="toc-number">3.5.</span> <span class="toc-text">5. 牛顿法、GN、LM的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-说一下Dog-Leg算法"><span class="toc-number">3.6.</span> <span class="toc-text">6. 说一下Dog-Leg算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-解释一下Gauss-Netwon和LM算法"><span class="toc-number">3.7.</span> <span class="toc-text">7. 解释一下Gauss-Netwon和LM算法</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
