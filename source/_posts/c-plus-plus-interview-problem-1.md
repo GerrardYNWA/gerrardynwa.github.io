@@ -110,3 +110,7 @@ void heap_sort(vector<int>& nums, int n) {
 
 ## 二、链表
 
+### 1. 链表反转
+
+### 2. 链表环及入口
+
