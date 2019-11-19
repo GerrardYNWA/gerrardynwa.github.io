@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: computer network | Master Lu</title>
+  <title>leetcode weekly contest 163 | Master Lu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Master Lu&apos;s Personal Blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Master Lu">
-<meta property="og:url" content="http://yoursite.com/tags/computer-network/index.html">
+  <meta name="description" content="LeetCode第163场周赛">
+<meta name="keywords" content="leetcode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="leetcode weekly contest 163">
+<meta property="og:url" content="http://yoursite.com/2019/11/17/leetcode-weekly-contest-163/index.html">
 <meta property="og:site_name" content="Master Lu">
-<meta property="og:description" content="Master Lu&apos;s Personal Blog">
+<meta property="og:description" content="LeetCode第163场周赛">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-11-19T11:39:04.620Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Master Lu">
-<meta name="twitter:description" content="Master Lu&apos;s Personal Blog">
+<meta name="twitter:title" content="leetcode weekly contest 163">
+<meta name="twitter:description" content="LeetCode第163场周赛">
   
     <link rel="alternative" href="/atom.xml" title="Master Lu" type="application/atom+xml">
   
@@ -181,71 +183,175 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-leetcode-weekly-contest-163" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/24/computer-networking-a-top-down-approach-1/" class="archive-article-date">
-  	<time datetime="2019-09-24T11:53:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-24</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/24/computer-networking-a-top-down-approach-1/">计算机网络—目录与参考</a>
+    <h1 class="article-title" itemprop="name">
+      leetcode weekly contest 163
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/11/17/leetcode-weekly-contest-163/" class="archive-article-date">
+  	<time datetime="2019-11-17T11:29:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>　　LeetCode第163场周赛</p>
+<a id="more"></a>
+<h2 id="1-Shift-2D-Grid"><a href="#1-Shift-2D-Grid" class="headerlink" title="1. Shift 2D Grid"></a>1. <a href="https://leetcode.com/contest/weekly-contest-163/problems/shift-2d-grid/">Shift 2D Grid</a></h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; shiftGrid(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; grid, <span class="keyword">int</span> k) &#123;</span><br><span class="line">        <span class="keyword">int</span> n = grid.size();</span><br><span class="line">        <span class="keyword">int</span> m = grid[<span class="number">0</span>].size();</span><br><span class="line">        </span><br><span class="line">        k %= (n * m);</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; result(n, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;(m));</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; m; j++) &#123;</span><br><span class="line">                <span class="keyword">int</span> pos = (i * m + j + k) % (n * m);</span><br><span class="line">                <span class="keyword">int</span> row = pos / m;</span><br><span class="line">                <span class="keyword">int</span> col = pos % m;</span><br><span class="line">                result[row][col] = grid[i][j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="2-Find-Elements-in-a-Contaminated-Binary-Tree"><a href="#2-Find-Elements-in-a-Contaminated-Binary-Tree" class="headerlink" title="2. Find Elements in a Contaminated Binary Tree"></a>2. <a href="https://leetcode.com/contest/weekly-contest-163/problems/find-elements-in-a-contaminated-binary-tree/">Find Elements in a Contaminated Binary Tree</a></h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FindElements</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt; st;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    FindElements(TreeNode* root) &#123;</span><br><span class="line">        init(root, <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (st.find(target) != st.end()) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(TreeNode* root, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="literal">nullptr</span>) <span class="keyword">return</span>;</span><br><span class="line">        </span><br><span class="line">        root-&gt;val = val;</span><br><span class="line">        st.insert(val);</span><br><span class="line">        </span><br><span class="line">        init(root-&gt;left, val * <span class="number">2</span> + <span class="number">1</span>);</span><br><span class="line">        init(root-&gt;right, val * <span class="number">2</span> + <span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your FindElements object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * FindElements* obj = new FindElements(root);</span></span><br><span class="line"><span class="comment"> * bool param_1 = obj-&gt;find(target);</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<h2 id="3-Greatest-Sum-Divisible-by-Three"><a href="#3-Greatest-Sum-Divisible-by-Three" class="headerlink" title="3. Greatest Sum Divisible by Three"></a>3. <a href="https://leetcode.com/contest/weekly-contest-163/problems/greatest-sum-divisible-by-three/">Greatest Sum Divisible by Three</a></h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxSumDivThree</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; dp(<span class="number">3</span>, <span class="number">0</span>), next;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> num : nums) &#123;</span><br><span class="line">            next = dp;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> sum : next) &#123;</span><br><span class="line">                dp[(sum + num) % <span class="number">3</span>] = max(dp[(sum + num) % <span class="number">3</span>], sum + num);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> dp[<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// class Solution &#123;</span></span><br><span class="line"><span class="comment">// public:</span></span><br><span class="line"><span class="comment">//     int maxSumDivThree(vector&lt;int&gt;&amp; nums) &#123;</span></span><br><span class="line"><span class="comment">//         vector&lt;int&gt; dp(3, 0), result(3, 0);</span></span><br><span class="line"><span class="comment">//         dp[1] = dp[2] = INT_MIN;</span></span><br><span class="line"><span class="comment">//         for (int num : nums) &#123;</span></span><br><span class="line"><span class="comment">//             int remainer = num % 3;</span></span><br><span class="line"><span class="comment">//             if (remainer == 0) &#123;</span></span><br><span class="line"><span class="comment">//                 result[0] = dp[0] + num;</span></span><br><span class="line"><span class="comment">//                 result[1] = dp[1] + num;</span></span><br><span class="line"><span class="comment">//                 result[2] = dp[2] + num;</span></span><br><span class="line"><span class="comment">//             &#125; else if (remainer == 1) &#123;</span></span><br><span class="line"><span class="comment">//                 result[0] = max(dp[0], dp[2] + num);</span></span><br><span class="line"><span class="comment">//                 result[1] = max(dp[1], dp[0] + num);</span></span><br><span class="line"><span class="comment">//                 result[2] = max(dp[2], dp[1] + num);</span></span><br><span class="line"><span class="comment">//             &#125; else if (remainer == 2) &#123;</span></span><br><span class="line"><span class="comment">//                 result[0] = max(dp[0], dp[1] + num);</span></span><br><span class="line"><span class="comment">//                 result[1] = max(dp[1], dp[2] + num);</span></span><br><span class="line"><span class="comment">//                 result[2] = max(dp[2], dp[0] + num);</span></span><br><span class="line"><span class="comment">//             &#125;</span></span><br><span class="line">            </span><br><span class="line"><span class="comment">//             for (int i = 0; i &lt; 3; i++) dp[i] = result[i];</span></span><br><span class="line"><span class="comment">//         &#125;</span></span><br><span class="line">        </span><br><span class="line"><span class="comment">//         return result[0];</span></span><br><span class="line"><span class="comment">//     &#125;</span></span><br><span class="line"><span class="comment">// &#125;;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// class Solution &#123;</span></span><br><span class="line"><span class="comment">// public:</span></span><br><span class="line"><span class="comment">//     int maxSumDivThree(vector&lt;int&gt;&amp; nums) &#123;</span></span><br><span class="line"><span class="comment">//         int n = nums.size();</span></span><br><span class="line"><span class="comment">//         vector&lt;vector&lt;int&gt;&gt; dp(n + 1, vector&lt;int&gt;(3, 0));</span></span><br><span class="line"><span class="comment">//         dp[0][1] = dp[0][2] = INT_MIN;</span></span><br><span class="line"><span class="comment">//         for (int i = 0; i &lt; n; i++) &#123;</span></span><br><span class="line"><span class="comment">//             int remainer = nums[i] % 3;</span></span><br><span class="line"><span class="comment">//             if (remainer == 0) &#123;</span></span><br><span class="line"><span class="comment">//                 dp[i + 1][0] = dp[i][0] + nums[i];</span></span><br><span class="line"><span class="comment">//                 dp[i + 1][1] = dp[i][1] + nums[i];</span></span><br><span class="line"><span class="comment">//                 dp[i + 1][2] = dp[i][2] + nums[i];</span></span><br><span class="line"><span class="comment">//             &#125; else if (remainer == 1) &#123;</span></span><br><span class="line"><span class="comment">//                 dp[i + 1][0] = max(dp[i][0], dp[i][2] + nums[i]);</span></span><br><span class="line"><span class="comment">//                 dp[i + 1][1] = max(dp[i][1], dp[i][0] + nums[i]);</span></span><br><span class="line"><span class="comment">//                 dp[i + 1][2] = max(dp[i][2], dp[i][1] + nums[i]);</span></span><br><span class="line"><span class="comment">//             &#125; else if (remainer == 2) &#123;</span></span><br><span class="line"><span class="comment">//                 dp[i + 1][0] = max(dp[i][0], dp[i][1] + nums[i]);</span></span><br><span class="line"><span class="comment">//                 dp[i + 1][1] = max(dp[i][1], dp[i][2] + nums[i]);</span></span><br><span class="line"><span class="comment">//                 dp[i + 1][2] = max(dp[i][2], dp[i][0] + nums[i]);</span></span><br><span class="line"><span class="comment">//             &#125;</span></span><br><span class="line"><span class="comment">//         &#125;</span></span><br><span class="line">        </span><br><span class="line"><span class="comment">//         return dp[n][0];</span></span><br><span class="line"><span class="comment">//     &#125;</span></span><br><span class="line"><span class="comment">// &#125;;</span></span><br><span class="line"><span class="comment">// class Solution &#123;</span></span><br><span class="line"><span class="comment">// public:</span></span><br><span class="line"><span class="comment">//     int maxSumDivThree(vector&lt;int&gt;&amp; nums) &#123;</span></span><br><span class="line"><span class="comment">//         int sum = 0;</span></span><br><span class="line"><span class="comment">//         vector&lt;int&gt; left;</span></span><br><span class="line"><span class="comment">//         for (auto num : nums) &#123;</span></span><br><span class="line"><span class="comment">//             if (num % 3 == 0) &#123;</span></span><br><span class="line"><span class="comment">//                 sum += num;</span></span><br><span class="line"><span class="comment">//             &#125; else &#123;</span></span><br><span class="line"><span class="comment">//                 left.push_back(num);</span></span><br><span class="line"><span class="comment">//             &#125;</span></span><br><span class="line"><span class="comment">//         &#125;</span></span><br><span class="line">        </span><br><span class="line"><span class="comment">//         int n = left.size();</span></span><br><span class="line"><span class="comment">//         vector&lt;vector&lt;int&gt;&gt; dp(n + 1, vector&lt;int&gt;(3, 0));</span></span><br><span class="line"><span class="comment">//         for (int i = 0; i &lt; n; i++) &#123;</span></span><br><span class="line"><span class="comment">//             int remainer = left[i] % 3;</span></span><br><span class="line"><span class="comment">//             if (remainer == 1) &#123;</span></span><br><span class="line"><span class="comment">//                 dp[i + 1][0] = (dp[i][2] == 0 ? dp[i][0] : max(dp[i][0], dp[i][2] + left[i]));</span></span><br><span class="line"><span class="comment">//                 dp[i + 1][1] = max(dp[i][1], dp[i][0] + left[i]);</span></span><br><span class="line"><span class="comment">//                 dp[i + 1][2] = (dp[i][1] == 0 ? dp[i][2] : max(dp[i][2], dp[i][1] + left[i]));</span></span><br><span class="line"><span class="comment">//             &#125; else if (remainer == 2) &#123;</span></span><br><span class="line"><span class="comment">//                 dp[i + 1][0] = (dp[i][1] == 0 ? dp[i][0] : max(dp[i][0], dp[i][1] + left[i]));</span></span><br><span class="line"><span class="comment">//                 dp[i + 1][1] = (dp[i][2] == 0 ? dp[i][1] : max(dp[i][1], dp[i][2] + left[i]));</span></span><br><span class="line"><span class="comment">//                 dp[i + 1][2] = max(dp[i][2], dp[i][0] + left[i]);</span></span><br><span class="line"><span class="comment">//             &#125;</span></span><br><span class="line"><span class="comment">//         &#125;</span></span><br><span class="line">        </span><br><span class="line"><span class="comment">//         return sum + dp[n][0];</span></span><br><span class="line"><span class="comment">//     &#125;</span></span><br><span class="line"><span class="comment">// &#125;;</span></span><br></pre></td></tr></table></figure>
+<h2 id="4-Minimum-Moves-to-Move-a-Box-to-Their-Target-Location"><a href="#4-Minimum-Moves-to-Move-a-Box-to-Their-Target-Location" class="headerlink" title="4. Minimum Moves to Move a Box to Their Target Location"></a>4. <a href="https://leetcode.com/contest/weekly-contest-163/problems/minimum-moves-to-move-a-box-to-their-target-location/">Minimum Moves to Move a Box to Their Target Location</a></h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Todo</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">computer network</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">leetcode</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Theory//" class="article-tag-list-link color2">Theory</a>
+        			<a href="/categories/Algorithm//" class="article-tag-list-link color5">Algorithm</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/17/leetcode-weekly-contest-163/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/11/17/leetcode-biweekly-contest-13/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">leetcode biweekly contest 13</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Shift-2D-Grid"><span class="toc-number">1.</span> <span class="toc-text">1. Shift 2D Grid</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Find-Elements-in-a-Contaminated-Binary-Tree"><span class="toc-number">2.</span> <span class="toc-text">2. Find Elements in a Contaminated Binary Tree</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Greatest-Sum-Divisible-by-Three"><span class="toc-number">3.</span> <span class="toc-text">3. Greatest Sum Divisible by Three</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Minimum-Moves-to-Move-a-Box-to-Their-Target-Location"><span class="toc-number">4.</span> <span class="toc-text">4. Minimum Moves to Move a Box to Their Target Location</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -268,9 +374,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
