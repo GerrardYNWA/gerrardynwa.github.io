@@ -1,4 +1,4 @@
-title: leetcode biweekly contest 13
+title: Leetcode Biweekly Contest 13
 date: 2019-11-17 15:29:20
 categories: Algorithm
 
