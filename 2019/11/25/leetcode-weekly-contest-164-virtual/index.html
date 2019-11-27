@@ -6,23 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>The History of Bundle Adjustment | Master Lu</title>
+  <title>Leetcode Weekly Contest 164 (Virtual) | Master Lu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="转载自知乎versatran01的回答：Bundle Adjustment到底是什么？">
-<meta name="keywords" content="computer vision,slam">
+  <meta name="description" content="LeetCode第164场周赛（Virtual）">
+<meta name="keywords" content="leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="The History of Bundle Adjustment">
-<meta property="og:url" content="http://yoursite.com/2016/08/06/the-history-of-bundle-adjustment/index.html">
+<meta property="og:title" content="Leetcode Weekly Contest 164 (Virtual)">
+<meta property="og:url" content="http://yoursite.com/2019/11/25/leetcode-weekly-contest-164-virtual/index.html">
 <meta property="og:site_name" content="Master Lu">
-<meta property="og:description" content="转载自知乎versatran01的回答：Bundle Adjustment到底是什么？">
+<meta property="og:description" content="LeetCode第164场周赛（Virtual）">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/img/gauss.jpg">
-<meta property="og:image" content="http://yoursite.com/img/legendre.jpg">
-<meta property="og:updated_time" content="2019-08-16T08:26:17.451Z">
+<meta property="og:updated_time" content="2019-11-27T08:39:36.800Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="The History of Bundle Adjustment">
-<meta name="twitter:description" content="转载自知乎versatran01的回答：Bundle Adjustment到底是什么？">
-<meta name="twitter:image" content="http://yoursite.com/img/gauss.jpg">
+<meta name="twitter:title" content="Leetcode Weekly Contest 164 (Virtual)">
+<meta name="twitter:description" content="LeetCode第164场周赛（Virtual）">
   
     <link rel="alternative" href="/atom.xml" title="Master Lu" type="application/atom+xml">
   
@@ -186,56 +183,32 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-the-history-of-bundle-adjustment" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-leetcode-weekly-contest-164-virtual" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      The History of Bundle Adjustment
+      Leetcode Weekly Contest 164 (Virtual)
     </h1>
   
 
         
-        <a href="/2016/08/06/the-history-of-bundle-adjustment/" class="archive-article-date">
-  	<time datetime="2016-08-06T03:46:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-06</time>
+        <a href="/2019/11/25/leetcode-weekly-contest-164-virtual/" class="archive-article-date">
+  	<time datetime="2019-11-25T08:33:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-25</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>　　转载自知乎versatran01的回答：<a href="https://www.zhihu.com/question/29082659/answer/62472382">Bundle Adjustment到底是什么？</a></p>
+        <p>　　LeetCode第164场周赛（Virtual）</p>
 <a id="more"></a>
-<hr>
-<p>　　Adjustment computation最早是由geodesy的人搞出来的。19世纪中期的时候，geodetics的学者就开始研究large scale triangulations了。20世纪中期，随着camera和computer的出现，photogrammetry也开始研究adjustment computation，所以他们给起了个名字叫bundle adjustment，bundle的意思我不知道中文怎么解释好，大家意会吧。(<strong>注: 光束法平差</strong>)20世纪下半段，computer vision community开始兴起reconstruction，也开始研究bundle adjustment，一开始重复造轮子，后来triggs<strong>[1]</strong>的modern synthesis及时出现。21世纪前后，robotics领域开始兴起SLAM，最早用的recursive bayesian filter，后来把问题搞成个graph然后用least squares方法解。</p>
-<hr>
-<p>　　这些东西归根结底就是Gauss大神“发明”的least squares method。当年天文学家Piazzi整天闲得没事看星星，在1801年1月1号早上发现了一个从来没观测到的星星，再接下来的42天里做了19次观测之后这个星星就消失了。当时的天文学家为了确定这玩意到底是什么绞尽了脑汁，这时候Gauss出现了，（最初）只用了3个观察数据，就用least squares算出了这个小行星的轨道，接下来天文学家根据Gauss的预测，也重新发现了这个小行星（虽然有小小的偏差），并将其命名为Ceres，也就是谷神星。Google的ceres-solver就是根据这个来命名的。</p>
-<p>　　关于究竟是谁发明了Least Squares历史上有争论，Legendre是最早publish这个方法的（1805），但是几年后（1809）Gauss跳出来说：“你太naive了，我1795年就开始用least squares了，微不足道”。虽然有人认为Gauss这样的大神没必要说谎来和Legendre这种小叼丝（相对，长了一副反派脸）抢成果，但是至今没有definitive的证据证明确实是Gauss最早发明Least Squares。有人认为least squares的方法对Gauss来说太简单以至于Gauss根本没觉得有必要把它publish出来。</p>
-<p><div align="center"><img src="/img/gauss.jpg" alt="Gauss"></div></p>
-<center>Gauss</center>
-
-<p><div align="center"><img src="/img/legendre.jpg" alt="Legendre"></div></p>
-<center>Legendre</center>
-
-<p>　　我们再来看看19，20世纪连电脑都没有的情况下，geodesy的人们面对的是什么样的问题吧。1927年的North American Datum有25000个观测塔，1983年的NAD有270000个观测塔。再来看看robotics community，最大的real-world SLAM datasets有21,000个pose<strong>[2]</strong>，最大的simulation datasets有200,000个pose<strong>[3]</strong>。看看时间，都是2010年以后的。拿NAD83来说，虽然1983年已经有电脑了，但是优化这样一个network，需要解1,800,000个equations。也就是说如果如果用Least Squares的话，每一步的normal equation J^T <em> J </em> x = J^T y 或者Ax = b，里面这个A的dimension是900,000 x 900,000。用dense method光是存这么一个matrix就要3000 Gb<strong>[4]</strong>。</p>
-<p>　　Bundle adjustment优化的是sum of reprojection error，这是一个geometric distance（为什么要minimize geometric distance可以参考<strong>[5]</strong>），问题可以formulate成一个least squares problem， 如果nosie是gaussian的话，那就是一个maximum likelihood estimator，是这种情况下所能得到的最优解了。</p>
-<p>　　这个reprojection error的公式是非线性的，所以这个least squares problem得用iterative method来求解。最简单的是Newton， 但是要算Hessian，并不是很好算，所以pass。接下来是Gauss-Newton，用J^T J 来近似Hessian，但是convergence速度不给力，也pass。再下来是Levenberg-Marquardt，是一个damping method，改一个lambda来控制到底是偏向steepest descent还是偏向Gauss-Newton，如果算出来更渣的一步就不接受，改个lambda重算，这样一来做了很多无用功，所以也pass。再下来还有Powell’s dogleg，是一个trust region method，在这个小区间内搞一个新的function来近objective function，不论好坏都走一步，但是步幅不会超过所谓的trust region，再根据表现调整这个region，总的来说在large scale问题上比Levenberg-Marquardt的表现要好。再往后问题再大就得用前面所说的算法的sparse版本，再大下去得换conjugate gradient方法，这块我就不怎么了解了。</p>
-<hr>
-<p>　　不论GN,LM,DL，中间都要解一个Ax=b形式的linear system，一般情况下算法的效率就取决于解这个linear system的效率。所以说到底这些nonlinear least squares problem最后也就是解一个linear system。这个linear system你可以直接inverse，也可以用QR，或者Choleskey，或者Schur complement trick来解，爱谁谁。说到这个Choleskey decomposition，当初就是为了Geodetic mapping而发明的。</p>
-<p>　　现实中，并不是所有observation都服从i.i.d. gaussian noise的（或者可以说几乎没有），遇到有outlier的情况，这些方法非常容易挂掉，这时候就得用到robust statistics里面的robust cost (*cost也可以叫做loss, 统计学那边喜欢叫risk) function了，比较常用的有huber, cauchy等等。</p>
-<hr>
-<p>　　总的来说bundle adjustment这个东西搞了这么多年也搞得差不多了，不能说state-of-the-art，但是可以算是gold standard。大点的问题诸如earth-scale reconstruction也被google的人搞过了，用了2 billion张谷歌街景，reconstruct了整个地球，真不知道接下来还能reconstruct什么。</p>
-<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a><strong>Reference</strong></h3><blockquote>
-<ol>
-<li><strong>Bundle Adjustment</strong> - A Modern Synthesis, Bill Triggs, et al.</li>
-<li>H. Johannsson, M. Kaess, M. Fallon, and J. J. Leonard, <strong>“Temporally &gt;scalable visual slam using a reduced pose graph”</strong>, in Proceedings of the IEEE International Conference on Robotics and Automation (ICRA), 2013, pp. 54–61.</li>
-<li>G. Grisetti, R. Kummerle, C. Stachniss, and W. Burgard, <strong>“A tutorial on graph-based SLAM”</strong>, IEEE Transactions on Intelligent Transportation Systems Magazine, vol. 2, pp. 32–43, 2010.</li>
-<li><strong>A Survey of Geodetic Approaches to Mapping and the Relationship to Graph-based SLAM</strong>.</li>
-<li><strong>Multiple View Geometry in Computer Vision</strong>, Richard Hartley, Andrew Zisserman.</li>
-</ol>
-</blockquote>
+<h2 id="1-Minimum-Time-Visiting-All-Points"><a href="#1-Minimum-Time-Visiting-All-Points" class="headerlink" title="1. Minimum Time Visiting All Points"></a>1. <a href="https://leetcode.com/contest/weekly-contest-164/problems/minimum-time-visiting-all-points/">Minimum Time Visiting All Points</a></h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minTimeToVisitAllPoints</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; points)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; points.size(); i++) &#123;</span><br><span class="line">            sum += max(<span class="built_in">abs</span>(points[i][<span class="number">0</span>] - points[i - <span class="number">1</span>][<span class="number">0</span>]), <span class="built_in">abs</span>(points[i][<span class="number">1</span>] - points[i - <span class="number">1</span>][<span class="number">1</span>]));</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="2-Count-Servers-that-Communicate"><a href="#2-Count-Servers-that-Communicate" class="headerlink" title="2. Count Servers that Communicate"></a>2. <a href="https://leetcode.com/contest/weekly-contest-164/problems/count-servers-that-communicate/">Count Servers that Communicate</a></h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:  </span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">countServers</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; grid)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> m = grid.size();</span><br><span class="line">        <span class="keyword">int</span> n = grid[<span class="number">0</span>].size();</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; sum_row(m, <span class="number">0</span>), sum_col(n, <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">                sum_row[i] += grid[i][j];</span><br><span class="line">                sum_col[j] += grid[i][j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (grid[i][j] == <span class="number">1</span> &amp;&amp; (sum_row[i] &gt; <span class="number">1</span> || sum_col[j] &gt; <span class="number">1</span>)) &#123;</span><br><span class="line">                    ans++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="3-Search-Suggestions-System"><a href="#3-Search-Suggestions-System" class="headerlink" title="3. Search Suggestions System"></a>3. <a href="https://leetcode.com/contest/weekly-contest-164/problems/search-suggestions-system/">Search Suggestions System</a></h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&gt; suggestedProducts(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; products, <span class="built_in">string</span> searchWord) &#123;</span><br><span class="line">        <span class="keyword">int</span> len = searchWord.length();</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&gt; results;</span><br><span class="line">        </span><br><span class="line">        sort(products.begin(), products.end());</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; result;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">auto</span> p : products) &#123;</span><br><span class="line">                <span class="keyword">if</span> (result.size() &gt;= <span class="number">3</span>) &#123;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (p.length() &gt; i &amp;&amp; p.substr(<span class="number">0</span>, i + <span class="number">1</span>) == searchWord.substr(<span class="number">0</span>, i + <span class="number">1</span>)) &#123;</span><br><span class="line">                    result.push_back(p);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            results.push_back(result);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> results;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="4-Number-of-Ways-to-Stay-in-the-Same-Place-After-Some-Steps"><a href="#4-Number-of-Ways-to-Stay-in-the-Same-Place-After-Some-Steps" class="headerlink" title="4. Number of Ways to Stay in the Same Place After Some Steps"></a>4. <a href="https://leetcode.com/contest/weekly-contest-164/problems/number-of-ways-to-stay-in-the-same-place-after-some-steps/">Number of Ways to Stay in the Same Place After Some Steps</a></h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> MOD = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; memo;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">numWays</span><span class="params">(<span class="keyword">int</span> steps, <span class="keyword">int</span> arrLen)</span> </span>&#123;</span><br><span class="line">        memo.resize(steps / <span class="number">2</span> + <span class="number">1</span>, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;(steps + <span class="number">1</span>, <span class="number">-1</span>));</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> dfs(arrLen, <span class="number">0</span>, steps);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> arrLen, <span class="keyword">int</span> pos, <span class="keyword">int</span> steps)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (steps == <span class="number">0</span> &amp;&amp; pos == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (pos &lt; <span class="number">0</span> || pos &gt;= arrLen || steps == <span class="number">0</span> || pos &gt; steps) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (memo[pos][steps] != <span class="number">-1</span>) <span class="keyword">return</span> memo[pos][steps];</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> stay = dfs(arrLen, pos, steps - <span class="number">1</span>) % MOD;</span><br><span class="line">        <span class="keyword">int</span> left = dfs(arrLen, pos - <span class="number">1</span>, steps - <span class="number">1</span>) % MOD;</span><br><span class="line">        <span class="keyword">int</span> right = dfs(arrLen, pos + <span class="number">1</span>, steps - <span class="number">1</span>) % MOD;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> memo[pos][steps] = ((stay + left) % MOD + right) % MOD;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -249,11 +222,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">computer vision</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">slam</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">leetcode</a>
         		</li>
       		
 		</ul>
@@ -320,7 +289,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2016/08/06/the-history-of-bundle-adjustment/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/25/leetcode-weekly-contest-164-virtual/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -334,18 +303,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2016/08/09/the-journey-of-learning-cuda-1/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          CUDA——从入门到转行(一)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/07/26/summer-camp/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Summer Camp</div>
+    <a href="/2019/11/17/leetcode-weekly-contest-163/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Leetcode Weekly Contest 163</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -372,7 +332,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Reference"><span class="toc-number">1.</span> <span class="toc-text">Reference</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Minimum-Time-Visiting-All-Points"><span class="toc-number">1.</span> <span class="toc-text">1. Minimum Time Visiting All Points</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Count-Servers-that-Communicate"><span class="toc-number">2.</span> <span class="toc-text">2. Count Servers that Communicate</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Search-Suggestions-System"><span class="toc-number">3.</span> <span class="toc-text">3. Search Suggestions System</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Number-of-Ways-to-Stay-in-the-Same-Place-After-Some-Steps"><span class="toc-number">4.</span> <span class="toc-text">4. Number of Ways to Stay in the Same Place After Some Steps</span></a></li></ol>
                     </div>
                 </span>
             </div>
