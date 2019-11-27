@@ -1,4 +1,4 @@
-title: leetcode weekly contest 163
+title: Leetcode Weekly Contest 163
 date: 2019-11-17 19:29:54
 categories: Algorithm
 
