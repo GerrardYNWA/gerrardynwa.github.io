@@ -7,7 +7,7 @@ tags: [leetcode]
 
 　　LeetCode第13场双周赛
 
-<!-- more-->
+<!-- more -->
 
 ## 1. [Encode Number](https://leetcode.com/contest/biweekly-contest-13/problems/encode-number/)
 
