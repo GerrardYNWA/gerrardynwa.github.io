@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>视觉SLAM十四讲——相机与图像 | Master Lu</title>
+  <title>Leetcode Biweekly Contest 14 | Master Lu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="重新整理学习《视觉SLAM十四讲》：相机与图像">
-<meta name="keywords" content="computer vision,slam">
+  <meta name="description" content="LeetCode第14场双周赛">
+<meta name="keywords" content="leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="视觉SLAM十四讲——相机与图像">
-<meta property="og:url" content="http://yoursite.com/2017/09/11/visual-slam-14-lectures-camera-and-image/index.html">
+<meta property="og:title" content="Leetcode Biweekly Contest 14">
+<meta property="og:url" content="http://yoursite.com/2019/12/02/leetcode-biweekly-contest-14/index.html">
 <meta property="og:site_name" content="Master Lu">
-<meta property="og:description" content="重新整理学习《视觉SLAM十四讲》：相机与图像">
+<meta property="og:description" content="LeetCode第14场双周赛">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-22T12:02:07.799Z">
+<meta property="og:updated_time" content="2019-12-02T15:15:58.321Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="视觉SLAM十四讲——相机与图像">
-<meta name="twitter:description" content="重新整理学习《视觉SLAM十四讲》：相机与图像">
+<meta name="twitter:title" content="Leetcode Biweekly Contest 14">
+<meta name="twitter:description" content="LeetCode第14场双周赛">
   
     <link rel="alternative" href="/atom.xml" title="Master Lu" type="application/atom+xml">
   
@@ -183,58 +183,33 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-visual-slam-14-lectures-camera-and-image" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-leetcode-biweekly-contest-14" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      视觉SLAM十四讲——相机与图像
+      Leetcode Biweekly Contest 14
     </h1>
   
 
         
-        <a href="/2017/09/11/visual-slam-14-lectures-camera-and-image/" class="archive-article-date">
-  	<time datetime="2017-09-11T14:27:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-11</time>
+        <a href="/2019/12/02/leetcode-biweekly-contest-14/" class="archive-article-date">
+  	<time datetime="2019-12-02T15:07:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-02</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>　　重新整理学习《视觉SLAM十四讲》：相机与图像<br><a id="more"></a></p>
-<h2 id="1-相机模型"><a href="#1-相机模型" class="headerlink" title="1. 相机模型"></a>1. 相机模型</h2><ul>
-<li>小孔成像模型</li>
-<li>内参（矩阵形式）</li>
-<li>同一直线上的投影点仍是同一个</li>
-<li>相机坐标系与世界坐标系还差一个变换（外参矩阵）</li>
-<li>投影顺序：世界—相机—归一化平面—像素</li>
-<li>畸变（针孔前的镜头会引入畸变）</li>
-<li>主要的畸变类型<ul>
-<li>径向畸变（透镜形状）（桶形失真/枕形失真）</li>
-<li>切向畸变（透镜和成像平面不严格平行）</li>
-</ul>
-</li>
-<li>单目相机的成像过程</li>
-<li>双目模型<ul>
-<li>左右相机中心距离称为基线</li>
-<li>左右像素的几何关系</li>
-</ul>
-</li>
-<li>RGB-D相机模型<ul>
-<li>结构光</li>
-<li>TOF</li>
-</ul>
-</li>
-</ul>
-<h2 id="2-图像"><a href="#2-图像" class="headerlink" title="2. 图像"></a>2. 图像</h2><ul>
-<li>矩阵（二维数组）</li>
-<li>灰度图</li>
-<li>深度图</li>
-<li>彩色图</li>
-</ul>
-<h2 id="3-面试题"><a href="#3-面试题" class="headerlink" title="3. 面试题"></a>3. 面试题</h2><h3 id="1-解释归一化像平面和像平面"><a href="#1-解释归一化像平面和像平面" class="headerlink" title="1. 解释归一化像平面和像平面"></a>1. 解释归一化像平面和像平面</h3><h3 id="2-相机模型成像过程，及逆过程，逆变换，畸变模型中理想像素点和畸变点的对应数学表达式，并用它解算矫正原理"><a href="#2-相机模型成像过程，及逆过程，逆变换，畸变模型中理想像素点和畸变点的对应数学表达式，并用它解算矫正原理" class="headerlink" title="2. 相机模型成像过程，及逆过程，逆变换，畸变模型中理想像素点和畸变点的对应数学表达式，并用它解算矫正原理"></a>2. 相机模型成像过程，及逆过程，逆变换，畸变模型中理想像素点和畸变点的对应数学表达式，并用它解算矫正原理</h3><h3 id="3-解释图像质量（层次，对比度，亮度，尺度，尺寸，饱和度，高斯卷积核）"><a href="#3-解释图像质量（层次，对比度，亮度，尺度，尺寸，饱和度，高斯卷积核）" class="headerlink" title="3. 解释图像质量（层次，对比度，亮度，尺度，尺寸，饱和度，高斯卷积核）"></a>3. 解释图像质量（层次，对比度，亮度，尺度，尺寸，饱和度，高斯卷积核）</h3><h3 id="4-根据像素之间的关系解释像素之间的连通，连通的两个必要条件。m连通？怎么提取连通像素组成的区域？"><a href="#4-根据像素之间的关系解释像素之间的连通，连通的两个必要条件。m连通？怎么提取连通像素组成的区域？" class="headerlink" title="4. 根据像素之间的关系解释像素之间的连通，连通的两个必要条件。m连通？怎么提取连通像素组成的区域？"></a>4. 根据像素之间的关系解释像素之间的连通，连通的两个必要条件。m连通？怎么提取连通像素组成的区域？</h3><h3 id="5-图像处理的目的，图像传输-的方式，什么是数字图像和模拟图像"><a href="#5-图像处理的目的，图像传输-的方式，什么是数字图像和模拟图像" class="headerlink" title="5. 图像处理的目的，图像传输 的方式，什么是数字图像和模拟图像"></a>5. 图像处理的目的，图像传输 的方式，什么是数字图像和模拟图像</h3><h3 id="6-像素之间的距离：欧氏距离，城市距离（D4距离），棋盘距离（D8距离）怎么计算区域之间的距离？"><a href="#6-像素之间的距离：欧氏距离，城市距离（D4距离），棋盘距离（D8距离）怎么计算区域之间的距离？" class="headerlink" title="6. 像素之间的距离：欧氏距离，城市距离（D4距离），棋盘距离（D8距离）怎么计算区域之间的距离？"></a>6. 像素之间的距离：欧氏距离，城市距离（D4距离），棋盘距离（D8距离）怎么计算区域之间的距离？</h3><h3 id="7-解释图像非凸性的概念"><a href="#7-解释图像非凸性的概念" class="headerlink" title="7. 解释图像非凸性的概念"></a>7. 解释图像非凸性的概念</h3><h3 id="8-解释图像的采样和量化（最近邻采样和插值采样）"><a href="#8-解释图像的采样和量化（最近邻采样和插值采样）" class="headerlink" title="8. 解释图像的采样和量化（最近邻采样和插值采样）"></a>8. 解释图像的采样和量化（最近邻采样和插值采样）</h3><h3 id="9-像素之间的关系（4近邻，D近邻，8近邻）"><a href="#9-像素之间的关系（4近邻，D近邻，8近邻）" class="headerlink" title="9. 像素之间的关系（4近邻，D近邻，8近邻）"></a>9. 像素之间的关系（4近邻，D近邻，8近邻）</h3><h3 id="10-相机标定原理及实现过程，棋盘格有哪些好处"><a href="#10-相机标定原理及实现过程，棋盘格有哪些好处" class="headerlink" title="10. 相机标定原理及实现过程，棋盘格有哪些好处"></a>10. 相机标定原理及实现过程，棋盘格有哪些好处</h3>
+        <p>　　LeetCode第14场双周赛</p>
+<a id="more"></a>
+<h2 id="1-Hexspeak"><a href="#1-Hexspeak" class="headerlink" title="1. Hexspeak"></a>1. <a href="https://leetcode.com/contest/biweekly-contest-14/problems/hexspeak/">Hexspeak</a></h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">toHexspeak</span><span class="params">(<span class="built_in">string</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">string</span> result = <span class="string">""</span>;</span><br><span class="line">        <span class="keyword">auto</span> n = stol(num);</span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">0</span>) <span class="keyword">return</span> <span class="string">"O"</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> (n &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> m = n % <span class="number">16</span>;</span><br><span class="line">            <span class="keyword">if</span> (m &gt;= <span class="number">2</span> &amp;&amp; m &lt;= <span class="number">9</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="string">"ERROR"</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (m == <span class="number">0</span>) &#123;</span><br><span class="line">                    result += <span class="string">'O'</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (m == <span class="number">1</span>) &#123;</span><br><span class="line">                    result += <span class="string">'I'</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    result += (<span class="string">'A'</span> + (m - <span class="number">10</span>));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            n /= <span class="number">16</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        reverse(result.begin(), result.end());</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="2-Remove-Interval"><a href="#2-Remove-Interval" class="headerlink" title="2. Remove Interval"></a>2. <a href="https://leetcode.com/contest/biweekly-contest-14/problems/remove-interval/">Remove Interval</a></h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; removeInterval(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; intervals, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; toBeRemoved) &#123;</span><br><span class="line">        <span class="keyword">int</span> n = intervals.size();</span><br><span class="line">        <span class="keyword">if</span> (toBeRemoved[<span class="number">0</span>] &gt;= intervals[n - <span class="number">1</span>][<span class="number">1</span>] || toBeRemoved[<span class="number">1</span>] &lt; intervals[<span class="number">0</span>][<span class="number">0</span>]) <span class="keyword">return</span> intervals;</span><br><span class="line">        <span class="keyword">if</span> (toBeRemoved[<span class="number">0</span>] &lt;= intervals[<span class="number">0</span>][<span class="number">0</span>] &amp;&amp; toBeRemoved[<span class="number">1</span>] &gt;= intervals[n - <span class="number">1</span>][<span class="number">1</span>]) <span class="keyword">return</span> &#123;&#125;;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; nums;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> interval : intervals) &#123;</span><br><span class="line">            nums.push_back(interval[<span class="number">0</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; result;</span><br><span class="line">        <span class="keyword">int</span> l = lower_bound(nums.begin(), nums.end(), toBeRemoved[<span class="number">0</span>]) - nums.begin();</span><br><span class="line">        <span class="keyword">int</span> r = lower_bound(nums.begin(), nums.end(), toBeRemoved[<span class="number">1</span>]) - nums.begin();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= l - <span class="number">2</span>; i++) &#123;</span><br><span class="line">            result.push_back(intervals[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> ((l - <span class="number">1</span> &gt;= <span class="number">0</span>) &amp;&amp; (l - <span class="number">1</span> &lt; n)) result.push_back(&#123;intervals[l - <span class="number">1</span>][<span class="number">0</span>], min(toBeRemoved[<span class="number">0</span>], intervals[l - <span class="number">1</span>][<span class="number">1</span>])&#125;);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> ((r - <span class="number">1</span> &gt;= <span class="number">0</span>) &amp;&amp; (r - <span class="number">1</span> &lt; n) &amp;&amp; toBeRemoved[<span class="number">1</span>] &lt; intervals[r - <span class="number">1</span>][<span class="number">1</span>]) &#123;</span><br><span class="line">            result.push_back(&#123;toBeRemoved[<span class="number">1</span>], intervals[r - <span class="number">1</span>][<span class="number">1</span>]&#125;);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = r; i &lt; n; i++) &#123;</span><br><span class="line">            result.push_back(intervals[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="3-Delete-Tree-Nodes"><a href="#3-Delete-Tree-Nodes" class="headerlink" title="3. Delete Tree Nodes"></a>3. <a href="https://leetcode.com/contest/biweekly-contest-14/problems/delete-tree-nodes/">Delete Tree Nodes</a></h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">deleteTreeNodes</span><span class="params">(<span class="keyword">int</span> nodes, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; parent, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; value)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = nodes - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">            <span class="keyword">int</span> j = i;</span><br><span class="line">            <span class="keyword">while</span> (parent[j] != <span class="number">-1</span>) &#123;</span><br><span class="line">                value[parent[j]] += value[j];</span><br><span class="line">                j = parent[j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; links(nodes);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nodes; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (parent[i] != <span class="number">-1</span>) &#123;</span><br><span class="line">                links[parent[i]].push_back(i);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (value[<span class="number">0</span>] == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nodes; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (value[i] == <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> val : links[i]) &#123;</span><br><span class="line">                    value[val] = <span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> result = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> v : value) &#123;</span><br><span class="line">            <span class="keyword">if</span> (v != <span class="number">0</span>) result++;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="4-Number-of-Ships-in-a-Rectangle"><a href="#4-Number-of-Ships-in-a-Rectangle" class="headerlink" title="4. Number of Ships in a Rectangle"></a>4. <a href="https://leetcode.com/contest/biweekly-contest-14/problems/number-of-ships-in-a-rectangle/">Number of Ships in a Rectangle</a></h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * // This is Sea's API interface.</span></span><br><span class="line"><span class="comment"> * // You should not implement it, or speculate about its implementation</span></span><br><span class="line"><span class="comment"> * class Sea &#123;</span></span><br><span class="line"><span class="comment"> *   public:</span></span><br><span class="line"><span class="comment"> *     bool hasShips(vector&lt;int&gt; topRight, vector&lt;int&gt; bottomLeft);</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">helper</span><span class="params">(Sea&amp; sea, <span class="keyword">int</span> x1, <span class="keyword">int</span> y1, <span class="keyword">int</span> x2, <span class="keyword">int</span> y2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (x1 &lt; x2 || y1 &lt; y2) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (!sea.hasShips(&#123;x1, y1&#125;, &#123;x2, y2&#125;)) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (x1 == x2 &amp;&amp; y1 == y2 &amp;&amp; sea.hasShips(&#123;x1, y1&#125;, &#123;x2, y2&#125;)) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> a = (x1 - x2) / <span class="number">2</span>, b = (y1 - y2) / <span class="number">2</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> helper(sea, x2 + a, y2 + b, x2, y2) + </span><br><span class="line">               helper(sea, x1, y2 + b, x2 + a + <span class="number">1</span>, y2) + </span><br><span class="line">               helper(sea, x2 + a, y1, x2, y2 + b + <span class="number">1</span>) + </span><br><span class="line">               helper(sea, x1, y1, x2 + a + <span class="number">1</span>, y2 + b + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">countShips</span><span class="params">(Sea sea, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; topRight, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; bottomLeft)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> helper(sea, topRight[<span class="number">0</span>], topRight[<span class="number">1</span>], bottomLeft[<span class="number">0</span>], bottomLeft[<span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
       
 
       
@@ -247,11 +222,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">computer vision</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">slam</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">leetcode</a>
         		</li>
       		
 		</ul>
@@ -318,7 +289,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/09/11/visual-slam-14-lectures-camera-and-image/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/02/leetcode-biweekly-contest-14/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -332,18 +303,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/09/20/visual-slam-14-lectures-nonlinear-optimization/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          视觉SLAM十四讲——非线性优化
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/08/15/visual-slam-14-lectures-lie-group-and-lie-algebra/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">视觉SLAM十四讲——李群和李代数</div>
+    <a href="/2019/11/25/leetcode-weekly-contest-164-virtual/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Leetcode Weekly Contest 164 (Virtual)</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -370,7 +332,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-相机模型"><span class="toc-number">1.</span> <span class="toc-text">1. 相机模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-图像"><span class="toc-number">2.</span> <span class="toc-text">2. 图像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-面试题"><span class="toc-number">3.</span> <span class="toc-text">3. 面试题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-解释归一化像平面和像平面"><span class="toc-number">3.1.</span> <span class="toc-text">1. 解释归一化像平面和像平面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-相机模型成像过程，及逆过程，逆变换，畸变模型中理想像素点和畸变点的对应数学表达式，并用它解算矫正原理"><span class="toc-number">3.2.</span> <span class="toc-text">2. 相机模型成像过程，及逆过程，逆变换，畸变模型中理想像素点和畸变点的对应数学表达式，并用它解算矫正原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-解释图像质量（层次，对比度，亮度，尺度，尺寸，饱和度，高斯卷积核）"><span class="toc-number">3.3.</span> <span class="toc-text">3. 解释图像质量（层次，对比度，亮度，尺度，尺寸，饱和度，高斯卷积核）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-根据像素之间的关系解释像素之间的连通，连通的两个必要条件。m连通？怎么提取连通像素组成的区域？"><span class="toc-number">3.4.</span> <span class="toc-text">4. 根据像素之间的关系解释像素之间的连通，连通的两个必要条件。m连通？怎么提取连通像素组成的区域？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-图像处理的目的，图像传输-的方式，什么是数字图像和模拟图像"><span class="toc-number">3.5.</span> <span class="toc-text">5. 图像处理的目的，图像传输 的方式，什么是数字图像和模拟图像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-像素之间的距离：欧氏距离，城市距离（D4距离），棋盘距离（D8距离）怎么计算区域之间的距离？"><span class="toc-number">3.6.</span> <span class="toc-text">6. 像素之间的距离：欧氏距离，城市距离（D4距离），棋盘距离（D8距离）怎么计算区域之间的距离？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-解释图像非凸性的概念"><span class="toc-number">3.7.</span> <span class="toc-text">7. 解释图像非凸性的概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-解释图像的采样和量化（最近邻采样和插值采样）"><span class="toc-number">3.8.</span> <span class="toc-text">8. 解释图像的采样和量化（最近邻采样和插值采样）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-像素之间的关系（4近邻，D近邻，8近邻）"><span class="toc-number">3.9.</span> <span class="toc-text">9. 像素之间的关系（4近邻，D近邻，8近邻）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-相机标定原理及实现过程，棋盘格有哪些好处"><span class="toc-number">3.10.</span> <span class="toc-text">10. 相机标定原理及实现过程，棋盘格有哪些好处</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Hexspeak"><span class="toc-number">1.</span> <span class="toc-text">1. Hexspeak</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Remove-Interval"><span class="toc-number">2.</span> <span class="toc-text">2. Remove Interval</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Delete-Tree-Nodes"><span class="toc-number">3.</span> <span class="toc-text">3. Delete Tree Nodes</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Number-of-Ships-in-a-Rectangle"><span class="toc-number">4.</span> <span class="toc-text">4. Number of Ships in a Rectangle</span></a></li></ol>
                     </div>
                 </span>
             </div>
