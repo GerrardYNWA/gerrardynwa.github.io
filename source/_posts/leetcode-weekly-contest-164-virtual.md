@@ -1,4 +1,4 @@
-title: Leetcode Weekly Contest 164 (Virtual)
+title: LeetCode Weekly Contest 164 (Virtual)
 date: 2019-11-25 16:33:24
 categories: Algorithm 
 
