@@ -1,5 +1,10 @@
-title: leetcode weekly contest 168 virtual
-date: 2020-01-15 15:06:28
-categories:
-tags:
+title: LeetCode Weekly Contest 168 (Virtual)
+date: 2019-12-25 15:06:28
+categories: Algorithm
+
+tags: [leetcode]
 ---
+
+　　LeetCode第168场周赛（Virtual）
+
+<!-- more -->
