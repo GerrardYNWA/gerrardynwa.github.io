@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>视觉SLAM十四讲——三维空间刚体运动 | Master Lu</title>
+  <title>LeetCode Weekly Contest 171 | Master Lu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="重新整理学习《视觉SLAM十四讲》：三维空间刚体运动">
-<meta name="keywords" content="computer vision,slam">
+  <meta name="description" content="LeetCode第171场周赛">
+<meta name="keywords" content="leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="视觉SLAM十四讲——三维空间刚体运动">
-<meta property="og:url" content="http://yoursite.com/2017/08/11/visual-slam-14-lectures-3d-rigid-motion/index.html">
+<meta property="og:title" content="LeetCode Weekly Contest 171">
+<meta property="og:url" content="http://yoursite.com/2020/01/14/leetcode-weekly-contest-171/index.html">
 <meta property="og:site_name" content="Master Lu">
-<meta property="og:description" content="重新整理学习《视觉SLAM十四讲》：三维空间刚体运动">
+<meta property="og:description" content="LeetCode第171场周赛">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-18T13:48:29.988Z">
+<meta property="og:updated_time" content="2020-01-19T08:45:17.980Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="视觉SLAM十四讲——三维空间刚体运动">
-<meta name="twitter:description" content="重新整理学习《视觉SLAM十四讲》：三维空间刚体运动">
+<meta name="twitter:title" content="LeetCode Weekly Contest 171">
+<meta name="twitter:description" content="LeetCode第171场周赛">
   
     <link rel="alternative" href="/atom.xml" title="Master Lu" type="application/atom+xml">
   
@@ -183,63 +183,28 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-visual-slam-14-lectures-3d-rigid-motion" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-leetcode-weekly-contest-171" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      视觉SLAM十四讲——三维空间刚体运动
+      LeetCode Weekly Contest 171
     </h1>
   
 
         
-        <a href="/2017/08/11/visual-slam-14-lectures-3d-rigid-motion/" class="archive-article-date">
-  	<time datetime="2017-08-11T14:27:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-11</time>
+        <a href="/2020/01/14/leetcode-weekly-contest-171/" class="archive-article-date">
+  	<time datetime="2020-01-14T07:08:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>　　重新整理学习《视觉SLAM十四讲》：三维空间刚体运动<br><a id="more"></a></p>
-<h2 id="1-向量和坐标系（参考系）"><a href="#1-向量和坐标系（参考系）" class="headerlink" title="1. 向量和坐标系（参考系）"></a>1. 向量和坐标系（参考系）</h2><h3 id="1-1-向量"><a href="#1-1-向量" class="headerlink" title="1.1 向量"></a>1.1 向量</h3><p>　　向量是线性空间中的一个元素，可以把它想象成从原点指向某处的一个箭头。只有当我们指定三维空间的坐标系时，才可以讨论该向量在此坐标系下的坐标。如果我们确定了一个坐标系，也就是一个线性空间的基 $ (\mathbf{e}_1, \mathbf{e}_2, \mathbf{e}_3)$，那么向量在这组基下的坐标为：</p>
-<script type="math/tex; mode=display">
-\mathbf{a} = [\mathbf{e}_1, \mathbf{e}_2, \mathbf{e}_3][a_1, a_2, a_3]^T = a_1 \mathbf{e}_1 + a_2 \mathbf{e}_2 + a_3 \mathbf{e}_3</script><h4 id="点积（内积）"><a href="#点积（内积）" class="headerlink" title="点积（内积）"></a>点积（内积）</h4><p>内积是一个标量，对应位一一相乘之后求和可得，可以描述向量间的投影关系。</p>
-<h4 id="叉积（外积）"><a href="#叉积（外积）" class="headerlink" title="叉积（外积）"></a>叉积（外积）</h4><p>外积只对三维向量存在定义，外积的方向垂直于这两个向量，大小为这两个向量张成的面积。</p>
-<h3 id="1-2-坐标系"><a href="#1-2-坐标系" class="headerlink" title="1.2 坐标系"></a>1.2 坐标系</h3><ul>
-<li>左手坐标系</li>
-<li>右手坐标系</li>
-</ul>
-<h2 id="2-旋转表示方式"><a href="#2-旋转表示方式" class="headerlink" title="2. 旋转表示方式"></a>2. 旋转表示方式</h2><h3 id="2-1-旋转矩阵与欧氏变换"><a href="#2-1-旋转矩阵与欧氏变换" class="headerlink" title="2.1 旋转矩阵与欧氏变换"></a>2.1 旋转矩阵与欧氏变换</h3><ul>
-<li>欧拉定理（Euler’s Rotation Theorem）:刚体在三维空间里的一般运动，可分解为刚体上方某一点的平移，以及绕经过此点的旋转轴的转动</li>
-<li>齐次坐标与变换矩阵</li>
-<li>旋转加平移在表达复合情况下有不便之处</li>
-<li>齐次坐标乘任意非零常数时仍表达同一坐标</li>
-<li>变换矩阵逆形式</li>
-</ul>
-<h3 id="2-2-旋转向量-轴角"><a href="#2-2-旋转向量-轴角" class="headerlink" title="2.2 旋转向量(轴角)"></a>2.2 旋转向量(轴角)</h3><ul>
-<li>旋转矩阵R有九个元素，但仅有三个自由度</li>
-<li>旋转向量与矩阵的不同（仅有三个量、无约束、更直观）</li>
-<li>罗德里格斯公式（旋转向量-&gt;旋转矩）</li>
-<li>旋转矩阵转旋转向量</li>
-</ul>
-<h3 id="2-3-欧拉角"><a href="#2-3-欧拉角" class="headerlink" title="2.3 欧拉角"></a>2.3 欧拉角</h3><ul>
-<li>将旋转分解为三个方向上的转动</li>
-<li>yaw-pitch-roll，东北天</li>
-<li>万向锁（欧拉角的奇异性问题，欧拉角不适合插值或迭代）</li>
-<li>仅用三个实数表达旋转时，不可避免地存在奇异性问题</li>
-<li>SLAM中很少用欧拉角表达姿态</li>
-</ul>
-<h3 id="2-4-四元数"><a href="#2-4-四元数" class="headerlink" title="2.4 四元数"></a>2.4 四元数</h3><ul>
-<li>2D情况，可用单位复数表达旋转</li>
-<li>3D情况，四元数可作为复数的扩充</li>
-<li>四元数到角轴（角轴到四元数）</li>
-<li>如何用四元数旋转一个空间点</li>
-<li>四元数相比角轴、欧拉角的优势（紧凑、无奇异性）</li>
-</ul>
-<h2 id="3-面试题"><a href="#3-面试题" class="headerlink" title="3. 面试题"></a>3. 面试题</h2><h3 id="1-齐次坐标和非齐次坐标"><a href="#1-齐次坐标和非齐次坐标" class="headerlink" title="1. 齐次坐标和非齐次坐标"></a>1. 齐次坐标和非齐次坐标</h3><h3 id="2-点的齐次坐标和向量齐次坐标的区别及应用"><a href="#2-点的齐次坐标和向量齐次坐标的区别及应用" class="headerlink" title="2. 点的齐次坐标和向量齐次坐标的区别及应用"></a>2. 点的齐次坐标和向量齐次坐标的区别及应用</h3><h3 id="3-说一下3D空间的位姿如何去表达"><a href="#3-说一下3D空间的位姿如何去表达" class="headerlink" title="3. 说一下3D空间的位姿如何去表达?"></a>3. 说一下3D空间的位姿如何去表达?</h3><h3 id="4-位姿不同表示间的相互转换、旋转矩阵特征值和特征向量物理意义"><a href="#4-位姿不同表示间的相互转换、旋转矩阵特征值和特征向量物理意义" class="headerlink" title="4. 位姿不同表示间的相互转换、旋转矩阵特征值和特征向量物理意义"></a>4. 位姿不同表示间的相互转换、旋转矩阵特征值和特征向量物理意义</h3><h3 id="5-相似变换、仿射变换、射影变换的区别及自由度"><a href="#5-相似变换、仿射变换、射影变换的区别及自由度" class="headerlink" title="5. 相似变换、仿射变换、射影变换的区别及自由度"></a>5. 相似变换、仿射变换、射影变换的区别及自由度</h3>
+        <p>　　LeetCode第171场周赛</p>
+<a id="more"></a>
       
 
       
@@ -252,11 +217,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">computer vision</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">slam</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">leetcode</a>
         		</li>
       		
 		</ul>
@@ -323,7 +284,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/08/11/visual-slam-14-lectures-3d-rigid-motion/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/01/14/leetcode-weekly-contest-171/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -337,18 +298,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/08/15/visual-slam-14-lectures-lie-group-and-lie-algebra/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/01/19/leetcode-weekly-contest-172/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          视觉SLAM十四讲——李群和李代数
+          LeetCode Weekly Contest 172
         
       </div>
     </a>
   
   
-    <a href="/2017/05/08/basic-concepts-of-slam/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">SLAM的基本概念</div>
+    <a href="/2020/01/08/leetcode-weekly-contest-170/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">LeetCode Weekly Contest 170</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -375,7 +336,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-向量和坐标系（参考系）"><span class="toc-number">1.</span> <span class="toc-text">1. 向量和坐标系（参考系）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-向量"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 向量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#点积（内积）"><span class="toc-number">1.1.1.</span> <span class="toc-text">点积（内积）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#叉积（外积）"><span class="toc-number">1.1.2.</span> <span class="toc-text">叉积（外积）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-坐标系"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 坐标系</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-旋转表示方式"><span class="toc-number">2.</span> <span class="toc-text">2. 旋转表示方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-旋转矩阵与欧氏变换"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 旋转矩阵与欧氏变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-旋转向量-轴角"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 旋转向量(轴角)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-欧拉角"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 欧拉角</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-四元数"><span class="toc-number">2.4.</span> <span class="toc-text">2.4 四元数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-面试题"><span class="toc-number">3.</span> <span class="toc-text">3. 面试题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-齐次坐标和非齐次坐标"><span class="toc-number">3.1.</span> <span class="toc-text">1. 齐次坐标和非齐次坐标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-点的齐次坐标和向量齐次坐标的区别及应用"><span class="toc-number">3.2.</span> <span class="toc-text">2. 点的齐次坐标和向量齐次坐标的区别及应用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-说一下3D空间的位姿如何去表达"><span class="toc-number">3.3.</span> <span class="toc-text">3. 说一下3D空间的位姿如何去表达?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-位姿不同表示间的相互转换、旋转矩阵特征值和特征向量物理意义"><span class="toc-number">3.4.</span> <span class="toc-text">4. 位姿不同表示间的相互转换、旋转矩阵特征值和特征向量物理意义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-相似变换、仿射变换、射影变换的区别及自由度"><span class="toc-number">3.5.</span> <span class="toc-text">5. 相似变换、仿射变换、射影变换的区别及自由度</span></a></li></ol></li></ol>
+                    目录，不存在的…
                     </div>
                 </span>
             </div>
