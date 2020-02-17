@@ -10,26 +10,93 @@ tags: [language]
 <!-- more -->
 
 ### DD-1
-### DD-1
-### DD-1
-### DD-1
-### DD-1
-### DD-1
-### DD-1
-### DD-1
-### DD-1
-### DD-1
-### DD-1
-### DD-1
-### DD-1
-### DD-1
-### DD-1
-### DD-1
-### DD-1
-### DD-1
-### DD-1
-### DD-1
 
+> Mother Teresa, who received a Nobel Peace Prize for her work on behalf of the poor, dies in Calcutta, India—she was 87 years old.
+
+### DD-2
+
+> Q: Jerry, what time do you have? 
+>
+> A: I have five o’clock.
+
+### DD-3
+
+> There are three things I have learned never to discuss with people: religion, politics and the Great Pumpkin!
+
+### DD-4
+
+> Don’t ever let somebody tell you—you can’t do something.
+>
+> - Stong: s / n / l
+> - Weak: d / t / th
+
+### DD-5
+
+> I have come here to chew bubblegum and kick ass… and I’m all out of bubblegum!
+
+### DD-6
+
+> The secret of life is just to live every moment!
+
+### DD-7
+
+> Another rogue trader has cost a bank billions.
+
+### DD-8
+
+> German, Rolf Buchholz is the man with the most piercings; he’s got 453.
+
+### DD-9
+
+> A satellite that was carried to space aboard the shuttle Discovery twenty years ago is about to fall to earth, but nobody knows where the debris will hit.
+
+### DD-10
+
+> It's a lofty, probably impossible goal!
+
+### DD-11
+
+> New York swept the Tampa Bay Rays by identical 4-2 scores in a day-night doubleheader Wednesday.
+
+### DD-12
+
+> Jim Henson, creater of the Muppets—from Kermit the Frog to Sesame Street—is born in Greenville, MS.
+
+### DD-13
+
+> Asian tiger mosquitoes are native to the tropics of Southeast Asia, but in the past few years they’ve spread all across the southeastern United States.
+
+### DD-14
+
+> Cats reputedly have nine lives, and he clearly wanted to spend at least one of them (uh) here in New York City.
+
+### DD-15
+
+> The frantic pacing—scene changes every 11 seconds on average—often leads kids zoned out and spun up; unable to concentrate.
+
+### DD-16
+
+> Battered, soaked and flooded; the Philippines is being hit by its second typhoon in a week.
+
+### DD-17
+
+> A few years ago they were thought to be useless—past their prime—not now.
+
+### DD-18
+
+> If you are breathing, it is not too late. Get up and get going!
+
+### DD-19
+
+> A 67-year-old grandpa has been found alive after being stuck for 6 days at the bottom of a ravine.
+
+### DD-20
+
+> Saturday, an ultralight plane crashed into a Ferris wheel at rural festival in Australia, yet somehow no one on the amusement ride nor the plane was hurt.
+
+### DD-21
+
+> Heidi won the world over with her forever cute but slightly confused look.
 
 ### DD-22
 
