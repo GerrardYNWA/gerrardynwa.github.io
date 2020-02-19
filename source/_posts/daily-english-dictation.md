@@ -137,3 +137,23 @@ tags: [language]
 ### DD-31
 
 > Mayor Sam Adams ordered that the camp be shut down Saturday citing unheadlthy conditions and the attraction of drug dealers and thieves.
+
+### DD-32
+
+> A preliminary government report predicts it’ll take 30 years or more to safely decommission the facility and it could be decades before nearby residents who were forced to flee can return to the area.
+
+### DD-33
+
+> I was lifting, you know, chairs out of the way, broken glass uh, other sanitary items I don’t want to get into, but uh, it was uh, horrific to say the least.
+
+### DD-34
+
+> TOYOTA is recalling more than half (of) a million vehicles for problems that could make difficult to steer.
+
+### DD-35
+
+> It’s great. It’s um, been a little bit nerve-wracking, um, and it’s been a long process to get here.
+
+### DD-36
+
+> When the family left Vietnam by boat, bound for Thailand, but the boat was intercepted by pirates… after years of trying, the father located his son in Thailand.
