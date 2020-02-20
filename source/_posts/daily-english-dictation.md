@@ -157,3 +157,7 @@ tags: [language]
 ### DD-36
 
 > When the family left Vietnam by boat, bound for Thailand, but the boat was intercepted by pirates… after years of trying, the father located his son in Thailand.
+
+### DD-37
+
+> A gooey mess snarls traffic along the busy Pennsylvania Turnpike. A leaking valve on a tanker spread driveway sealant across a 40-mile stretch of the eastbound side.
