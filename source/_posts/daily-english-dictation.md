@@ -161,3 +161,11 @@ tags: [language]
 ### DD-37
 
 > A gooey mess snarls traffic along the busy Pennsylvania Turnpike. A leaking valve on a tanker spread driveway sealant across a 40-mile stretch of the eastbound side.
+
+### DD-38
+
+> The music is being played at a church in Germany, and, well, it really lives up to its name. Since it started, there have been just 11 chord changes and the next one isn’t scheduled until July 2012.
+
+### DD-39
+
+> Dozens of white rabbits were apparently dumped along the side of the road Sunday night. More than 60 bunnies were scattered on the shoulder.
