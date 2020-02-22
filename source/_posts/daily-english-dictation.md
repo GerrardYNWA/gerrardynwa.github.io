@@ -152,7 +152,7 @@ tags: [language]
 
 ### DD-35
 
-> It’s great. It’s um, been a little bit nerve-wracking, um, and it’s been a long process to get here.
+> It's great. It's um, been a little bit nerve-wracking, um, and it's been a long process to get here.
 
 ### DD-36
 
@@ -164,8 +164,12 @@ tags: [language]
 
 ### DD-38
 
-> The music is being played at a church in Germany, and, well, it really lives up to its name. Since it started, there have been just 11 chord changes and the next one isn’t scheduled until July 2012.
+> The music is being played at a church in Germany, and, well, it really lives up to its name. Since it started, there have been just 11 chord changes and the next one isn't scheduled until July 2012.
 
 ### DD-39
 
 > Dozens of white rabbits were apparently dumped along the side of the road Sunday night. More than 60 bunnies were scattered on the shoulder.
+
+### DD-40
+
+> There’s a wonderful line I came across: If you’ve always done…or, If you always do what you’ve always done, you’ll always get what you’ve always got. It’s a brilliant line.
