@@ -173,3 +173,7 @@ tags: [language]
 ### DD-40
 
 > There’s a wonderful line I came across: If you’ve always done…or, If you always do what you’ve always done, you’ll always get what you’ve always got. It’s a brilliant line.
+
+### DD-41
+
+> Her story has inspired others from Montana to Indiana to pay off the bills of complete strangers in these days before Christmas. Holiday shoppers who’ve heard about the layaway Santas say the sweeping acts of the kindness have restored their faith in people.
