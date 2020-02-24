@@ -177,3 +177,13 @@ tags: [language]
 ### DD-41
 
 > Her story has inspired others from Montana to Indiana to pay off the bills of complete strangers in these days before Christmas. Holiday shoppers who’ve heard about the layaway Santas say the sweeping acts of the kindness have restored their faith in people.
+
+### DD-42
+
+> He sprang to his sleigh to his team gave a whistle!
+>
+> And away they all flew like the down of a thistle.
+>
+> But I heard him exclaim as he drove out of sight.
+>
+> “Happy Christmas to all, and to all a good night!”
