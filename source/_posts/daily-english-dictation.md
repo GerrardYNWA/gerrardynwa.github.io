@@ -187,3 +187,13 @@ tags: [language]
 > But I heard him exclaim as he drove out of sight.
 >
 > “Happy Christmas to all, and to all a good night!”
+
+### DD-43
+
+> E: Hey, George, you know, my friend goes to a psychic(fortune teller).
+>
+> G: Really?
+>
+> E: Uh-huh. We should go sometime.
+>
+> G: I’d love to go. Make an appointment.
