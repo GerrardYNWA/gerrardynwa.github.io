@@ -197,3 +197,13 @@ tags: [language]
 > E: Uh-huh. We should go sometime.
 >
 > G: I’d love to go. Make an appointment.
+
+### DD-44
+
+> R: Dad, I beat you. Don't you remember the Rayman Spinball?
+>
+> F: Ray, I learned to play in Korea. From Koreans. Do you think some punk kid’s gonna actually beat me?
+>
+> R: No, dad, you were trying to win. You were sweating and panting.
+>
+> F: I’m a damn fine actor.
