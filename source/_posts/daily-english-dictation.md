@@ -207,3 +207,11 @@ tags: [language]
 > R: No, dad, you were trying to win. You were sweating and panting.
 >
 > F: I’m a damn fine actor.
+
+### DD-45
+
+> Hey, is it cold out?
+
+### DD-46
+
+> For more than 300 years, the power of French king was absolute. This meant that he had the power to do anything.
