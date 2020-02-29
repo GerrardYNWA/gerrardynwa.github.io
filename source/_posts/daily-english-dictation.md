@@ -215,3 +215,7 @@ tags: [language]
 ### DD-46
 
 > For more than 300 years, the power of French king was absolute. This meant that he had the power to do anything.
+
+### DD-47
+
+> What people will do these days for their pets… A wash and a blow-dry. But the demanding dog now wants a limo along with other creature comforts at a pet hotel and day spa.
