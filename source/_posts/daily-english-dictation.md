@@ -219,3 +219,7 @@ tags: [language]
 ### DD-47
 
 > What people will do these days for their pets… A wash and a blow-dry. But the demanding dog now wants a limo along with other creature comforts at a pet hotel and day spa.
+
+### DD-48
+
+> Buckingham Palace officials are staying mum about the murder case, and police are keeping many details confidential as they try to identify the victim and figure out exactly what happended to her.
