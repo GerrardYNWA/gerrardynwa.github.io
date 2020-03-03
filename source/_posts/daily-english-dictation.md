@@ -223,3 +223,13 @@ tags: [language]
 ### DD-48
 
 > Buckingham Palace officials are staying mum about the murder case, and police are keeping many details confidential as they try to identify the victim and figure out exactly what happended to her.
+
+### DD-49
+
+> 1863 "All aboard, but mind the gap" as the world’s first underground passenger railway opens in London.
+
+### DD-50
+
+> D: And why do you wanna go there?
+>
+> S: I konw it’s had a bad press recently, but it’s the place that’s taken my fancy.
