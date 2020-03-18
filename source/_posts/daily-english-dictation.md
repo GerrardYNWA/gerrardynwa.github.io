@@ -233,3 +233,11 @@ tags: [language]
 > D: And why do you wanna go there?
 >
 > S: I konw it’s had a bad press recently, but it’s the place that’s taken my fancy.
+
+### DD-51
+
+> There’s people running, and walking their dogs, and having brunch on the patios.
+
+### DD-52
+
+> Martin Luther King, Jr.’s rise as a civil rights leader began in 1955 when he spearheaded the drive to desegregate public buses in Montgomery, Alabama.
