@@ -240,4 +240,12 @@ tags: [language]
 
 ### DD-52
 
-> Martin Luther King, Jr.’s rise as a civil rights leader began in 1955 when he spearheaded the drive to desegregate public buses in Montgomery, Alabama.
+> Martin Luther King, Jr.'s rise as a civil rights leader began in 1955 when he spearheaded the drive to desegregate public buses in Montgomery, Alabama.
+
+### DD-53
+
+> Anti-piracy legislation under consideration in Washington has some websites in a tizzy. Wikipdia, BoingBoing and Reddit say they’ll have none of it and are blacking out their sites on Wednesday.
+
+### DD-54
+
+> 
